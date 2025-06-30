@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --darkBlue: #001F54;
+  --lightBlue: #0078D7;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+ 
