@@ -1,62 +1,114 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const HeroSection = () => {
+const slides = [
+  {
+    video: "/assets/video1.mp4",
+    heading: "Fast & Reliable Shipping",
+  },
+  {
+    video: "/assets/video2.mp4",
+    heading: "Global Logistics Solutions",
+  },
+  {
+    video: "/assets/video3.mp4",
+    heading: "Secure Warehousing",
+  },
+  {
+    video: "/assets/video4.mp4",
+    heading: "Customer-Focused Service",
+  },
+];
+
+export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const timeoutRef = useRef(null);
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearTimeout(timeoutRef.current);
+  }, [current]);
+
+  const goTo = (idx) => setCurrent(idx);
+  const prev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const next = () => setCurrent((prev) => (prev + 1) % slides.length);
+
   return (
-    <section id="home" className="relative flex items-center justify-center h-screen text-white bg-darkBlue">
-      {/* Background Video */}
-      <video
-        className="absolute top-0 left-0 object-cover w-full h-full"
-        src="/assets/hero-video.mp4"
-        autoPlay
-        loop
-        muted
-      />
+    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[80vh] flex items-center justify-center overflow-hidden bg-black">
+      {/* Video Slides */}
+      <div className="absolute inset-0 w-full h-full">
+        <AnimatePresence initial={false} mode="wait">
+          <motion.video
+            key={slides[current].video}
+            src={slides[current].video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="object-cover w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7 }}
+          />
+        </AnimatePresence>
+      </div>
 
-      {/* Overlay for text content */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Overlay for darkening video */}
+      <div className="absolute inset-0 z-10 bg-black/40" />
 
-      {/* Content */}
-      <div className="relative z-10 px-4 text-center md:px-8">
-        <motion.h1
-          className="mb-6 text-4xl font-bold md:text-6xl"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Reliable Logistics Solutions
-        </motion.h1>
-        <motion.p
-          className="mb-8 text-lg md:text-xl"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Connecting the world through our efficient logistics network.
-        </motion.p>
-        <motion.div
-          className="flex justify-center gap-4"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-        >
-          <a
-            href="#services"
-            className="px-6 py-3 text-white transition rounded-md bg-lightBlue hover:bg-white hover:text-darkBlue"
+      {/* Heading Text */}
+      <div className="relative z-20 flex flex-col items-center px-2">
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={slides[current].heading}
+            className="mb-6 text-xl font-bold text-center text-white xs:text-2xl sm:text-3xl md:text-5xl sm:mb-8 drop-shadow-lg"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -40, opacity: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Learn More
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 transition bg-white rounded-md text-darkBlue hover:bg-lightBlue hover:text-white"
-          >
-            Contact Us
-          </a>
-        </motion.div>
+            {slides[current].heading}
+          </motion.h1>
+        </AnimatePresence>
+      </div>
+
+      {/* Dots */}
+      <div className="absolute z-30 flex gap-2 left-4 sm:left-8 bottom-4 sm:bottom-8">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => goTo(idx)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full border-2 border-white transition ${
+              current === idx ? "bg-white" : "bg-transparent"
+            }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Arrows */}
+      <div className="absolute z-30 flex gap-2 right-4 sm:right-8 bottom-4 sm:bottom-8 sm:gap-4">
+        <button
+          onClick={prev}
+          className="p-1 text-blue-900 transition rounded-full sm:p-2 bg-white/70 hover:bg-white"
+          aria-label="Previous video"
+        >
+          <FiChevronLeft size={20} className="sm:w-6 sm:h-6" />
+        </button>
+        <button
+          onClick={next}
+          className="p-1 text-blue-900 transition rounded-full sm:p-2 bg-white/70 hover:bg-white"
+          aria-label="Next video"
+        >
+          <FiChevronRight size={20} className="sm:w-6 sm:h-6" />
+        </button>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}
