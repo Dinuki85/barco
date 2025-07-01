@@ -41,7 +41,12 @@ const Header = () => {
     >
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}
-        <a href="#" className="flex items-center h-full text-2xl font-bold text-white">
+        <a
+          href="#"
+          className={`flex items-center h-full text-2xl font-bold transition-colors duration-300 ${
+            scrolled ? "text-black" : "text-white"
+          }`}
+        >
           <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
             <Image
               src="/logo.png"
@@ -52,12 +57,14 @@ const Header = () => {
               priority
             />
           </div>
-         
+          
         </a>
 
         {/* Hamburger Menu Button for mobile */}
         <button
-          className="text-3xl text-white md:hidden"
+          className={`text-3xl md:hidden transition-colors duration-300 ${
+            scrolled ? "text-black" : "text-white"
+          }`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
@@ -71,7 +78,11 @@ const Header = () => {
               <li key={index}>
                 <a
                   href={link.href}
-                  className="text-lg text-white transition hover:text-gray-300"
+                  className={`text-lg transition-colors duration-300 ${
+                    scrolled
+                      ? "text-black hover:text-gray-600"
+                      : "text-white hover:text-gray-300"
+                  }`}
                 >
                   {link.name}
                 </a>
