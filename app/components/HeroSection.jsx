@@ -39,7 +39,7 @@ export default function HeroSection() {
   const next = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   return (
-    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[80vh] flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative flex items-center justify-center w-full min-h-screen overflow-hidden bg-black">
       {/* Video Slides */}
       <div className="absolute inset-0 w-full h-full">
         <AnimatePresence initial={false} mode="wait">
@@ -50,11 +50,11 @@ export default function HeroSection() {
             muted
             loop
             playsInline
-            className="object-cover w-full h-full"
+            className="absolute inset-0 object-cover w-full h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
           />
         </AnimatePresence>
       </div>
