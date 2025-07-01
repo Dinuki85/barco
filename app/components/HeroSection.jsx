@@ -49,7 +49,7 @@ export default function HeroSection() {
             autoPlay
             muted
             loop
-            playsInline
+            
             className="absolute inset-0 object-cover w-full h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

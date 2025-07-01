@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 
+
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const menuVariants = {
@@ -42,12 +43,12 @@ const Header = () => {
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           className={`flex items-center h-full text-2xl font-bold transition-colors duration-300 ${
             scrolled ? "text-black" : "text-white"
           }`}
         >
-          <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24 bg:black/60">
+          <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
             <Image
               src="/logo.png"
               alt="Barco Logo"
