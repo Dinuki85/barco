@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, px } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi"; 
 import Image from "next/image";
 
@@ -32,13 +32,14 @@ const Header = () => {
             <Image
               src={"/logo.png"}
               alt="Barco Logo"
-              fill
-              style={{ objectFit: "contain" }}
+              width={64}
+              height={64}
+              className="object-contain w-full h-full"
               priority={true}
-              sizes="(max-width: 1000px)80px 100px"
+              
             />
           </div>
-            Barco Global Logistics
+            
         </a>
 
         {/* Hamburger Menu Button for mobile */}
