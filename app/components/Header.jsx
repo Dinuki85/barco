@@ -49,7 +49,7 @@ const Header = ({ forceBlack = false }) => {
           href="/"
           className={`flex items-center h-full text-2xl font-bold transition-colors duration-300 ${textColor}`}
         >
-          <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24 bg-black/60">
+          <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24">
             <Image
               src="/logo.png"
               alt="Barco Logo"
@@ -58,7 +58,6 @@ const Header = ({ forceBlack = false }) => {
               className="object-contain"
               priority
             />
-            
           </div>
         </Link>
 
@@ -78,11 +77,13 @@ const Header = ({ forceBlack = false }) => {
               <li key={index}>
                 <Link
                   href={link.href}
-                  className={`text-lg transition-colors duration-300 ${
-                    forceBlack || scrolled
+                  className={`relative text-lg transition-colors duration-300
+                    ${forceBlack || scrolled
                       ? "text-black hover:text-gray-600"
-                      : "text-white hover:text-gray-300"
-                  }`}
+                      : "text-white hover:text-gray-300"}
+                    after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5
+                    after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left
+                  `}
                 >
                   {link.name}
                 </Link>
