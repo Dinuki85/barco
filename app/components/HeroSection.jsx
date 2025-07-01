@@ -54,7 +54,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.5 }}
           />
         </AnimatePresence>
       </div>
@@ -73,7 +73,7 @@ export default function HeroSection() {
             exit={{ y: -40, opacity: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {slides[current].heading}
+            
           </motion.h1>
         </AnimatePresence>
       </div>
