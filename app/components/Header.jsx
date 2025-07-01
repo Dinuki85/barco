@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
-
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -18,7 +18,7 @@ const menuVariants = {
   exit: { opacity: 0, y: "-100%", transition: { duration: 0.3 } },
 };
 
-const Header = () => {
+const Header = ({ forceBlack = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,6 +29,9 @@ const Header = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Use forceBlack or scrolled for text color
+  const textColor = forceBlack || scrolled ? "text-black" : "text-white";
 
   return (
     <header
@@ -42,13 +45,11 @@ const Header = () => {
     >
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}
-        <a
+        <Link
           href="/"
-          className={`flex items-center h-full text-2xl font-bold transition-colors duration-300 ${
-            scrolled ? "text-black" : "text-white"
-          }`}
+          className={`flex items-center h-full text-2xl font-bold transition-colors duration-300 ${textColor}`}
         >
-          <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
+          <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24 bg-black/60">
             <Image
               src="/logo.png"
               alt="Barco Logo"
@@ -57,15 +58,13 @@ const Header = () => {
               className="object-contain"
               priority
             />
+            
           </div>
-          
-        </a>
+        </Link>
 
         {/* Hamburger Menu Button for mobile */}
         <button
-          className={`text-3xl md:hidden transition-colors duration-300 ${
-            scrolled ? "text-black" : "text-white"
-          }`}
+          className={`text-3xl md:hidden transition-colors duration-300 ${textColor}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
@@ -77,16 +76,16 @@ const Header = () => {
           <ul className="flex items-center gap-8">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <a
+                <Link
                   href={link.href}
                   className={`text-lg transition-colors duration-300 ${
-                    scrolled
+                    forceBlack || scrolled
                       ? "text-black hover:text-gray-600"
                       : "text-white hover:text-gray-300"
                   }`}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -115,13 +114,13 @@ const Header = () => {
             <ul className="flex flex-col items-center gap-6 pb-6">
               {navLinks.map((link, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-xl text-white transition hover:text-gray-300"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
