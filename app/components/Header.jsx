@@ -31,10 +31,12 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-50  border-b-2  border-black w-full transition-colors duration-300 ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
-      style={{ backdropFilter: !scrolled ? "blur(2px)" : "none" }}
+      style={{ backdropFilter: !scrolled ? "blur(2px)" : "none" ,
+        fontFamily:"Times New Roman, serif"
+      }}
     >
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}

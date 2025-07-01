@@ -11,7 +11,11 @@ module.exports = {
         lightBlue: "#0078D7",
         white: "#ffffff",
       },
-    },
+      fontFamily: {
+        calibri: ["Calibri", "sans-serif"],
+        timesnewroman: ["Times New Roman", "serif"],
+      }, // <-- add this closing brace
+    },   // <-- and this one to close extend
   },
   plugins: [],
 };
