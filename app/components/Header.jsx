@@ -23,7 +23,7 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > window.innerHeight * 0.7); // after hero section
+      setScrolled(window.scrollY > window.innerHeight * 0.7);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -31,31 +31,33 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50  border-b-2  border-black w-full transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 border-b-2 border-black ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
-      style={{ backdropFilter: !scrolled ? "blur(2px)" : "none" ,
-        fontFamily:"Times New Roman, serif"
+      style={{
+        backdropFilter: !scrolled ? "blur(2px)" : "none",
+        fontFamily: "Calibri, sans-serif"
       }}
     >
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}
-        <a href="#" className="flex items-center h-full text-2xl font-bold text-gray-900">
-  <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
-    <Image
-      src="/logo.png"
-      alt="Barco Logo"
-      width={96}   
-      height={96}
-      className="object-contain"
-      priority
-    />
-  </div>
-</a>
+        <a href="#" className="flex items-center h-full text-2xl font-bold text-white">
+          <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
+            <Image
+              src="/logo.png"
+              alt="Barco Logo"
+              width={96}
+              height={96}
+              className="object-contain"
+              priority
+            />
+          </div>
+         
+        </a>
 
         {/* Hamburger Menu Button for mobile */}
         <button
-          className="text-3xl text-gray-900 md:hidden"
+          className="text-3xl text-white md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
@@ -69,7 +71,7 @@ const Header = () => {
               <li key={index}>
                 <a
                   href={link.href}
-                  className="text-lg text-gray-900 transition hover:text-gray-600"
+                  className="text-lg text-white transition hover:text-gray-300"
                 >
                   {link.name}
                 </a>
@@ -83,7 +85,7 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="absolute left-0 w-full bg-white shadow-md top-full md:hidden"
+            className="absolute left-0 w-full bg-black shadow-md top-full md:hidden"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
@@ -91,7 +93,7 @@ const Header = () => {
           >
             <div className="flex justify-end p-4">
               <button
-                className="text-3xl text-gray-900"
+                className="text-3xl text-white"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close Menu"
               >
@@ -103,7 +105,7 @@ const Header = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-xl text-gray-900 transition hover:text-gray-600"
+                    className="text-xl text-white transition hover:text-gray-300"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
