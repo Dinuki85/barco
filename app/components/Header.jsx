@@ -47,7 +47,7 @@ const Header = () => {
             scrolled ? "text-black" : "text-white"
           }`}
         >
-          <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
+          <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24 bg:black/60">
             <Image
               src="/logo.png"
               alt="Barco Logo"
