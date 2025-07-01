@@ -39,18 +39,17 @@ const Header = () => {
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}
         <a href="#" className="flex items-center h-full text-2xl font-bold text-gray-900">
-          <div className="flex items-center justify-center w-12 h-12 md:h-16 md:w-16">
-            <Image
-              src="/logo.png"
-              alt="Barco Logo"
-              width={64}
-              height={64}
-              className="object-contain"
-              priority
-            />
-          </div>
-          <span className="hidden ml-2 sm:inline">Barco</span>
-        </a>
+  <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
+    <Image
+      src="/logo.png"
+      alt="Barco Logo"
+      width={96}   
+      height={96}
+      className="object-contain"
+      priority
+    />
+  </div>
+</a>
 
         {/* Hamburger Menu Button for mobile */}
         <button
