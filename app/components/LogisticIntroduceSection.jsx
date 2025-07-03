@@ -48,10 +48,11 @@ const LogisticIntroduceSection = () => {
 
 
             </div>
-             <div className="flex items-center justify-center h-screen bg-gray-100">
-          <Counter targetNumber={1000} />
-        </div>
             
+            {/*<div className="flex w-full px-10 py-10 gid-rows-2 h -screen jstify-center i2tems-center inset- flex-center bg-light-blue-100 sm:w-full bottom-9">
+        <button className='border rounborder-spacing-1 border-darkBlue '><Counter targetNumber={1000} /></button>  
+        </div>
+            */}
         </section>
         
 

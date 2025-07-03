@@ -19,13 +19,13 @@
           } else {
             setDisplayNumber(Math.floor(start));
           }
-        }, 16); // Update roughly every 16ms for 60fps
+        },4); // Update roughly every 16ms for 60fps
 
         return () => clearInterval(counter); // Cleanup on unmount
       }, [targetNumber]);
 
       return (
-        <div className="text-5xl font-bold text-blue-600">
+        <div className="text-5xl font-bold text-black-600">
           {displayNumber.toLocaleString()}
         </div>
       );
