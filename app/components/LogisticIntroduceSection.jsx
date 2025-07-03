@@ -1,11 +1,14 @@
 "use client";
 import { Grandstander } from 'next/font/google';
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { CgAdd } from "react-icons/cg";
+import Counter from './Counter';
 
 const LogisticIntroduceSection = () => {
+    
+    
     return (
-        <section className='relative flex items-center justify-center w-full min-h-screen bg:light-blue-100 md:items-center sm:items-center'>
+        <section className='relative grid w-full min-h-screen grid-cols-2 justfy-center item-s-center bg:light-blue-100 md:items-center sm:items-center'>
             <div className='absolute  grid-cols-2 place-items-start w-full h-full inset-1 bg:light-blue-500 sm:w-full sm:h-full md:w-full md:h-full *:'>
 
                 <h1 className='flex flex-col items-center w-full px-[15%] py-10 scroll-mt-20 font-bold text-4xl  font-serif' >
@@ -45,7 +48,12 @@ const LogisticIntroduceSection = () => {
 
 
             </div>
+             <div className="flex items-center justify-center h-screen bg-gray-100">
+          <Counter targetNumber={1000} />
+        </div>
+            
         </section>
+        
 
     )
 }
