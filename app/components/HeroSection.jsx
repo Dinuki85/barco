@@ -30,7 +30,7 @@ export default function HeroSection() {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 6000);
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
 
@@ -39,7 +39,7 @@ export default function HeroSection() {
   const next = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   return (
-    <section className="relative flex items-center justify-center w-full min-h-screen overflow-hidden bg-black">
+    <section className="relative flex items-center justify-center w-full min-h-screen overflow-hidden bg-black md:items-center sm:items-center">
       {/* Video Slides */}
       <div className="absolute inset-0 w-full h-full">
         <AnimatePresence initial={false} mode="wait">
@@ -59,8 +59,6 @@ export default function HeroSection() {
         </AnimatePresence>
       </div>
 
-      {/* Overlay for darkening video */}
-      <div className="absolute inset-0 z-10 bg-black/40" />
 
       {/* Heading Text */}
       <div className="relative z-20 flex flex-col items-center px-2">

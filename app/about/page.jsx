@@ -3,7 +3,7 @@ import Header from "../components/Header";
 export default function AboutPage() {
   return (
     <>
-    <Header forceBlack={true}/>
+    
     <div id='about' className='flex flex-col items-center justify-center min-h-screen bg-white'>
         <main className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
             <h1 className='mb-4 text-3xl font-bold'>About Us</h1>

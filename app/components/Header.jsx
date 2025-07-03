@@ -4,6 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -43,6 +51,7 @@ const Header = ({ forceBlack = false }) => {
         fontFamily: "Calibri, sans-serif"
       }}
     >
+           
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
         {/* Logo */}
         <Link
@@ -79,8 +88,8 @@ const Header = ({ forceBlack = false }) => {
                   href={link.href}
                   className={`relative text-lg transition-colors duration-300
                     ${forceBlack || scrolled
-                      ? "text-black hover:text-gray-600"
-                      : "text-white hover:text-gray-300"}
+                      ? "text-blue-800 hover:text-gray-600"
+                      : "text-black hover:text-gray-300"}
                     after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5
                     after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left
                   `}
@@ -89,6 +98,21 @@ const Header = ({ forceBlack = false }) => {
                 </Link>
               </li>
             ))}
+
+             {/* Clerk Authentication Buttons */}
+            <ClerkProvider>
+            <SignedOut>
+              <SignInButton />
+              <SignUpButton>
+                <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </ClerkProvider>
           </ul>
         </nav>
       </div>
@@ -125,8 +149,14 @@ const Header = ({ forceBlack = false }) => {
                 </li>
               ))}
             </ul>
+
+        
+           
           </motion.nav>
         )}
+
+
+        
       </AnimatePresence>
     </header>
   );
