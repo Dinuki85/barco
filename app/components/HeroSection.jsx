@@ -107,6 +107,12 @@ export default function HeroSection() {
           <FiChevronRight size={20} className="sm:w-6 sm:h-6" />
         </button>
       </div>
+      
+      
     </section>
-  );
+
+       
+
+
+);
 }

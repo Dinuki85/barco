@@ -1,20 +1,12 @@
 import HeroSection from "./components/HeroSection";
+import LogisticIntroduceSection from "./components/LogisticIntroduceSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <section
-        id="home"
-        className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen px-4 text-center text-white bg-lightBlue"
-      >
-        <h1 className="mb-4 text-3xl font-bold md:text-5xl">Welcome to Barco
-          
-        </h1>
-        <p className="max-w-xl text-base md:text-lg">
-          Your trusted partner for global logistics and supply chain solutions.
-        </p>
-      </section>
+     <LogisticIntroduceSection />
+     
       <section
         id="about"
         className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen px-4 text-center bg-white text-darkBlue"
