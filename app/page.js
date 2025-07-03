@@ -7,15 +7,8 @@ export default function Home() {
       <HeroSection />
      <LogisticIntroduceSection />
      
-      <section
-        id="about"
-        className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen px-4 text-center bg-white text-darkBlue"
-      >
-        <h2 className="mb-4 text-2xl font-semibold md:text-3xl">About Us</h2>
-        <p className="max-w-xl text-base md:text-lg">
-          We provide reliable, efficient, and secure logistics services worldwide.
-        </p>
-      </section>
+      
+     
       <section
         id="services"
         className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen px-4 text-center text-white bg-lightBlue"
