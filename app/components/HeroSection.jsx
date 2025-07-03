@@ -42,7 +42,7 @@ export default function HeroSection() {
     <section className="relative flex items-center justify-center w-full min-h-screen overflow-hidden bg-black md:items-center sm:items-center">
       {/* Video Slides */}
       <div className="absolute inset-0 w-full h-full">
-        <AnimatePresence initial={false} mode="wait">
+        <AnimatePresence initial={false} >
           <motion.video
             key={slides[current].video}
             src={slides[current].video}
