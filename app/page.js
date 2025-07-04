@@ -6,7 +6,9 @@ export default function Home() {
     <>
       <HeroSection />
      <LogisticIntroduceSection />
-     
+     <div>
+      <Image src=""/>
+     </div>
       
      
       
