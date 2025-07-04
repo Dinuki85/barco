@@ -2,9 +2,15 @@ import React from 'react'
 
 const MeatTeam = () => {
   return (
-    <div>
+
+    <section >
+        <div className="grid grid-cols-3 gap-3 overflow-scroll">
+
       
     </div>
+
+    </section>
+    
   )
 }
 

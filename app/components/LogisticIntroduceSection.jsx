@@ -32,7 +32,7 @@ const LogisticIntroduceSection = () => {
                     logistics support, we have the
                     capabilities to handle it all.
                 </p>
-                <ul className='grid grid-cols-3 gap-4 px-3 py-3 font-serif text-lg list-none sm:text-base md:text-lg text-mono'>
+                <ul className='grid grid-cols-3 gap-4 px-3 py-3 font-serif text-lg list-none sm:text-base md:text-lg text-mono overflow-clip'>
                     <li className='flex px-2 py-1 flex-center'>  <CgAdd />    Warehousing and Distribution</li>
                     <li className='flex px-2 py-1 flex-center'>  <CgAdd /> Freight Forwarding</li>
                     <li className='flex px-2 py-1 flex-center'> <CgAdd /> Supply Chain Management</li>
