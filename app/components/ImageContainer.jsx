@@ -18,7 +18,15 @@ const assets = [
   {
     image: "/assets/barco2.jpg",
     heading: "Barco Image 4"
-  }
+  },
+   {
+    image: "/assets/barco1.jpg",
+    heading: "Barco Image 1"
+  },
+  {
+    image: "/assets/barco2.jpg",
+    heading: "Barco Image 2"
+  },
 ];
 
 const IMAGE_WIDTH = 320; // px, adjust to your image width
@@ -41,21 +49,27 @@ const ImageContainer = () => {
   return (
     <section className="flex flex-col items-center justify-center w-full py-8">
       <div
-        className="relative h-[220px] w-[320px] md:w-[640px] overflow-hidden"
-        style={{ maskImage: "linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%)" }}
+        className="relative w-full overflow-hidden"
+        style={{ maskImage: "linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%)" }}
       >
         <div
           className="flex flex-row transition-transform duration-700"
           style={{
-            transform: `translateX(-${current * IMAGE_WIDTH}px)`,
+            width:`${imagesToShow.length * 25}vw`,
+            transform: `translateX(-${current * 25}vw)`,
             willChange: "transform"
           }}
         >
           {imagesToShow.map((asset, idx) => (
             <div
               key={idx}
-              className="relative h-[220px] w-[320px] flex items-center justify-center group"
-              style={{ flexShrink: 0 }}
+              className="relative flex items-center justify-center group"
+              style={{
+                width: "25vw",
+                minWidth: "25vw",
+                height:"220px",
+                flexShrink: 0
+              }}
             >
               <Image
                 src={asset.image}
