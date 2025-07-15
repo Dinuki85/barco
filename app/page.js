@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <HeroSection />
      <LogisticIntroduceSection />
+     
     <ImageContainer />
     <MeatTeam />
       
