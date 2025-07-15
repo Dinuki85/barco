@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { CgAdd } from "react-icons/cg";
 import Counter from './Counter';
 import Link from 'next/link';
-import WaterMarkSlider from './WaterMarkSlider';
+//import WaterMarkSlider from './WaterMarkSlider';
 
 const LogisticIntroduceSection = () => {
 

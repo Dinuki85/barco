@@ -55,8 +55,8 @@ const ImageContainer = () => {
         <div
           className="flex flex-row transition-transform duration-700"
           style={{
-            width:`${imagesToShow.length * 25}vw`,
-            transform: `translateX(-${current * 25}vw)`,
+            width:`${imagesToShow.length * 30}vw`,
+            transform: `translateX(-${current * 30}vw)`,
             willChange: "transform"
           }}
         >
@@ -65,9 +65,9 @@ const ImageContainer = () => {
               key={idx}
               className="relative flex items-center justify-center group"
               style={{
-                width: "25vw",
-                minWidth: "25vw",
-                height:"220px",
+                width: "30vw",
+                minWidth:"30vw",
+                height:"260px",
                 flexShrink: 0
               }}
             >
