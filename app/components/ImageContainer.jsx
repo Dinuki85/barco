@@ -53,7 +53,7 @@ const ImageContainer = () => {
         style={{ maskImage: "linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%)" }}
       >
         <div
-          className="flex flex-row transition-transform duration-700"
+          className="flex flex-row transition-transform duration-700 gap-x-4"
           style={{
             width:`${imagesToShow.length * 30}vw`,
             transform: `translateX(-${current * 30}vw)`,
