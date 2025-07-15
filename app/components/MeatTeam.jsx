@@ -2,7 +2,7 @@ import TeamMember from "./TeamMember";
 
 const teamMembers = [
   {
-    image: "/assets/barco1.jpg ",
+    image: "/assets/barco1.jpg",
     name: "Alice Johnson",
     position: "CEO",
     company: "Barco Logistics",
