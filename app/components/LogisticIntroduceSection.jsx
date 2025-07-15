@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { CgAdd } from "react-icons/cg";
 import Counter from './Counter';
 import Link from 'next/link';
-import WatermarkSlider from './WatermarkSlider';
+import WaterMarkSlider from './WaterMarkSlider';
 
 const LogisticIntroduceSection = () => {
 
@@ -19,7 +19,7 @@ const LogisticIntroduceSection = () => {
                 </h1><hr className='border-4 border-light-blue-300' />
 
                 <h2 className='flex flex-col items-baseline font-serif py-3 px-2 text-2xl font-thin sm:text-1xl md:*'> Delivering Posibilities, On Time</h2>
-                <WatermarkSlider side='right' />
+                
                 <p className='flex flex-col items-center px-5 py-4 font-serif text-lg text-justify sm:text-base md:text-lg text-mono'>
                     At Barco Logistics, we specialize in
                     providing comprehensive logistics
@@ -34,6 +34,7 @@ const LogisticIntroduceSection = () => {
                     logistics support, we have the
                     capabilities to handle it all.
                 </p>
+                
                 <ul className='grid grid-cols-3 gap-4 px-3 py-3 font-serif text-lg list-none sm:text-base md:text-lg text-mono overflow-clip'>
                     <li className='flex px-2 py-1 flex-center'>  <CgAdd />    Warehousing and Distribution</li>
                     <li className='flex px-2 py-1 flex-center'>  <CgAdd /> Freight Forwarding</li>

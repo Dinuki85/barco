@@ -3,10 +3,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const watermarkImages = [
-  "/public/assets/barco1.jpg",
-  "/public/assets/barco2.jpg",
-  "/public/assets/barco3.jpg",
-  // Add more images as needed
+  "/assets/barco1.jpg",
+  "/assets/barco2.jpg",
+  "/assets/barco3.jpg",
+  
 ];
 
 export default function WatermarkSlider({ side = "right" }) {
