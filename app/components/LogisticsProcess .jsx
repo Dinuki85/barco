@@ -3,6 +3,36 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaTruck, FaBoxes, FaWarehouse, FaShippingFast } from "react-icons/fa";
 import { MdLocalShipping, MdOutlineInventory2 } from "react-icons/md";
+import { FaShoppingCart, FaWarehouse, FaTruckMoving } from "react-icons/fa";
+import { MdInventory } from "react-icons/md";
+
+const steps = [
+  {
+    title: "Order Placement",
+    description:
+      "The journey begins when customers place orders through various channels such as websites, mobile apps, or physical counters. We instantly capture the order and initiate the fulfillment process.",
+    icon: <FaShoppingCart className="text-4xl text-blue-900" />,
+  },
+  {
+    title: "Inventory Management",
+    description:
+      "Smart inventory systems track item availability in real-time, optimize stock levels, and ensure that products are ready for dispatch without delay or overstock.",
+    icon: <MdInventory className="text-4xl text-blue-900" />,
+  },
+  {
+    title: "Order Warehousing & Storage",
+    description:
+      "Goods are stored in secured, climate-controlled facilities, categorized for efficient picking and packing. Warehousing plays a key role in fast and accurate delivery.",
+    icon: <FaWarehouse className="text-4xl text-blue-900" />,
+  },
+  {
+    title: "Transportation",
+    description:
+      "We select the optimal mode of transport — road, air, sea, or rail — to deliver goods safely, swiftly, and affordably across regions and borders.",
+    icon: <FaTruckMoving className="text-4xl text-blue-900" />,
+  },
+];
+
 
 const centerServices = [
   "Freight Services",
@@ -86,10 +116,16 @@ const LogisticsProcess = () => {
       {/* Animated Center Bar */}
     
 {/* Animated Center Bar */}
-<div className="relative flex items-center justify-center h-[100px] overflow-hidden my-10">
-  <div className="absolute w-full h-[2px] bg-gradient-to-r from-blue-400 to-blue-800 opacity-40" />
+{/* Animated Center Bar Card */}
+<div className="relative flex items-center justify-center h-[120px] overflow-hidden my-10 px-4">
+  {/* Outer card wrapper */}
+  <div className="absolute z-0 w-full h-full max-w-6xl mx-auto border border-blue-300 shadow-lg rounded-2xl bg-gradient-to-r from-blue-900/60 via-blue-500/40 to-blue-300/30 backdrop-blur-sm" />
 
-  <div className="absolute flex w-full overflow-hidden">
+  {/* Center line */}
+  <div className="absolute w-full h-[2px] bg-gradient-to-r from-blue-400 to-blue-800 opacity-40 z-10" />
+
+  {/* Animated Text Row */}
+  <div className="absolute z-20 flex w-full max-w-6xl mx-auto overflow-hidden">
     {[0, 1].map((loopIndex) => (
       <motion.div
         key={loopIndex}
@@ -100,7 +136,7 @@ const LogisticsProcess = () => {
           duration: 20,
           ease: "linear",
         }}
-        style={{ minWidth: "100%" }} // Ensures full width
+        style={{ minWidth: "100%" }}
       >
         {centerServices.map((service, index) => (
           <span
@@ -114,6 +150,7 @@ const LogisticsProcess = () => {
     ))}
   </div>
 </div>
+
 
 
 
