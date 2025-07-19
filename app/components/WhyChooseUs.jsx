@@ -93,14 +93,24 @@ const WhyChooseUsSection = () => {
 
                         With a deep understanding of complex supply chains, we provide innovative, efficient, and tailored logistics solutions. Our reliability, strategic partnerships, and technology-driven operations set us apart in a highly competitive industry.
                     </motion.p>
-                    <ul className="space-y-4">
+                   <motion.ul
+                        className="space-y-4"
+                        variants={listContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.5 }}
+                    >
                         {whyList.map((item, idx) => (
-                            <li key={idx} className="flex items-center text-base text-gray-700">
+                            <motion.li
+                                key={idx}
+                                className="flex items-center text-base text-gray-700"
+                                variants={listItem}
+                            >
                                 <FaCheckCircle className="flex-shrink-0 mr-3 text-blue-700" />
                                 <span>{item}</span>
-                            </li>
+                            </motion.li>
                         ))}
-                    </ul>
+                    </motion.ul>
                 </div>
                 {/* Right: Stacked, auto-sliding images */}
                 <div className="w-full md:w-1/2 flex justify-center relative min-h-[350px]">
