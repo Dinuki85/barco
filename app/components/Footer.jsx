@@ -23,23 +23,25 @@ export default function ConnectFooter() {
     <>
       {/* Heading Section - OUTSIDE FOOTER */}
       <div className="relative w-full px-4 pt-10 pb-0 text-center md:px-[8%] lg:px-[15%]">
-        <motion.h1
-          className="w-full font-serif text-3xl font-bold text-black underline sm:text-5xl md:text-6xl lg:text-7xl underline-offset-8 decoration-blue-600"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.7 }}
-        >
-          {heading.split("").map((char, idx) => (
-            <motion.span
-              key={idx}
-              variants={letterVariants}
-              className={char === " " ? "mx-2" : ""}
-            >
-              {char}
-            </motion.span>
-          ))}
-        </motion.h1>
+       <motion.h1
+  className="w-full font-serif text-3xl font-bold text-black sm:text-5xl md:text-6xl lg:text-7xl"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.7 }}
+>
+  {heading.split("").map((char, idx) => (
+    <motion.span
+      key={idx}
+      variants={letterVariants}
+      // For spaces, just render space without extra margin
+      className={char === " " ? "" : ""}
+    >
+      {char}
+    </motion.span>
+  ))}
+</motion.h1>
+
       </div>
 
       {/* Footer starts here */}
