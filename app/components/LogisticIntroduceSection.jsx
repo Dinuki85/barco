@@ -51,7 +51,7 @@ const h2LetterVariants = {
 };
 
 
-function useCounter(targetNumber, duration = 2000) {
+function useCounter(targetNumber, duration = 2000,trigger = true) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
