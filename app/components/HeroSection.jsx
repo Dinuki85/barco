@@ -4,22 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const slides = [
-  {
-    video: "/assets/barco1.mp4",
-    heading: "Fast & Reliable Shipping",
-  },
-  {
-    video: "/assets/barco2.mp4",
-    heading: "Global Logistics Solutions",
-  },
-  {
-    video: "/assets/barco3.mp4",
-    heading: "Secure Warehousing",
-  },
-  {
-    video: "/assets/barco4.mp4",
-    heading: "Customer-Focused Service",
-  },
+ 
    {
     video: "/assets/barco5.mp4",
     heading: "Customer-Focused Service",
