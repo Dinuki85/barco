@@ -38,17 +38,18 @@ const liVariants = {
     hidden: { opacity: 0, x: -40 },
     visible: { opacity: 1, x: 0 }
 };
+
 const h2ContainerVariants = {
     hidden: {},
     visible: {
         transition: {
-            staggerChildren: 0.18
+            staggerChildren: 0.06
         }
     }
 };
-const h2WordVariants = {
-    hidden: { opacity: 0, x: -40 },
-    visible: { opacity: 1, x: 0 }
+const h2LetterVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
 };
 
 const LogisticIntroduceSection = () => {
@@ -78,17 +79,17 @@ const LogisticIntroduceSection = () => {
                 <hr className='border-8 border-light-blue-300' />
 
                 <motion.h2
-    className='flex flex-wrap justify-center font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'
+    className='flex flex-wrap  items-center justify-center font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'
     variants={h2ContainerVariants}
     initial="hidden"
     whileInView="visible"
     viewport={{ once: false, amount: 0.5 }}
 >
-    {"Delivering Possibilities, On Time".split(" ").map((word, idx) => (
+    {"Delivering Posibilities, On Time".split("").map((word, idx) => (
         <motion.span
             key={idx}
-            variants={h2WordVariants}
-            className="mx-2"
+            variants={h2LetterVariants}
+            className="mx-2" 
         >
             {word}
         </motion.span>
