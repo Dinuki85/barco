@@ -26,17 +26,29 @@ const containerVariants = {
     }
 };
 const ulVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15
+        }
     }
-  }
 };
 
 const liVariants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0 }
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 }
+};
+const h2ContainerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.18
+        }
+    }
+};
+const h2WordVariants = {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 }
 };
 
 const LogisticIntroduceSection = () => {
@@ -65,54 +77,68 @@ const LogisticIntroduceSection = () => {
                 </motion.h1>
                 <hr className='border-8 border-light-blue-300' />
 
-                <h2 className='flex flex-col items-center font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'>
-                    Delivering Posibilities, On Time
-                </h2>
+                <motion.h2
+    className='flex flex-wrap justify-center font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'
+    variants={h2ContainerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.5 }}
+>
+    {"Delivering Possibilities, On Time".split(" ").map((word, idx) => (
+        <motion.span
+            key={idx}
+            variants={h2WordVariants}
+            className="mx-2"
+        >
+            {word}
+        </motion.span>
+    ))}
+</motion.h2>
 
 
                 <motion.ul
-                  className="grid max-w-4xl grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none "
-                  variants={ulVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: false, amount: 0.4 }}
+                    className="grid max-w-4xl grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none "
+                    variants={ulVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.5 }}
                 >
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <MdWarehouse className="text-xl text-blue-700 " />
-                    Warehousing and Distribution
-                  </motion.li>
                     <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <FaShippingFast className="text-xl text-blue-700" />
-                    Freight Forwarding
-                  </motion.li>
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <GiCargoCrate className="text-xl text-blue-700" />
-                    Supply Chain Management
-                  </motion.li>
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <MdOutlineLocalShipping className="text-xl text-blue-700" />
-                    E-commerce Logistics
-                  </motion.li>
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <MdOutlineSupportAgent className="text-xl text-blue-700" />
-                    Last-Mile Delivery
-                  </motion.li>
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <MdWarehouse className="text-xl text-blue-700" />
-                    Inventory Management
-                  </motion.li>
-                     <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <FaShippingFast className="text-xl text-blue-700" />
-                    Customs Clearance
-                  </motion.li>
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <GiCargoCrate className="text-xl text-blue-700" />
-                    Packaging Solutions
-                  </motion.li>
-                  <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <MdOutlineLocalShipping className="text-xl text-blue-700" />
-                    Express Delivery
-                  </motion.li>
+                        <MdWarehouse className="text-xl text-blue-700 " />
+                        Warehousing and Distribution
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <FaShippingFast className="text-xl text-blue-700" />
+                        Freight Forwarding
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <GiCargoCrate className="text-xl text-blue-700" />
+                        Supply Chain Management
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <MdOutlineLocalShipping className="text-xl text-blue-700" />
+                        E-commerce Logistics
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <MdOutlineSupportAgent className="text-xl text-blue-700" />
+                        Last-Mile Delivery
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <MdWarehouse className="text-xl text-blue-700" />
+                        Inventory Management
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <FaShippingFast className="text-xl text-blue-700" />
+                        Customs Clearance
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <GiCargoCrate className="text-xl text-blue-700" />
+                        Packaging Solutions
+                    </motion.li>
+                    <motion.li variants={liVariants} className="flex items-center gap-2">
+                        <MdOutlineLocalShipping className="text-xl text-blue-700" />
+                        Express Delivery
+                    </motion.li>
                 </motion.ul>
 
                 <button className='block px-4 py-2 mx-auto text-center text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 focus:outline-double focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75'>
