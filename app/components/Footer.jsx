@@ -53,24 +53,28 @@ export default function ConnectFooter() {
           style={{ backgroundImage: "url('/assets/barco1.jpg')" }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/20" />
+         <div className="absolute inset-0 bg-black/20" />
+
 
           {/* Content */}
-          <div className="relative z-10 max-w-3xl mx-auto text-white">
-            <h2 className="mb-3 text-4xl font-bold">
-             {" "}
-              <span className="text-white">Barco Global Logistics(PVT) Ltd</span>
-            </h2>
-            <p className="mb-6 text-lg italic">
-              "Beyond Logistics, It's Our Passion"
-            </p>
-            <Link href="/contact">
-  <button className="flex items-center gap-2 px-5 py-2 text-white transition-all duration-300 border border-white rounded-full hover:bg-white hover:text-blue-950 backdrop-blur-0">
-    <HiArrowUpRight className="text-xl" />
-    Contact Us
-  </button>
-</Link>
-          </div>
+          {/* Content */}
+<div className="relative z-10 max-w-3xl mx-auto text-center text-white">
+  <h2 className="mb-3 text-4xl font-bold">
+    <span className="text-white">Barco Global Logistics(PVT) Ltd</span>
+  </h2>
+  <p className="mb-6 text-lg italic">"Beyond Logistics, It's Our Passion"</p>
+
+  {/* Centered Button */}
+  <div className="flex justify-center">
+    <Link href="/contact">
+      <button className="flex items-center gap-2 px-5 py-2 text-white transition-all duration-300 border border-white rounded-full hover:bg-white hover:text-blue-950">
+        <HiArrowUpRight className="text-xl" />
+        Contact Us
+      </button>
+    </Link>
+  </div>
+</div>
+
         </div>
 
         {/* Contact Details */}
