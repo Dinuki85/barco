@@ -82,9 +82,9 @@ const LogisticsProcess = () => {
 >
   {/* Connector line */}
   <div className="absolute z-0 w-1 h-16 -translate-x-1/2 bg-blue-400 left-1/2 top-full opacity-60" />
-  <div className="flex justify-center mb-4">{item.icon}</div>
-  <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
-  <p className="text-sm text-gray-600">{item.description}</p>
+  <div className="flex justify-center mb-4">{topItems.icon}</div>
+  <h3 className="text-xl font-semibold text-slate-800">{topItems.title}</h3>
+  <p className="text-sm text-gray-600">{topItems.description}</p>
 </motion.div>
 
         {/* Animated Center Bar */}
@@ -136,9 +136,9 @@ const LogisticsProcess = () => {
 >
   {/* Connector line */}
   <div className="absolute z-0 w-1 h-16 -translate-x-1/2 bg-blue-400 left-1/2 -top-16 opacity-60" />
-  <div className="flex justify-center mb-4">{item.icon}</div>
-  <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
-  <p className="text-sm text-gray-600">{item.description}</p>
+  <div className="flex justify-center mb-4">{bottomItems.icon}</div>
+  <h3 className="text-xl font-semibold text-slate-800">{bottomItems.title}</h3>
+  <p className="text-sm text-gray-600">{bottomItems.description}</p>
 </motion.div>
 
           ))}
