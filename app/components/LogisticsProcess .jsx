@@ -69,24 +69,23 @@ const LogisticsProcess = () => {
     <section className="w-full px-4 py-16 bg-white md:px-12 lg:px-24">
       <div className="relative flex flex-col items-center">
         {/* Top Items with connecting lines */}
-        <div className="z-20 grid w-full max-w-6xl grid-cols-1 gap-16 mb-24 md:grid-cols-2">
-          {topItems.map((item, index) => (
-            <motion.div
-              key={index}
-              {...fadeInUp}
-              viewport={{ once: true, amount: 0.3 }}
-              className="relative p-6 text-center transition-all shadow-md bg-blue-900/10 hover:bg-blue-800/20 backdrop-blur rounded-xl"
-            >
-              {/* Connector line */}
-              <div className="absolute z-0 w-1 h-16 -translate-x-1/2 bg-blue-400 left-1/2 top-full opacity-60" />
-              <div className="flex justify-center mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold text-slate-800">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
+       <motion.div
+  key={index}
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.3 }}
+  transition={{
+    duration: 0.6,
+    ease: "easeOut",
+  }}
+  className="relative p-6 text-center transition-all shadow-md bg-blue-900/10 hover:bg-blue-800/20 backdrop-blur rounded-xl"
+>
+  {/* Connector line */}
+  <div className="absolute z-0 w-1 h-16 -translate-x-1/2 bg-blue-400 left-1/2 top-full opacity-60" />
+  <div className="flex justify-center mb-4">{item.icon}</div>
+  <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
+  <p className="text-sm text-gray-600">{item.description}</p>
+</motion.div>
 
         {/* Animated Center Bar */}
         <div className="relative w-full max-w-6xl h-[120px] flex items-center justify-center my-6 z-10">
@@ -124,20 +123,24 @@ const LogisticsProcess = () => {
         {/* Bottom Items with connecting lines */}
         <div className="z-20 grid w-full max-w-6xl grid-cols-1 gap-16 mt-20 md:grid-cols-2">
           {bottomItems.map((item, index) => (
-            <motion.div
-              key={index}
-              {...fadeInUp}
-              viewport={{ once: true, amount: 0.3 }}
-              className="relative p-6 text-center transition-all shadow-md bg-blue-900/10 hover:bg-blue-800/20 backdrop-blur rounded-xl"
-            >
-              {/* Connector line */}
-              <div className="absolute z-0 w-1 h-16 -translate-x-1/2 bg-blue-400 left-1/2 -top-16 opacity-60" />
-              <div className="flex justify-center mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold text-slate-800">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">{item.description}</p>
-            </motion.div>
+           <motion.div
+  key={index}
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.3 }}
+  transition={{
+    duration: 0.6,
+    ease: "easeOut",
+  }}
+  className="relative p-6 text-center transition-all shadow-md bg-blue-900/10 hover:bg-blue-800/20 backdrop-blur rounded-xl"
+>
+  {/* Connector line */}
+  <div className="absolute z-0 w-1 h-16 -translate-x-1/2 bg-blue-400 left-1/2 -top-16 opacity-60" />
+  <div className="flex justify-center mb-4">{item.icon}</div>
+  <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
+  <p className="text-sm text-gray-600">{item.description}</p>
+</motion.div>
+
           ))}
         </div>
       </div>
