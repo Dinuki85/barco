@@ -76,9 +76,9 @@ export default function ConnectFooter() {
           <div>
             <h3 className="mb-2 text-lg font-semibold text-yellow-300">📍 Address</h3>
             <p>
-              No. 12, Marine Drive,
+             Level 35, West Tower ,World Trade Center
               <br />
-              Colombo 03,
+              Colombo 01,
               <br />
               Sri Lanka
             </p>
@@ -88,7 +88,7 @@ export default function ConnectFooter() {
             <p>
               Phone: +94 77 123 4567
               <br />
-              Email: info@barcologistics.com
+              Email: sales@barco.lk
             </p>
           </div>
           <div>
@@ -105,7 +105,7 @@ export default function ConnectFooter() {
 
         {/* Copyright */}
         <div className="py-4 text-sm text-center text-gray-300 border-t border-gray-600 bg-blue-950">
-          &copy; {new Date().getFullYear()} Barco Global Logistic. All rights reserved.
+          &copy; {new Date().getFullYear()}  Barco Global Logistic. All rights reserved.
         </div>
       </footer>
     </>
