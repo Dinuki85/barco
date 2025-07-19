@@ -57,11 +57,11 @@ export default function ConnectFooter() {
           {/* Content */}
           <div className="relative z-10 max-w-3xl mx-auto text-white">
             <h2 className="mb-3 text-4xl font-bold">
-              Let’s Connect with{" "}
-              <span className="text-yellow-300">Barco Global Logistic</span>
+             {" "}
+              <span className="text-white">Barco Global Logistics(PVT) Ltd</span>
             </h2>
-            <p className="mb-6 text-lg">
-              Delivering trust, across borders. Reach out to us for expert logistics solutions.
+            <p className="mb-6 text-lg italic">
+              "Beyond Logistics, It's Our Passion"
             </p>
             <Link href="/contact">
               <button className="px-6 py-3 font-semibold text-black transition-all duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500">
