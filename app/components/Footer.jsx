@@ -68,8 +68,9 @@ export default function ConnectFooter() {
   <div className="flex justify-center">
     <Link href="/contact">
       <button className="flex items-center gap-2 px-5 py-2 text-white transition-all duration-300 border border-white rounded-full hover:bg-white hover:text-blue-950">
-        <HiArrowUpRight className="text-xl" />
+        
         Contact Us
+        <HiArrowUpRight className="text-xl" />
       </button>
     </Link>
   </div>
