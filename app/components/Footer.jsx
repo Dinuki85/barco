@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <section className="relative w-full bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/images/barco1.jpg')" }}>
+    <section className="relative w-full bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/assets/barco1.jpg')" }}>
       {/* Overlay */}
       <div className="px-6 py-20 text-white bg-black bg-opacity-60 backdrop-blur-sm md:px-16">
         {/* Headline and CTA */}
