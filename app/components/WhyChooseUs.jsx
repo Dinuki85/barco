@@ -81,11 +81,18 @@ const WhyChooseUsSection = () => {
             <div className="flex flex-col items-center justify-between gap-10 md:flex-row">
                 {/* Left: Description & List */}
                 <div className="w-full mb-10 md:w-1/2 md:mb-0">
-                    <p className="mb-6 text-lg text-gray-700">
+                  <motion.p
+                        className="mb-6 text-lg text-gray-700"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.5 }}
+                        variants={letterVariants}
+                        transition={{ duration: 0.6 }}
+                    >
                         At Barco Global Logistic, we don't just move goods; we move businesses forward. As a premium provider of global logistics and freight forwarding services, we empower enterprises to connect markets, navigate global trade, and scale operations with confidence.
 
                         With a deep understanding of complex supply chains, we provide innovative, efficient, and tailored logistics solutions. Our reliability, strategic partnerships, and technology-driven operations set us apart in a highly competitive industry.
-                    </p>
+                    </motion.p>
                     <ul className="space-y-4">
                         {whyList.map((item, idx) => (
                             <li key={idx} className="flex items-center text-base text-gray-700">
