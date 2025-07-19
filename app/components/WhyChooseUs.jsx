@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import {motion } from "framer-motion";
 import Link from "next/link";
+import { HiArrowUpRight } from "react-icons/hi2";
 
 const images = [
   "/assets/barco1.jpg", 
