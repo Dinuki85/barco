@@ -1,6 +1,22 @@
 "use client";
 import Link from "next/link";
 
+const heading = "Let's Connect Together";
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.06
+        }
+    }
+};
+
 export default function ConnectFooter() {
   return (
     <footer className="w-full text-white bg-blue-950">
@@ -11,6 +27,25 @@ export default function ConnectFooter() {
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r"></div>
+         <div className="relative w-full px-4 pt-10 pb-0 md:px-[8%] lg:px-[15%]">
+                <motion.h1
+                    className='w-full font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl'
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.7 }}
+                >
+                    {heading.split("").map((char, idx) => (
+                        <motion.span
+                            key={idx}
+                            variants={letterVariants}
+                            className={char === " " ? "mx-2" : ""}
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
+                </motion.h1>
+                </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto">
