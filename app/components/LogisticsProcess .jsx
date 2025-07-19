@@ -116,7 +116,6 @@ const LogisticsProcess = () => {
       {/* Animated Center Bar */}
     
 {/* Animated Center Bar */}
-{/* Animated Center Bar Card */}
 <div className="relative flex items-center justify-center h-[120px] overflow-hidden my-10 px-4">
   {/* Outer card wrapper */}
   <div className="absolute z-0 w-full h-full max-w-6xl mx-auto border border-blue-300 shadow-lg rounded-2xl bg-gradient-to-r from-blue-900/60 via-blue-500/40 to-blue-300/30 backdrop-blur-sm" />
@@ -155,15 +154,28 @@ const LogisticsProcess = () => {
 
 
       {/* Bottom Icons Row */}
-      <div className="flex flex-col items-center justify-between gap-10 mt-12 md:flex-row">
-        {bottomItems.map((item, index) => (
-          <div key={index} className="max-w-xs text-center">
-            <div className="flex justify-center mb-4">{item.icon}</div>
-            <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
-            <p className="text-sm text-gray-600">{item.description}</p>
-          </div>
-        ))}
+     <div className="flex flex-col gap-16 my-10">
+  {steps.map((step, index) => (
+    <div
+      key={index}
+      className={`flex flex-col md:flex-row items-center gap-8 ${
+        index % 2 !== 0 ? "md:flex-row-reverse" : ""
+      }`}
+    >
+      {/* Icon and Title */}
+      <div className="flex flex-col items-center text-center md:w-1/3">
+        <div className="mb-4">{step.icon}</div>
+        <h3 className="text-2xl font-bold text-slate-800">{step.title}</h3>
       </div>
+
+      {/* Description */}
+      <div className="text-lg leading-relaxed text-gray-700 md:w-2/3">
+        {step.description}
+      </div>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 };
