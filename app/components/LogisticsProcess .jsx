@@ -85,6 +85,7 @@ const LogisticsProcess = () => {
 
       {/* Animated Center Bar */}
     
+{/* Animated Center Bar */}
 <div className="relative flex items-center justify-center h-[100px] overflow-hidden my-10">
   <div className="absolute w-full h-[2px] bg-gradient-to-r from-blue-400 to-blue-800 opacity-40" />
 
@@ -92,13 +93,14 @@ const LogisticsProcess = () => {
     {[0, 1].map((loopIndex) => (
       <motion.div
         key={loopIndex}
-        className="flex min-w-full gap-6 whitespace-nowrap"
+        className="flex gap-6 px-4 shrink-0 whitespace-nowrap"
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           repeat: Infinity,
           duration: 20,
           ease: "linear",
         }}
+        style={{ minWidth: "100%" }} // Ensures full width
       >
         {centerServices.map((service, index) => (
           <span
@@ -112,6 +114,7 @@ const LogisticsProcess = () => {
     ))}
   </div>
 </div>
+
 
 
       {/* Bottom Icons Row */}
