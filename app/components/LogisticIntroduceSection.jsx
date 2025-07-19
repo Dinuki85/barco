@@ -50,9 +50,9 @@ const LogisticIntroduceSection = () => {
                         </motion.span>
                     ))}
                 </motion.h1>
-                <hr className='border-4 border-light-blue-300' />
+                <hr className='border-8 border-light-blue-300' />
 
-                <h2 className='flex flex-col items-baseline font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'>
+                <h2 className='flex flex-col items-center font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'>
                     Delivering Posibilities, On Time
                 </h2>
 
