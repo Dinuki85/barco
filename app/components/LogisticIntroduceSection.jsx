@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useRef} from 'react'
 import { MdWarehouse, MdOutlineLocalShipping, MdOutlineSupportAgent } from "react-icons/md";
 import Link from 'next/link';
 import { FaShippingFast } from "react-icons/fa";
@@ -50,11 +50,15 @@ const h2LetterVariants = {
     visible: { opacity: 1, y: 0 }
 };
 
-// Counter logic inside this file
+
 function useCounter(targetNumber, duration = 2000) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
+         if (!trigger) {
+            setCount(0);
+            return;
+        }
         let start = 0;
         const end = parseInt(targetNumber);
         if (start === end) return;
@@ -65,12 +69,13 @@ function useCounter(targetNumber, duration = 2000) {
             if (start === end) clearInterval(timer);
         }, incrementTime);
         return () => clearInterval(timer);
-    }, [targetNumber, duration]);
+    }, [targetNumber, duration, trigger]);
 
     return count;
 }
 
 const LogisticIntroduceSection = () => {
+    
     // Counters for stats
     const count1 = useCounter(100);
     const count2 = useCounter(85);
@@ -176,22 +181,22 @@ const LogisticIntroduceSection = () => {
             <div className="w-full px-2 mt-10 sm:px-6 md:px-10">
                 <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3">
                     <div className="flex flex-col items-center w-full">
-                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-transparent stroke-2 stroke-blue-900 [text-stroke:2px_#1e3352]">
+                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-outline">
                             {count1}%
                         </span>
                         <hr className="w-full my-2 border-t border-gray-200" />
                         <span className="mt-2 text-lg font-bold text-center text-blue-900 sm:text-xl md:text-2xl">On-Time Deliveries</span>
                     </div>
                     <div className="flex flex-col items-center w-full">
-                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-transparent stroke-2 stroke-blue-900 [text-stroke:2px_#1e3352]">
+                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-outline">
                             {count2}%
                         </span>
                         <hr className="w-full my-2 border-t border-gray-200" />
                         <span className="mt-2 text-lg font-bold text-center text-blue-900 sm:text-xl md:text-2xl">Global Network Coverage</span>
                     </div>
                     <div className="flex flex-col items-center w-full">
-                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-transparent stroke-2 stroke-blue-900 [text-stroke:2px_#1e3352]">
-                            {count3}%
+                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-outline">
+                            {count1}%
                         </span>
                         <hr className="w-full my-2 border-t border-gray-200" />
                         <span className="mt-2 text-lg font-bold text-center text-blue-900 sm:text-xl md:text-2xl">Cross-Border Efficiency</span>
