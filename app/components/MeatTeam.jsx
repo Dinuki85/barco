@@ -1,4 +1,6 @@
+"use client"
 import TeamMember from "./TeamMember";
+import { motion } from "framer-motion";
 
 const teamMembers = [
   {
@@ -25,11 +27,46 @@ const teamMembers = [
   // Add more members as needed
 ];
 
+const heading = "Meet the team";
+
+const letterVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
 export default function MeatTeam() {
   return (
-    <section className="py-12 bg-gray-50">
-      <h1 className="mb-8 text-3xl font-bold text-center">Meet the Team</h1>
-      <div className="flex flex-wrap justify-center gap-6">
+    <section className="py-16 bg-gray-50">
+      <div className="flex items-center justify-center px-4 mb-12 text-center">
+        <motion.h1
+          className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl text-slate-800"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.7 }}
+        >
+          {heading.split("").map((char, idx) => (
+            <motion.span
+              key={idx}
+              variants={letterVariants}
+              className={char === " " ? "mx-2" : ""}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.h1>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-6 px-4">
         {teamMembers.map((member, idx) => (
           <TeamMember key={idx} {...member} />
         ))}
