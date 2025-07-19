@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { HiArrowUpRight } from "react-icons/hi2";
 
 const heading = "Let's Connect Together";
 
@@ -65,16 +66,16 @@ export default function ConnectFooter() {
             </p>
             <Link href="/contact">
               <button className="px-6 py-3 font-semibold text-black transition-all duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500">
-                Contact Us
+                Contact Us<HiArrowUpRight className="ml-2 text-2xl" />
               </button>
             </Link>
           </div>
         </div>
 
         {/* Contact Details */}
-        <div className="grid gap-6 px-6 py-10 text-sm text-white md:px-16 md:grid-cols-3 md:text-base bg-blue-950">
+        <div className="grid gap-6 px-6 py-10 text-sm text-white bg-blue-500 md:px-16 md:grid-cols-3 md:text-base">
           <div>
-            <h3 className="mb-2 text-lg font-semibold text-yellow-300">📍 Address</h3>
+            <h3 className="mb-2 text-lg font-semibold text-black">📍 Address</h3>
             <p>
              Level 35, West Tower ,World Trade Center
               <br />
@@ -84,7 +85,7 @@ export default function ConnectFooter() {
             </p>
           </div>
           <div>
-            <h3 className="mb-2 text-lg font-semibold text-yellow-300">📞 Contact</h3>
+            <h3 className="mb-2 text-lg font-semibold text-black">📞 Contact</h3>
             <p>
               Phone: +94 77 123 4567
               <br />
@@ -92,7 +93,7 @@ export default function ConnectFooter() {
             </p>
           </div>
           <div>
-            <h3 className="mb-2 text-lg font-semibold text-yellow-300">⏰ Office Hours</h3>
+            <h3 className="mb-2 text-lg font-semibold text-black">⏰ Office Hours</h3>
             <p>
               Mon - Fri: 8:30 AM – 6:00 PM
               <br />
@@ -105,7 +106,7 @@ export default function ConnectFooter() {
 
         {/* Copyright */}
         <div className="py-4 text-sm text-center text-gray-300 border-t border-gray-600 bg-blue-950">
-          &copy; {new Date().getFullYear()}  Barco Global Logistic. All rights reserved.
+         &copy;  {new Date().getFullYear()}  Barco Global Logistics(Pvt) Ltd. All rights reserved.
         </div>
       </footer>
     </>
