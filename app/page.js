@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import LogisticIntroduceSection from "./components/LogisticIntroduceSection";
 import ImageContainer from "./components/ImageContainer";
 import MeatTeam from "./components/MeatTeam";
+import WhyChooseUsSection from "./components/WhyChooseUs";
 
 
 export default function Home() {
@@ -13,6 +14,8 @@ export default function Home() {
      <LogisticIntroduceSection />
      
     <ImageContainer />
+
+    <WhyChooseUsSection/>
     <MeatTeam />
       
     </>
