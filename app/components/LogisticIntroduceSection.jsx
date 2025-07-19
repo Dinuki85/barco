@@ -51,7 +51,7 @@ const h2LetterVariants = {
 };
 
 
-function useCounter(targetNumber, duration = 2000, trigger = true) {
+function useCounter(targetNumber, duration =1000, trigger = true) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -64,7 +64,7 @@ function useCounter(targetNumber, duration = 2000, trigger = true) {
         if (start === end) return;
         let incrementTime = Math.max(10, Math.floor(duration / end));
         let timer = setInterval(() => {
-            start += 1;
+            start += 5;
             setCount(start);
             if (start === end) clearInterval(timer);
         }, incrementTime);
