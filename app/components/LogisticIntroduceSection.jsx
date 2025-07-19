@@ -61,15 +61,23 @@ const LogisticIntroduceSection = () => {
         <section className='relative grid w-full min-h-screen grid-cols-2 justfy-center item-s-center bg:light-blue-100 md:items-center sm:items-center'>
             <div className='absolute  grid-cols-2 place-items-start w-full h-full inset-1 bg:light-blue-500 sm:w-full sm:h-full md:w-full md:h-full *:'>
     <div className="relative w-full px-[15%] pt-10 pb-0">
-                <motion.h1
-                    className='w-full font-serif font-bold text-7xl'
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: false, amount: 0.7 }}
-                >
-                    {heading}
-                </motion.h1>
+               <motion.h1
+    className='w-full font-serif font-bold text-7xl'
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.7 }}
+>
+    {heading.split("").map((char, idx) => (
+        <motion.span
+            key={idx}
+            variants={letterVariants}
+            className={char === " " ? "mx-2" : ""}
+        >
+            {char}
+        </motion.span>
+    ))}
+</motion.h1>
                 {/* All Services link at bottom right */}
                 <div className="flex justify-end mt-8">
                     <Link href="/services" className="flex flex-col items-end cursor-pointer select-none group">
