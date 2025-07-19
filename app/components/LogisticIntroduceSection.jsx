@@ -73,6 +73,9 @@ function useCounter(targetNumber, duration = 2000) {
     return count;
 }
 const LogisticIntroduceSection = () => {
+    const count1 = useCounter(100);
+    const count2 = useCounter(85);
+    const count3 = useCounter(95);
 
 
     return (
