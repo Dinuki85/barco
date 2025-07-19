@@ -84,37 +84,33 @@ const LogisticsProcess = () => {
       </div>
 
       {/* Animated Center Bar */}
-      {/* Animated Center Bar */}
+    
 <div className="relative flex items-center justify-center h-[100px] overflow-hidden my-10">
   <div className="absolute w-full h-[2px] bg-gradient-to-r from-blue-400 to-blue-800 opacity-40" />
 
-  <motion.div
-    className="absolute flex gap-6 whitespace-nowrap"
-    animate={{ x: ["100%", "-100%"] }}
-    transition={{
-      repeat: Infinity,
-      duration: 20,
-      ease: "linear"
-    }}
-  >
-    {centerServices.map((service, index) => (
-      <span
-        key={index}
-        className="inline-block px-6 py-2 text-xl font-semibold text-blue-800 border border-blue-400 rounded-lg shadow-md md:text-2xl bg-gradient-to-r from-blue-50 to-white"
+  <div className="absolute flex w-full overflow-hidden">
+    {[0, 1].map((loopIndex) => (
+      <motion.div
+        key={loopIndex}
+        className="flex min-w-full gap-6 whitespace-nowrap"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "linear",
+        }}
       >
-        {service}
-      </span>
+        {centerServices.map((service, index) => (
+          <span
+            key={`${loopIndex}-${index}`}
+            className="inline-block px-6 py-2 text-xl font-semibold text-blue-800 border border-blue-400 rounded-lg shadow-md md:text-2xl bg-gradient-to-r from-blue-50 to-white"
+          >
+            {service}
+          </span>
+        ))}
+      </motion.div>
     ))}
-    {/* Repeat the same services to create seamless loop */}
-    {centerServices.map((service, index) => (
-      <span
-        key={`repeat-${index}`}
-        className="inline-block px-6 py-2 text-xl font-semibold text-blue-800 border border-blue-400 rounded-lg shadow-md md:text-2xl bg-gradient-to-r from-blue-50 to-white"
-      >
-        {service}
-      </span>
-    ))}
-  </motion.div>
+  </div>
 </div>
 
 
