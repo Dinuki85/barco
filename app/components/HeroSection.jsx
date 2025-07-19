@@ -5,19 +5,23 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const slides = [
   {
-    video: "/assets/video1.mp4",
+    video: "/assets/barco1.mp4",
     heading: "Fast & Reliable Shipping",
   },
   {
-    video: "/assets/video2.mp4",
+    video: "/assets/barco2.mp4",
     heading: "Global Logistics Solutions",
   },
   {
-    video: "/assets/video3.mp4",
+    video: "/assets/barco3.mp4",
     heading: "Secure Warehousing",
   },
   {
-    video: "/assets/video4.mp4",
+    video: "/assets/barco4.mp4",
+    heading: "Customer-Focused Service",
+  },
+   {
+    video: "/assets/barco5.mp4",
     heading: "Customer-Focused Service",
   },
 ];
