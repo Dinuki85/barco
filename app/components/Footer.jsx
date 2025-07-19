@@ -65,10 +65,11 @@ export default function ConnectFooter() {
               "Beyond Logistics, It's Our Passion"
             </p>
             <Link href="/contact">
-              <button className="px-6 py-3 font-semibold text-black transition-all duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500">
-                Contact Us<HiArrowUpRight className="ml-2 text-2xl" />
-              </button>
-            </Link>
+  <button className="flex items-center gap-2 px-5 py-2 text-white transition-all duration-300 border border-white rounded-full hover:bg-white hover:text-blue-950 backdrop-blur-0">
+    <HiArrowUpRight className="text-xl" />
+    Contact Us
+  </button>
+</Link>
           </div>
         </div>
 
