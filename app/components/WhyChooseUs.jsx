@@ -27,6 +27,20 @@ const containerVariants = {
     }
 };
 
+const listContainer = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15
+        }
+    }
+};
+
+const listItem = {
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0 }
+};
+
 const whyList = [
     "Global network and local expertise",
     "On-time, secure deliveries",
