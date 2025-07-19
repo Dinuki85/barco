@@ -5,21 +5,23 @@ import ImageContainer from "./components/ImageContainer";
 import MeatTeam from "./components/MeatTeam";
 import WhyChooseUsSection from "./components/WhyChooseUs";
 import LogisticsProcess from "./components/LogisticsProcess ";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
- 
+
   return (
     <>
       <HeroSection />
-     <LogisticIntroduceSection />
-     
-    <ImageContainer />
+      <LogisticIntroduceSection />
 
-    <WhyChooseUsSection/>
-    <LogisticsProcess />
-    <MeatTeam />
-      
+      <ImageContainer />
+
+      <WhyChooseUsSection />
+      <LogisticsProcess />
+      <MeatTeam />
+      <Footer />
+
     </>
   );
 }
