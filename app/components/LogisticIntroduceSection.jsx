@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { FaShippingFast } from "react-icons/fa";
 import { GiCargoCrate } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { HiArrowUpRight } from "react-icons/hi2";
+
 
 //import WaterMarkSlider from './WaterMarkSlider';
 
@@ -58,24 +60,27 @@ const LogisticIntroduceSection = () => {
     return (
         <section className='relative grid w-full min-h-screen grid-cols-2 justfy-center item-s-center bg:light-blue-100 md:items-center sm:items-center'>
             <div className='absolute  grid-cols-2 place-items-start w-full h-full inset-1 bg:light-blue-500 sm:w-full sm:h-full md:w-full md:h-full *:'>
-
+    <div className="relative w-full px-[15%] pt-10 pb-0">
                 <motion.h1
-                    className='flex flex-row flex-wrap items-left w-full px-[15%] py-10 scroll-mt-20 font-bold text-7xl font-serif'
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
+                    className='w-full font-serif font-bold text-7xl'
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: false, amount: 0.7 }}
                 >
-                    {heading.split("").map((char, idx) => (
-                        <motion.span
-                            key={idx}
-                            variants={letterVariants}
-                            className={char === " " ? "mx-2" : ""}
-                        >
-                            {char}
-                        </motion.span>
-                    ))}
+                    {heading}
                 </motion.h1>
+                {/* All Services link at bottom right */}
+                <div className="flex justify-end mt-8">
+                    <Link href="/services" className="flex flex-col items-end cursor-pointer select-none group">
+                        <span className="flex items-center text-xl font-bold transition-colors text-slate-800 group-hover:text-blue-700">
+                            All Services
+                            <HiArrowUpRight className="ml-2 text-2xl" />
+                        </span>
+                        <span className="block w-full h-px mt-1 transition-colors bg-slate-400 group-hover:bg-blue-700"></span>
+                    </Link>
+                </div>
+            </div>
                 <hr className='border-8 border-light-blue-300' />
 
                 <motion.h2
