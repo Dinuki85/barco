@@ -1,22 +1,35 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function TeamMember({ image, name, position, company, email }) {
   return (
-    <div className="relative flex flex-col items-center p-6 m-4 overflow-hidden bg-white shadow-lg rounded-xl w-72 group">
-      {/* Animated border */}
-      <span className="pointer-events-none absolute inset-0 z-10 rounded-xl border-4 border-transparent group-hover:border-transparent before:absolute before:inset-[-4px] before:rounded-[inherit] before:bg-gradient-to-tr before:from-blue-400 before:via-blue-700 before:to-blue-400 before:animate-border-spin before:z-[-1] before:opacity-100 before:content-['']"></span>
-      <div className="relative z-20 mb-4 w-28 h-28">
+    <motion.div
+  whileInView={{ opacity: 1, y: 0 }}
+  initial={{ opacity: 0, y: 40 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: false, amount: 0.3 }}
+  whileHover={{ scale: 1.07 }} // zoom effect on hover
+  className="flex flex-col items-center w-full max-w-xs p-6 shadow-lg cursor-pointer bg-gradient-to-br from-blue-800/70 to-blue-900/80 backdrop-blur-md rounded-xl"
+>
+      {/* Image Section */}
+      <div className="relative w-48 h-48 mb-4">
         <Image
           src={image}
           alt={name}
           fill
-          className="object-cover border-4 border-blue-200 rounded-full"
+          className="object-contain drop-shadow-xl"
+          sizes="192px"
         />
       </div>
-      <h2 className="z-20 mb-1 text-xl font-bold underline">{name}</h2>
-      <p className="z-20 font-semibold text-blue-700">{position}</p>
-      <p className="z-20 mb-2 text-gray-500">{company}</p>
-      <a href={`mailto:${email}`} className="z-20 text-blue-500 underline break-all">{email}</a>
-    </div>
+
+      {/* Text Content */}
+      <h2 className="mb-1 text-2xl font-bold text-center text-white">{name}</h2>
+      <p className="mb-1 font-medium text-center text-blue-200">{position}</p>
+      <p className="mb-3 text-center text-gray-300">{company}</p>
+      <a href={`mailto:${email}`} className="text-center text-blue-400 underline break-all">
+        {email}
+      </a>
+    </motion.div>
   );
 }

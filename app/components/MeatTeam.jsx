@@ -45,7 +45,7 @@ const containerVariants = {
 
 export default function MeatTeam() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="px-4 py-16 bg-gray-50 md:px-12 lg:px-24">
       <div className="flex items-center justify-center px-4 mb-12 text-center">
         <motion.h1
           className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl text-slate-800"
