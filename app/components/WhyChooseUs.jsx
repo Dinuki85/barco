@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import {motion } from "framer-motion";
+import Link from "next/link";
 
 const images = [
   "/assets/barco1.jpg", 
@@ -57,7 +58,7 @@ const WhyChooseUsSection = () => {
                 </motion.h1>
                 {/* All Services link at bottom right */}
                 <div className="flex justify-end mt-8">
-                    <Link href="/services" className="flex flex-col items-end cursor-pointer select-none group">
+                    <Link href="/about" className="flex flex-col items-end cursor-pointer select-none group">
                         <span className="flex items-center text-xl font-bold transition-colors text-slate-800 group-hover:text-blue-700">
                             All Services
                             <HiArrowUpRight className="ml-2 text-2xl" />
