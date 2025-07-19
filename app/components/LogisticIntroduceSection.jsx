@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState , useRef} from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { MdWarehouse, MdOutlineLocalShipping, MdOutlineSupportAgent } from "react-icons/md";
 import Link from 'next/link';
 import { FaShippingFast } from "react-icons/fa";
@@ -51,11 +51,11 @@ const h2LetterVariants = {
 };
 
 
-function useCounter(targetNumber, duration = 2000,trigger = true) {
+function useCounter(targetNumber, duration = 2000, trigger = true) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-         if (!trigger) {
+        if (!trigger) {
             setCount(0);
             return;
         }
@@ -78,9 +78,9 @@ const LogisticIntroduceSection = () => {
     const statsRef = useRef(null);
     const isStatsInView = useInView(statsRef, { amount: 0.5, once: false });
     // Counters for stats
-    const count1 = useCounter(100,2000,isStatsInView);
-    const count2 = useCounter(85,2000,isStatsInView);
-    const count3 = useCounter(95,2000,isStatsInView);
+    const count1 = useCounter(100, 2000, isStatsInView);
+    const count2 = useCounter(85, 2000, isStatsInView);
+    const count3 = useCounter(95, 2000, isStatsInView);
 
     return (
         <section className='relative flex flex-col w-full min-h-screen bg-light-blue-100'>
