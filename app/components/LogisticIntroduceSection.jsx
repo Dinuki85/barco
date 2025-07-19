@@ -75,7 +75,8 @@ function useCounter(targetNumber, duration = 2000) {
 }
 
 const LogisticIntroduceSection = () => {
-    
+    const statsRef = useRef(null);
+    const isStatsInView = useInView(statsRef, { amount: 0.5, once: false });
     // Counters for stats
     const count1 = useCounter(100);
     const count2 = useCounter(85);
