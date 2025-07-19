@@ -84,36 +84,39 @@ const LogisticsProcess = () => {
       </div>
 
       {/* Animated Center Bar */}
-      <div className="relative flex items-center justify-center h-[120px] overflow-hidden my-10">
-        <div className="absolute w-full h-[2px] bg-gradient-to-r from-blue-400 to-blue-800 opacity-40" />
-        <div className="z-10 px-4 py-2 bg-white border border-blue-300 rounded-md shadow-md animate-bounce">
-          <motion.div
-            className="text-xl font-bold text-blue-800 sm:text-2xl md:text-3xl whitespace-nowrap"
-            variants={textMotion}
-            initial="initial"
-            animate="animate"
-          >
-            {centerServices.map((service, index) => (
-              <motion.span
-                key={index}
-                className="inline-block px-6 py-2 mx-2 mb-1 text-blue-900 border border-blue-500 rounded-lg shadow-md bg-gradient-to-r from-blue-100 to-white"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    delay: index * 0.6,
-                    duration: 0.5,
-                    ease: "easeOut",
-                  },
-                }}
-              >
-                {service}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-      </div>
+      {/* Animated Center Bar */}
+<div className="relative flex items-center justify-center h-[100px] overflow-hidden my-10">
+  <div className="absolute w-full h-[2px] bg-gradient-to-r from-blue-400 to-blue-800 opacity-40" />
+
+  <motion.div
+    className="absolute flex gap-6 whitespace-nowrap"
+    animate={{ x: ["100%", "-100%"] }}
+    transition={{
+      repeat: Infinity,
+      duration: 20,
+      ease: "linear"
+    }}
+  >
+    {centerServices.map((service, index) => (
+      <span
+        key={index}
+        className="inline-block px-6 py-2 text-xl font-semibold text-blue-800 border border-blue-400 rounded-lg shadow-md md:text-2xl bg-gradient-to-r from-blue-50 to-white"
+      >
+        {service}
+      </span>
+    ))}
+    {/* Repeat the same services to create seamless loop */}
+    {centerServices.map((service, index) => (
+      <span
+        key={`repeat-${index}`}
+        className="inline-block px-6 py-2 text-xl font-semibold text-blue-800 border border-blue-400 rounded-lg shadow-md md:text-2xl bg-gradient-to-r from-blue-50 to-white"
+      >
+        {service}
+      </span>
+    ))}
+  </motion.div>
+</div>
+
 
       {/* Bottom Icons Row */}
       <div className="flex flex-col items-center justify-between gap-10 mt-12 md:flex-row">
