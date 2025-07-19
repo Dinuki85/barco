@@ -71,14 +71,14 @@ const LogisticIntroduceSection = () => {
 
 
                 <motion.ul
-                  className="grid max-w-4xl grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none justify-items-center"
+                  className="grid max-w-4xl grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none "
                   variants={ulVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.4 }}
                 >
                   <motion.li variants={liVariants} className="flex items-center gap-2">
-                    <MdWarehouse className="text-xl text-blue-700" />
+                    <MdWarehouse className="text-xl text-blue-700 " />
                     Warehousing and Distribution
                   </motion.li>
                     <motion.li variants={liVariants} className="flex items-center gap-2">
