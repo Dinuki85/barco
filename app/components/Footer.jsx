@@ -1,54 +1,57 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
 const heading = "Let's Connect Together";
 
 const letterVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 }
 };
 
 const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.06
-        }
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06
     }
+  }
 };
 
 export default function ConnectFooter() {
   return (
-    <footer className="w-full text-white bg-blue-950">
+    <footer className="w-full bg-blue-950">
+      {/* Heading Section - separate with black text and underline */}
+      <div className="w-full px-4 pt-10 pb-4 text-center md:px-[8%] lg:px-[15%]">
+        <motion.h1
+          className="inline-block text-3xl font-bold tracking-wide text-black border-b-4 border-yellow-400 md:text-5xl"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.7 }}
+        >
+          {heading.split("").map((char, idx) => (
+            <motion.span
+              key={idx}
+              variants={letterVariants}
+              className={char === " " ? "mx-1" : ""}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.h1>
+      </div>
+
       {/* Top Section with Fixed Image Background */}
       <div
         className="relative h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center text-center px-4"
         style={{ backgroundImage: "url('/assets/barco1.jpg')" }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r"></div>
-         <div className="relative w-full px-4 pt-10 pb-0 md:px-[8%] lg:px-[15%]">
-                <motion.h1
-                    className='w-full font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl'
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.7 }}
-                >
-                    {heading.split("").map((char, idx) => (
-                        <motion.span
-                            key={idx}
-                            variants={letterVariants}
-                            className={char === " " ? "mx-2" : ""}
-                        >
-                            {char}
-                        </motion.span>
-                    ))}
-                </motion.h1>
-                </div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl mx-auto">
+        <div className="relative z-10 max-w-3xl mx-auto text-white">
           <h2 className="mb-3 text-4xl font-bold">
             Let’s Connect with <span className="text-yellow-300">Barco Global Logistic</span>
           </h2>
@@ -67,15 +70,31 @@ export default function ConnectFooter() {
       <div className="grid gap-6 px-6 py-10 text-sm text-white md:px-16 md:grid-cols-3 md:text-base bg-blue-950">
         <div>
           <h3 className="mb-2 text-lg font-semibold text-yellow-300">📍 Address</h3>
-          <p>No. 12, Marine Drive,<br />Colombo 03,<br />Sri Lanka</p>
+          <p>
+            No. 12, Marine Drive,
+            <br />
+            Colombo 03,
+            <br />
+            Sri Lanka
+          </p>
         </div>
         <div>
           <h3 className="mb-2 text-lg font-semibold text-yellow-300">📞 Contact</h3>
-          <p>Phone: +94 77 123 4567<br />Email: info@barcologistics.com</p>
+          <p>
+            Phone: +94 77 123 4567
+            <br />
+            Email: info@barcologistics.com
+          </p>
         </div>
         <div>
           <h3 className="mb-2 text-lg font-semibold text-yellow-300">⏰ Office Hours</h3>
-          <p>Mon - Fri: 8:30 AM – 6:00 PM<br />Saturday: 9:00 AM – 1:00 PM<br />Sunday: Closed</p>
+          <p>
+            Mon - Fri: 8:30 AM – 6:00 PM
+            <br />
+            Saturday: 9:00 AM – 1:00 PM
+            <br />
+            Sunday: Closed
+          </p>
         </div>
       </div>
 
