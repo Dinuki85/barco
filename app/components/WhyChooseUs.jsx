@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import {motion } from "framer-motion";
 
 const images = [
   "/assets/barco1.jpg", 
@@ -7,6 +8,21 @@ const images = [
   "/assets/barco1.jpg"
 ];
 
+const heading = "Why Choose Us";
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.06
+        }
+    }
+};
 const WhyChooseUsSection = () => {
   const [current, setCurrent] = useState(0);
 
@@ -21,7 +37,35 @@ const WhyChooseUsSection = () => {
     <section className="flex flex-col items-center justify-between w-full px-4 py-16 bg-white md:flex-row md:px-16">
       {/* Left: Description */}
       <div className="w-full mb-8 md:w-1/2 md:mb-0">
-        <h2 className="mb-4 text-3xl font-bold md:text-4xl">Why Choose Us</h2>
+         <div className="relative w-full px-4 pt-10 pb-0 md:px-[8%] lg:px-[15%]">
+                <motion.h1
+                    className='w-full font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl'
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.7 }}
+                >
+                    {heading.split("").map((char, idx) => (
+                        <motion.span
+                            key={idx}
+                            variants={letterVariants}
+                            className={char === " " ? "mx-2" : ""}
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
+                </motion.h1>
+                {/* All Services link at bottom right */}
+                <div className="flex justify-end mt-8">
+                    <Link href="/services" className="flex flex-col items-end cursor-pointer select-none group">
+                        <span className="flex items-center text-xl font-bold transition-colors text-slate-800 group-hover:text-blue-700">
+                            All Services
+                            <HiArrowUpRight className="ml-2 text-2xl" />
+                        </span>
+                        <span className="block w-full h-px mt-1 transition-colors bg-slate-400 group-hover:bg-blue-700"></span>
+                    </Link>
+                </div>
+            </div>
         <p className="mb-6 text-lg text-gray-700">
           We are a leading logistics company dedicated to bridging distances and delivering dreams. 
           Our expertise, reliability, and innovative solutions ensure your 
