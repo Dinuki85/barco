@@ -6,8 +6,25 @@ import Counter from './Counter';
 import Link from 'next/link';
 import { FaShippingFast } from "react-icons/fa";
 import { GiCargoCrate } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 //import WaterMarkSlider from './WaterMarkSlider';
+
+const heading = "Logistics Capabilities";
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.06
+        }
+    }
+};
 
 const LogisticIntroduceSection = () => {
 
@@ -16,49 +33,64 @@ const LogisticIntroduceSection = () => {
         <section className='relative grid w-full min-h-screen grid-cols-2 justfy-center item-s-center bg:light-blue-100 md:items-center sm:items-center'>
             <div className='absolute  grid-cols-2 place-items-start w-full h-full inset-1 bg:light-blue-500 sm:w-full sm:h-full md:w-full md:h-full *:'>
 
-                <h1 className='flex flex-col items-left w-full px-[15%] py-10 scroll-mt-20 font-bold text-7xl  font-serif' >
+                <motion.h1
+                    className='flex flex-row flex-wrap items-left w-full px-[15%] py-10 scroll-mt-20 font-bold text-7xl font-serif'
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.7 }}
+                >
+                    {heading.split("").map((char, idx) => (
+                        <motion.span
+                            key={idx}
+                            variants={letterVariants}
+                            className={char === " " ? "mx-2" : ""}
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
+                </motion.h1>
+                <hr className='border-4 border-light-blue-300' />
 
-                    Logistics Capabilities
-                </h1><hr className='border-4 border-light-blue-300' />
-
-                <h2 className='flex flex-col items-baseline font-serif py-3 px-2 text-2xl font-thin sm:text-1xl md:*'> Delivering Posibilities, On Time</h2>
-
+                <h2 className='flex flex-col items-baseline font-serif py-3 px-7 text-2xl font-thin sm:text-1xl md:*'>
+                    Delivering Posibilities, On Time
+                </h2>
 
 
-                <ul className="grid max-w-full grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none sm:text-base md:text-lg text-mono justify-items-center ">
-                    <li className="flex items-center gap-2 px-2 py-1">
+                <ul className="grid max-w-4xl grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none ">
+                    <li className="flex items-center gap-2">
                         <MdWarehouse className="text-xl text-blue-700" />
                         Warehousing and Distribution
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <FaShippingFast className="text-xl text-blue-700" />
                         Freight Forwarding
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <GiCargoCrate className="text-xl text-blue-700" />
                         Supply Chain Management
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <MdOutlineLocalShipping className="text-xl text-blue-700" />
                         E-commerce Logistics
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <MdOutlineSupportAgent className="text-xl text-blue-700" />
                         Last-Mile Delivery
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <MdWarehouse className="text-xl text-blue-700" />
                         Inventory Management
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <FaShippingFast className="text-xl text-blue-700" />
                         Customs Clearance
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <GiCargoCrate className="text-xl text-blue-700" />
                         Packaging Solutions
                     </li>
-                    <li className="flex items-center gap-2 px-2 py-1">
+                    <li className="flex items-center gap-2">
                         <MdOutlineLocalShipping className="text-xl text-blue-700" />
                         Express Delivery
                     </li>

@@ -16,7 +16,7 @@ const teamMembers = [
     email: "bob@barco.com"
   },
   {
-    image: "/assets/barco3.jpg",
+    image: "/assets/barco2.jpg",
     name: "Carol Lee",
     position: "Logistics Specialist",
     company: "Barco Logistics",
