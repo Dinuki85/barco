@@ -179,7 +179,7 @@ const LogisticIntroduceSection = () => {
             </motion.ul>
 
             {/* Statistics Section */}
-            <div className="w-full px-2 mt-10 sm:px-6 md:px-10">
+            <div ref={statsRef} className="w-full px-2 mt-10 sm:px-6 md:px-10">
                 <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3">
                     <div className="flex flex-col items-center w-full">
                         <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-outline">
