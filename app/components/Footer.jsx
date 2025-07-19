@@ -20,11 +20,11 @@ const containerVariants = {
 
 export default function ConnectFooter() {
   return (
-    <footer className="w-full bg-blue-950">
-      {/* Heading Section - separate with black text and underline */}
-      <div className="w-full px-4 pt-10 pb-4 text-center md:px-[8%] lg:px-[15%]">
+    <>
+      {/* Heading Section - OUTSIDE FOOTER */}
+      <div className="relative w-full px-4 pt-10 pb-0 text-center md:px-[8%] lg:px-[15%]">
         <motion.h1
-          className="inline-block text-3xl font-bold tracking-wide text-black border-b-4 border-yellow-400 md:text-5xl"
+          className="w-full font-serif text-3xl font-bold text-black underline sm:text-5xl md:text-6xl lg:text-7xl underline-offset-8 decoration-blue-600"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -34,7 +34,7 @@ export default function ConnectFooter() {
             <motion.span
               key={idx}
               variants={letterVariants}
-              className={char === " " ? "mx-1" : ""}
+              className={char === " " ? "mx-2" : ""}
             >
               {char}
             </motion.span>
@@ -42,66 +42,70 @@ export default function ConnectFooter() {
         </motion.h1>
       </div>
 
-      {/* Top Section with Fixed Image Background */}
-      <div
-        className="relative h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center text-center px-4"
-        style={{ backgroundImage: "url('/assets/barco1.jpg')" }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      {/* Footer starts here */}
+      <footer className="w-full bg-blue-950">
+        {/* Top Section with Fixed Image Background */}
+        <div
+          className="relative h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center text-center px-4"
+          style={{ backgroundImage: "url('/assets/barco1.jpg')" }}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-3xl mx-auto text-white">
-          <h2 className="mb-3 text-4xl font-bold">
-            Let’s Connect with <span className="text-yellow-300">Barco Global Logistic</span>
-          </h2>
-          <p className="mb-6 text-lg">
-            Delivering trust, across borders. Reach out to us for expert logistics solutions.
-          </p>
-          <Link href="/contact">
-            <button className="px-6 py-3 font-semibold text-black transition-all duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500">
-              Contact Us
-            </button>
-          </Link>
+          {/* Content */}
+          <div className="relative z-10 max-w-3xl mx-auto text-white">
+            <h2 className="mb-3 text-4xl font-bold">
+              Let’s Connect with{" "}
+              <span className="text-yellow-300">Barco Global Logistic</span>
+            </h2>
+            <p className="mb-6 text-lg">
+              Delivering trust, across borders. Reach out to us for expert logistics solutions.
+            </p>
+            <Link href="/contact">
+              <button className="px-6 py-3 font-semibold text-black transition-all duration-300 bg-yellow-400 rounded-full hover:bg-yellow-500">
+                Contact Us
+              </button>
+            </Link>
+          </div>
         </div>
-      </div>
 
-      {/* Contact Details */}
-      <div className="grid gap-6 px-6 py-10 text-sm text-white md:px-16 md:grid-cols-3 md:text-base bg-blue-950">
-        <div>
-          <h3 className="mb-2 text-lg font-semibold text-yellow-300">📍 Address</h3>
-          <p>
-            No. 12, Marine Drive,
-            <br />
-            Colombo 03,
-            <br />
-            Sri Lanka
-          </p>
+        {/* Contact Details */}
+        <div className="grid gap-6 px-6 py-10 text-sm text-white md:px-16 md:grid-cols-3 md:text-base bg-blue-950">
+          <div>
+            <h3 className="mb-2 text-lg font-semibold text-yellow-300">📍 Address</h3>
+            <p>
+              No. 12, Marine Drive,
+              <br />
+              Colombo 03,
+              <br />
+              Sri Lanka
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-2 text-lg font-semibold text-yellow-300">📞 Contact</h3>
+            <p>
+              Phone: +94 77 123 4567
+              <br />
+              Email: info@barcologistics.com
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-2 text-lg font-semibold text-yellow-300">⏰ Office Hours</h3>
+            <p>
+              Mon - Fri: 8:30 AM – 6:00 PM
+              <br />
+              Saturday: 9:00 AM – 1:00 PM
+              <br />
+              Sunday: Closed
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 className="mb-2 text-lg font-semibold text-yellow-300">📞 Contact</h3>
-          <p>
-            Phone: +94 77 123 4567
-            <br />
-            Email: info@barcologistics.com
-          </p>
-        </div>
-        <div>
-          <h3 className="mb-2 text-lg font-semibold text-yellow-300">⏰ Office Hours</h3>
-          <p>
-            Mon - Fri: 8:30 AM – 6:00 PM
-            <br />
-            Saturday: 9:00 AM – 1:00 PM
-            <br />
-            Sunday: Closed
-          </p>
-        </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="py-4 text-sm text-center text-gray-300 border-t border-gray-600 bg-blue-950">
-        &copy; {new Date().getFullYear()} Barco Global Logistic. All rights reserved.
-      </div>
-    </footer>
+        {/* Copyright */}
+        <div className="py-4 text-sm text-center text-gray-300 border-t border-gray-600 bg-blue-950">
+          &copy; {new Date().getFullYear()} Barco Global Logistic. All rights reserved.
+        </div>
+      </footer>
+    </>
   );
 }
