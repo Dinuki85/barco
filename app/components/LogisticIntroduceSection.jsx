@@ -176,6 +176,31 @@ const LogisticIntroduceSection = () => {
                     </motion.li>
                 </motion.ul>
 
+                <div className="w-full px-2 mt-10 sm:px-6 md:px-10">
+                <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3">
+                    <div className="flex flex-col items-center w-full">
+                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-transparent stroke-2 stroke-blue-900 [text-stroke:2px_#1e3352]">
+                            {count1}%
+                        </span>
+                        <hr className="w-full my-2 border-t border-gray-200" />
+                        <span className="mt-2 text-lg font-bold text-center text-blue-900 sm:text-xl md:text-2xl">On-Time Deliveries</span>
+                    </div>
+                    <div className="flex flex-col items-center w-full">
+                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-transparent stroke-2 stroke-blue-900 [text-stroke:2px_#1e3352]">
+                            {count2}%
+                        </span>
+                        <hr className="w-full my-2 border-t border-gray-200" />
+                        <span className="mt-2 text-lg font-bold text-center text-blue-900 sm:text-xl md:text-2xl">Global Network Coverage</span>
+                    </div>
+                     <div className="flex flex-col items-center w-full">
+                        <span className="text-[70px] sm:text-[90px] md:text-[110px] lg:text-[120px] font-bold text-transparent stroke-2 stroke-blue-900 [text-stroke:2px_#1e3352]">
+                            {count3}%
+                        </span>
+                        <hr className="w-full my-2 border-t border-gray-200" />
+                        <span className="mt-2 text-lg font-bold text-center text-blue-900 sm:text-xl md:text-2xl">Cross-Border Efficiency</span>
+                    </div>
+                </div>
+
 
 
 
