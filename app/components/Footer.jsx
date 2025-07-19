@@ -7,7 +7,7 @@ export default function ConnectFooter() {
       {/* Top Section with Fixed Image Background */}
       <div
         className="relative h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center text-center px-4"
-        style={{ backgroundImage: "url('/images/connect-bg.png')" }}
+        style={{ backgroundImage: "url('/assets/barco1.png')" }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-600/70 to-blue-400/60"></div>
