@@ -1,9 +1,12 @@
 "use client";
 import { Grandstander } from 'next/font/google';
 import { useEffect, useState } from 'react'
-import { CgAdd } from "react-icons/cg";
+import { MdWarehouse, MdOutlineLocalShipping, MdOutlineSupportAgent } from "react-icons/md";
 import Counter from './Counter';
 import Link from 'next/link';
+import { FaShippingFast } from "react-icons/fa";
+import { GiCargoCrate } from "react-icons/gi";
+
 //import WaterMarkSlider from './WaterMarkSlider';
 
 const LogisticIntroduceSection = () => {
@@ -19,33 +22,46 @@ const LogisticIntroduceSection = () => {
                 </h1><hr className='border-4 border-light-blue-300' />
 
                 <h2 className='flex flex-col items-baseline font-serif py-3 px-2 text-2xl font-thin sm:text-1xl md:*'> Delivering Posibilities, On Time</h2>
-                
-                <p className='flex flex-col items-center px-5 py-4 font-serif text-lg text-justify sm:text-base md:text-lg text-mono'>
-                    At Barco Logistics, we specialize in
-                    providing comprehensive logistics
-                    solutions tailored to meet the
-                    unique needs of our clients.
-                    Our expertise spans across
-                    various sectors, ensuring that
-                    we deliver efficient, reliable,
-                    and cost-effective services.
-                    Whether you require warehousing,
-                    distribution, or specialized
-                    logistics support, we have the
-                    capabilities to handle it all.
-                </p>
-                
-                <ul className='grid grid-cols-3 gap-4 px-3 py-3 font-serif text-lg list-none sm:text-base md:text-lg text-mono overflow-clip'>
-                    <li className='flex px-2 py-1 flex-center'>  <CgAdd />    Warehousing and Distribution</li>
-                    <li className='flex px-2 py-1 flex-center'>  <CgAdd /> Freight Forwarding</li>
-                    <li className='flex px-2 py-1 flex-center'> <CgAdd /> Supply Chain Management</li>
-                    <li className='flex px-2 py-1 flex-center'> <CgAdd /> E commerce Logistics</li>
-                    <li className='flex px-2 py-1 flex-center'> <CgAdd />  Last-Mile Delivery</li>
-                    <li className='flex px-2 py-1 flex-center'>  <CgAdd />    Warehousing and Distribution</li>
-                    <li className='flex px-2 py-1 flex-center'>  <CgAdd /> Freight Forwarding</li>
-                    <li className='flex px-2 py-1 flex-center'> <CgAdd /> Supply Chain Management</li>
-                    <li className='flex px-2 py-1 flex-center'> <CgAdd /> E commerce Logistics</li>
-                    <li className='flex px-2 py-1 flex-center'> <CgAdd />  Last-Mile Delivery</li>
+
+
+
+                <ul className="grid grid-cols-3 gap-6 py-3 font-serif text-lg list-none px-100 sm:text-base md:text-lg text-mono">
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <MdWarehouse className="text-xl text-blue-700" />
+                        Warehousing and Distribution
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <FaShippingFast className="text-xl text-blue-700" />
+                        Freight Forwarding
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <GiCargoCrate className="text-xl text-blue-700" />
+                        Supply Chain Management
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <MdOutlineLocalShipping className="text-xl text-blue-700" />
+                        E-commerce Logistics
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <MdOutlineSupportAgent className="text-xl text-blue-700" />
+                        Last-Mile Delivery
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <MdWarehouse className="text-xl text-blue-700" />
+                        Inventory Management
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <FaShippingFast className="text-xl text-blue-700" />
+                        Customs Clearance
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <GiCargoCrate className="text-xl text-blue-700" />
+                        Packaging Solutions
+                    </li>
+                    <li className="flex items-center gap-2 px-2 py-1">
+                        <MdOutlineLocalShipping className="text-xl text-blue-700" />
+                        Express Delivery
+                    </li>
                 </ul>
 
                 <button className='block px-4 py-2 mx-auto text-center text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 focus:outline-double focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75'>
