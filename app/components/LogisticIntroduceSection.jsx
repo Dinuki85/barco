@@ -16,7 +16,7 @@ const LogisticIntroduceSection = () => {
         <section className='relative grid w-full min-h-screen grid-cols-2 justfy-center item-s-center bg:light-blue-100 md:items-center sm:items-center'>
             <div className='absolute  grid-cols-2 place-items-start w-full h-full inset-1 bg:light-blue-500 sm:w-full sm:h-full md:w-full md:h-full *:'>
 
-                <h1 className='flex flex-col items-center w-full px-[15%] py-10 scroll-mt-20 font-bold text-4xl  font-serif' >
+                <h1 className='flex flex-col items-left w-full px-[15%] py-10 scroll-mt-20 font-bold text-7xl  font-serif' >
 
                     Logistics Capabilities
                 </h1><hr className='border-4 border-light-blue-300' />
@@ -25,7 +25,7 @@ const LogisticIntroduceSection = () => {
 
 
 
-                <ul className="grid grid-cols-3 gap-6 py-3 font-serif text-lg list-none px-100 sm:text-base md:text-lg text-mono">
+                <ul className="grid max-w-full grid-cols-3 gap-6 py-3 mx-auto font-serif text-lg list-none sm:text-base md:text-lg text-mono justify-items-center ">
                     <li className="flex items-center gap-2 px-2 py-1">
                         <MdWarehouse className="text-xl text-blue-700" />
                         Warehousing and Distribution
