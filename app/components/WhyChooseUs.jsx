@@ -13,7 +13,7 @@ const WhyChooseUsSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
+    }, 3000); // Change image every 2 seconds
     return () => clearInterval(timer);
   }, []);
 
