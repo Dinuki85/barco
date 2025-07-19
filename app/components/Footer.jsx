@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 const heading = "Let's Connect Together";
 
 const letterVariants = {
