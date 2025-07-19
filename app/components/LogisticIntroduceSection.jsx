@@ -4,7 +4,7 @@ import { MdWarehouse, MdOutlineLocalShipping, MdOutlineSupportAgent } from "reac
 import Link from 'next/link';
 import { FaShippingFast } from "react-icons/fa";
 import { GiCargoCrate } from "react-icons/gi";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 // Animation variants
@@ -78,9 +78,9 @@ const LogisticIntroduceSection = () => {
     const statsRef = useRef(null);
     const isStatsInView = useInView(statsRef, { amount: 0.5, once: false });
     // Counters for stats
-    const count1 = useCounter(100);
-    const count2 = useCounter(85);
-    const count3 = useCounter(95);
+    const count1 = useCounter(100,2000,isStatsInView);
+    const count2 = useCounter(85,2000,isStatsInView);
+    const count3 = useCounter(95,2000,isStatsInView);
 
     return (
         <section className='relative flex flex-col w-full min-h-screen bg-light-blue-100'>
