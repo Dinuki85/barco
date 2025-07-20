@@ -64,7 +64,7 @@ function useCounter(targetNumber, duration =1000, trigger = true) {
         if (start === end) return;
         let incrementTime = Math.max(10, Math.floor(duration / end));
         let timer = setInterval(() => {
-            start += 5;
+            start += 3;
             setCount(start);
             if (start === end) clearInterval(timer);
         }, incrementTime);
