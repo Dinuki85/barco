@@ -1,3 +1,4 @@
+import ContactSection from "../components/ContactSection";
 import Header from "../components/Header";
 
 export default function ContactPage() {
@@ -6,7 +7,7 @@ export default function ContactPage() {
 
       <div>
         <h1>Contact Us</h1>
-        <p>If you have any questions, feel free to reach out!</p>
+        <ContactSection/>
         
     </div>
     </>
