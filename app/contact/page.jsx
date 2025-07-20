@@ -4,12 +4,11 @@ import Header from "../components/Header";
 export default function ContactPage() {
   return (
     <>
-
-      <div>
-        <h1>Contact Us</h1>
-        <ContactSection/>
-        
-    </div>
+      <Header />
+      <main className="min-h-screen px-4 pt-24 bg-gray-50">
+        <h1 className="mb-8 text-3xl font-bold text-center">Contact Us</h1>
+        <ContactSection />
+      </main>
     </>
   );
 }
