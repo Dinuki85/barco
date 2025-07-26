@@ -10,14 +10,14 @@ export default function ContactSection() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16 md:flex-row"
-      style={{
-        backgroundImage: `url(${BACKGROUND_IMAGE})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+  className="flex flex-col w-full min-h-screen gap-8 px-4 py-8 md:flex-row"
+  style={{
+    backgroundImage: `url(${BACKGROUND_IMAGE})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
       {/* Company Details Card */}
      <div
   className={`
