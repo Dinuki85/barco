@@ -19,7 +19,7 @@ export default function ContactSection() {
       }}
     >
       <div className="flex flex-col items-center w-full max-w-lg p-8 bg-white rounded-lg shadow-md bg-opacity-90">
-        
+        <h1 className="mb-8 text-3xl font-bold text-center text-blue-900">Contact Us</h1>
         {state.succeeded ? (
           <div className="py-10 text-center">
             <h2 className="mb-4 text-2xl font-semibold text-green-600">🎉 Thank you!</h2>
