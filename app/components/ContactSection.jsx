@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import Image from "next/image";
 
-// Change this to your actual image path
-const BACKGROUND_IMAGE = "/assets/barco1.jpg";
+// Make sure this path is correct
+const BACKGROUND_IMAGE = "/assets/barco1.png";
 
 export default function ContactSection() {
   const [state, handleSubmit] = useForm("xyzpkwyr");
@@ -17,7 +16,7 @@ export default function ContactSection() {
         bgRef.current.classList.add("zoomed");
         timeout = setTimeout(() => {
           bgRef.current.classList.remove("zoomed");
-        }, 2000); // Zoom duration
+        }, 2000);
       }
     }
     animateZoom();
@@ -29,11 +28,11 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      {/* Fixed animated background */}
+    <div className="relative flex justify-center items-center min-h-[600px] py-16">
+      {/* Section-limited animated background */}
       <div
         ref={bgRef}
-        className="contact-bg fixed inset-0 w-full h-full -z-10 pointer-events-none transition-transform duration-[2000ms]"
+        className="contact-bg absolute inset-0 w-full h-full rounded-lg overflow-hidden pointer-events-none transition-transform duration-[2000ms] z-0"
         style={{
           backgroundImage: `url(${BACKGROUND_IMAGE})`,
           backgroundSize: "cover",
@@ -41,17 +40,17 @@ export default function ContactSection() {
           backgroundRepeat: "no-repeat",
         }}
       />
-      {/* Page content */}
-      <div className="relative z-10 py-16">
+      {/* Form content */}
+      <div className="relative z-10 w-full max-w-lg">
         {state.succeeded ? (
-          <div className="py-10 text-center">
+          <div className="py-10 text-center bg-white rounded-lg shadow-md bg-opacity-90">
             <h2 className="mb-4 text-2xl font-semibold text-green-600">🎉 Thank you!</h2>
             <p className="text-gray-700">Your message has been successfully sent. We'll get back to you soon.</p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="max-w-lg p-6 mx-auto space-y-5 bg-white rounded-lg shadow-md"
+            className="p-6 space-y-5 bg-white rounded-lg shadow-md bg-opacity-90"
           >
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
