@@ -6,7 +6,7 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="min-h-screen px-4 pt-24 bg-gray-50">
-        <h1 className="mb-8 text-3xl font-bold text-center">Contact Us</h1>
+        
         <ContactSection />
       </main>
     </>

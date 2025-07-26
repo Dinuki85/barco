@@ -1,56 +1,34 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
-// Make sure this path is correct
+// Make sure this path is correct and the file exists in public/assets/barco1.jpg
 const BACKGROUND_IMAGE = "/assets/barco1.png";
 
 export default function ContactSection() {
   const [state, handleSubmit] = useForm("xyzpkwyr");
-  const bgRef = useRef(null);
-
-  useEffect(() => {
-    let timeout;
-    function animateZoom() {
-      if (bgRef.current) {
-        bgRef.current.classList.add("zoomed");
-        timeout = setTimeout(() => {
-          bgRef.current.classList.remove("zoomed");
-        }, 2000);
-      }
-    }
-    animateZoom();
-    const interval = setInterval(animateZoom, 5000);
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
-    };
-  }, []);
 
   return (
-    <div className="relative flex justify-center items-center min-h-[600px] py-16">
-      {/* Section-limited animated background */}
-      <div
-        ref={bgRef}
-        className="contact-bg absolute inset-0 w-full h-full rounded-lg overflow-hidden pointer-events-none transition-transform duration-[2000ms] z-0"
-        style={{
-          backgroundImage: `url(${BACKGROUND_IMAGE})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-      {/* Form content */}
-      <div className="relative z-10 w-full max-w-lg">
+    <div
+      className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16"
+      style={{
+        backgroundImage: `url(${BACKGROUND_IMAGE})`,
+        backgroundSize: "fill",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="flex flex-col items-center w-full max-w-lg p-8 bg-white rounded-lg shadow-md bg-opacity-90">
+        
         {state.succeeded ? (
-          <div className="py-10 text-center bg-white rounded-lg shadow-md bg-opacity-90">
+          <div className="py-10 text-center">
             <h2 className="mb-4 text-2xl font-semibold text-green-600">🎉 Thank you!</h2>
             <p className="text-gray-700">Your message has been successfully sent. We'll get back to you soon.</p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="p-6 space-y-5 bg-white rounded-lg shadow-md bg-opacity-90"
+            className="w-full space-y-5"
           >
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -94,16 +72,6 @@ export default function ContactSection() {
           </form>
         )}
       </div>
-      {/* Styles for zoom animation */}
-      <style jsx global>{`
-        .contact-bg {
-          transform: scale(1);
-        }
-        .contact-bg.zoomed {
-          transform: scale(1.08);
-          transition: transform 2s cubic-bezier(0.4,0,0.2,1);
-        }
-      `}</style>
     </div>
   );
 }
