@@ -5,6 +5,21 @@ import { useForm, ValidationError } from "@formspree/react";
 // Make sure this path is correct and the file exists in public/assets/barco1.jpg
 const BACKGROUND_IMAGE = "/assets/barco1.png";
 
+const heading = "Let's Connect Together";
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.06
+        }
+    }
+};
 export default function ContactSection() {
   const [state, handleSubmit] = useForm("xyzpkwyr");
 

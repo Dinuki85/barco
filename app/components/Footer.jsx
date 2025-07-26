@@ -19,7 +19,7 @@ const containerVariants = {
     }
 };
 
-export default function ConnectFooter() {
+export default function Footer() {
     return (
         <>
             {/* Heading Section - OUTSIDE FOOTER */}
