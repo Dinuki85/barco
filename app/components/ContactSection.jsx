@@ -19,53 +19,57 @@ export default function ContactSection() {
       }}
     >
       {/* Company Details Card */}
-      <div
-        className={`
-          group relative flex flex-col gap-5 justify-center items-start
-          w-full max-w-md mb-10 md:mb-0 md:mr-8
-          rounded-2xl p-8 shadow-xl
-          border border-blue-200
-          backdrop-blur-md
-          transition-transform duration-300
-          hover:scale-105
-          animated-bg
-        `}
-        style={{
-          boxShadow: "0 8px 32px 0 rgba(31, 64, 104, 0.18)",
-        }}
-      >
-        <div className="flex items-center gap-3 mb-2">
-          <FaBuilding className="text-2xl text-blue-900" />
-          <span className="text-xl font-bold text-blue-900">Barco Global Logistics (PVT) LTD</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaMapMarkerAlt className="text-blue-700" />
-          <span className="font-medium text-blue-900">
-            123 Marine Drive, Colombo 03, Sri Lanka
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaPhoneAlt className="text-blue-700" />
-          <span className="font-medium text-blue-900">
-            +94 11 234 5678
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaEnvelope className="text-blue-700" />
-          <span className="font-medium text-blue-900">
-            info@barcologistics.com
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaClock className="text-blue-700" />
-          <span className="font-medium text-blue-900">
-            Mon - Fri: 8:30 AM - 6:00 PM
-          </span>
-        </div>
-        <div className="mt-4 text-sm leading-relaxed text-blue-800">
-          <span className="font-semibold">Your trusted partner in global logistics and supply chain solutions. We deliver reliability, speed, and transparency for your business worldwide.</span>
-        </div>
-      </div>
+     <div
+  className={`
+    group relative flex flex-col gap-5 justify-center items-start
+    w-full max-w-md mb-10 md:mb-0 md:mr-8
+    rounded-2xl p-8 shadow-xl
+    border border-blue-200
+    backdrop-blur-md
+    transition-transform duration-300
+    hover:scale-105
+    animated-bg
+  `}
+  style={{
+    boxShadow: "0 8px 32px 0 rgba(31, 64, 104, 0.18)",
+  }}
+>
+  <div className="flex items-center gap-3 mb-2">
+    <FaBuilding className="text-2xl text-blue-900 transition-colors duration-300 group-hover:text-blue-100" />
+    <span className="text-xl font-bold text-blue-900 transition-colors duration-300 group-hover:text-white">
+      Barco Global Logistics (PVT) LTD
+    </span>
+         </div>
+  <div className="flex items-center gap-3">
+    <FaMapMarkerAlt className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
+    <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
+      123 Marine Drive, Colombo 03, Sri Lanka
+    </span>
+  </div>
+  <div className="flex items-center gap-3">
+    <FaPhoneAlt className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
+    <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
+      +94 11 234 5678
+    </span>
+  </div>
+  <div className="flex items-center gap-3">
+    <FaEnvelope className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
+    <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
+      info@barcologistics.com
+    </span>
+         </div>
+  <div className="flex items-center gap-3">
+    <FaClock className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
+    <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
+      Mon - Fri: 8:30 AM - 6:00 PM
+    </span>
+  </div>
+  <div className="mt-4 text-sm leading-relaxed text-blue-800 transition-colors duration-300 group-hover:text-blue-100">
+    <span className="font-semibold">
+      Your trusted partner in global logistics and supply chain solutions. We deliver reliability, speed, and transparency for your business worldwide.
+    </span>
+  </div>
+</div>
 
       {/* Contact Form Card */}
       <div className="flex flex-col items-center w-full max-w-lg p-8 bg-white rounded-lg shadow-md bg-opacity-90">
