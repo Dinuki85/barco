@@ -24,11 +24,11 @@ export default function ContactSection() {
           group relative flex flex-col gap-5 justify-center items-start
           w-full max-w-md mb-10 md:mb-0 md:mr-8
           rounded-2xl p-8 shadow-xl
-          bg-gradient-to-br from-blue-100/60 via-blue-200/60 to-blue-300/40
           border border-blue-200
           backdrop-blur-md
           transition-transform duration-300
-          hover:scale-105 hover:bg-gradient-to-br hover:from-blue-200 hover:via-blue-300 hover:to-blue-500/80 hover:shadow-2xl
+          hover:scale-105
+          animated-bg
         `}
         style={{
           boxShadow: "0 8px 32px 0 rgba(31, 64, 104, 0.18)",
@@ -122,6 +122,26 @@ export default function ContactSection() {
           </form>
         )}
       </div>
+      {/* Custom color animation for the company card */}
+      <style jsx>{`
+        .animated-bg {
+          background: linear-gradient(135deg, #e0f2fecc 60%, #bae6fdcc 80%, #a5d8fccf 100%);
+          animation: lightPulse 2s infinite alternate;
+        }
+        .animated-bg:hover {
+          animation: none !important;
+          background: linear-gradient(135deg, #1e3a8aee 60%, #2563ebee 100%);
+          background-blend-mode: multiply;
+        }
+        @keyframes lightPulse {
+          0% {
+            background: linear-gradient(135deg, #e0f2fecc 60%, #bae6fdcc 80%, #a5d8fccf 100%);
+          }
+          100% {
+            background: linear-gradient(135deg, #dbeafecc 60%, #bfdbfecc 80%, #93c5fdcc 100%);
+          }
+        }
+      `}</style>
     </div>
   );
 }
