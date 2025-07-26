@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import Image from "next/image";
 
 // Change this to your actual image path
-const BACKGROUND_IMAGE = "/assets/barco1.png";
+const BACKGROUND_IMAGE = "/assets/barco1.jpg";
 
 export default function ContactSection() {
   const [state, handleSubmit] = useForm("xyzpkwyr");
