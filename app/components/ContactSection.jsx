@@ -1,38 +1,73 @@
 "use client";
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaBuilding } from "react-icons/fa";
 
-// Make sure this path is correct and the file exists in public/assets/barco1.jpg
 const BACKGROUND_IMAGE = "/assets/barco1.png";
 
-const heading = "Let's Connect Together";
-
-const letterVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 }
-};
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.06
-        }
-    }
-};
 export default function ContactSection() {
   const [state, handleSubmit] = useForm("xyzpkwyr");
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16"
+      className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16 md:flex-row"
       style={{
         backgroundImage: `url(${BACKGROUND_IMAGE})`,
-        backgroundSize: "fill",
+        backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Company Details Card */}
+      <div
+        className={`
+          group relative flex flex-col gap-5 justify-center items-start
+          w-full max-w-md mb-10 md:mb-0 md:mr-8
+          rounded-2xl p-8 shadow-xl
+          bg-gradient-to-br from-blue-100/60 via-blue-200/60 to-blue-300/40
+          border border-blue-200
+          backdrop-blur-md
+          transition-transform duration-300
+          hover:scale-105 hover:bg-gradient-to-br hover:from-blue-200 hover:via-blue-300 hover:to-blue-500/80 hover:shadow-2xl
+        `}
+        style={{
+          boxShadow: "0 8px 32px 0 rgba(31, 64, 104, 0.18)",
+        }}
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <FaBuilding className="text-2xl text-blue-900" />
+          <span className="text-xl font-bold text-blue-900">Barco Global Logistics (PVT) LTD</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaMapMarkerAlt className="text-blue-700" />
+          <span className="font-medium text-blue-900">
+            123 Marine Drive, Colombo 03, Sri Lanka
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaPhoneAlt className="text-blue-700" />
+          <span className="font-medium text-blue-900">
+            +94 11 234 5678
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaEnvelope className="text-blue-700" />
+          <span className="font-medium text-blue-900">
+            info@barcologistics.com
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaClock className="text-blue-700" />
+          <span className="font-medium text-blue-900">
+            Mon - Fri: 8:30 AM - 6:00 PM
+          </span>
+        </div>
+        <div className="mt-4 text-sm leading-relaxed text-blue-800">
+          <span className="font-semibold">Your trusted partner in global logistics and supply chain solutions. We deliver reliability, speed, and transparency for your business worldwide.</span>
+        </div>
+      </div>
+
+      {/* Contact Form Card */}
       <div className="flex flex-col items-center w-full max-w-lg p-8 bg-white rounded-lg shadow-md bg-opacity-90">
         <h1 className="mb-8 text-3xl font-bold text-center text-blue-900">Contact Us</h1>
         {state.succeeded ? (
