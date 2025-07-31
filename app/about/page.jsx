@@ -49,7 +49,7 @@ function AnimatedParagraph({ text }) {
       className="flex flex-wrap mb-8 text-lg text-black"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.7 }}
       variants={{
         visible: { transition: { staggerChildren: 0.07 } }
       }}
@@ -82,51 +82,117 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
     <main className="min-h-screen px-4 pt-20 pb-12 ">
-      <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
-        {/* Left: About Content */}
-        <div>
-          <motion.h1
-            className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.7 }}
-          >
-            {heading.split("").map((char, idx) => (
-              <motion.span
-                key={idx}
-                variants={letterVariants}
-                className={char === " " ? "mx-2" : ""}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.h1>
-          <motion.p
-            className="mb-6 text-lg text-gray-700"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+   {/* Why Choose Us Section */}
+<section className="max-w-6xl mx-auto px-4 mb-20">
+  {/* Heading + Image Grid */}
+  <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
+    {/* Left: Heading & Slogan */}
+    <div>
+      <motion.h1
+        className="font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight text-gray-900"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.7 }}
+      >
+        {heading.split("").map((char, idx) => (
+          <motion.span
+            key={idx}
             variants={letterVariants}
-            transition={{ duration: 0.6 }}
+            className={char === " " ? "mx-2" : ""}
           >
-            Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide.
-            <br /><br />
-            With a global network and a commitment to innovation, we help our clients move goods efficiently and securely across borders.
-          </motion.p>
-        </div>
-        {/* Right: Animated Image */}
-        <div className="flex items-center justify-center">
-          <div className="relative w-full overflow-hidden transition-transform duration-300 shadow-lg mx-au to h-100max-w-xs rounded-2xl hover:scale-105">
-            <img
-              src="/assets/barco1.png"
-              alt="Barco Global Logistics"
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-blue-200/40 via-blue-400/30 to-blue-900/20"></div>
-          </div>
-        </div>
-      </section>
+            {char}
+          </motion.span>
+        ))}
+      </motion.h1>
+
+      {/* Underline */}
+      <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-400 rounded-full"></div>
+
+      {/* Subheading */}
+      <h3 className="text-xl font-medium text-blue-900">
+        Beyond Logistics, It's Our Passion
+      </h3>
+    </div>
+
+    {/* Right: Stacked Carousel */}
+<div className="relative w-full h-72 md:h-80 lg:h-96 overflow-hidden rounded-xl shadow-xl">
+  <img
+    src="/assets/barco1.png"
+    alt="Stack 1"
+    className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack1"
+  />
+  <img
+    src="/assets/barco1.jpg"
+    alt="Stack 2"
+    className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack2"
+  />
+  <img
+    src="/assets/barco2.jpg"
+    alt="Stack 3"
+    className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack3"
+  />
+
+  {/* Stack animation styles */}
+  <style jsx>{`
+    @keyframes stack1 {
+      0%, 20% { opacity: 1; transform: translate(0, 0) scale(1); z-index: 3; }
+      25%, 100% { opacity: 0; transform: translate(20px, 20px) scale(0.95); z-index: 1; }
+    }
+
+    @keyframes stack2 {
+      0%, 45% { opacity: 0; transform: translate(20px, 20px) scale(0.95); z-index: 1; }
+      50%, 70% { opacity: 1; transform: translate(0, 0) scale(1); z-index: 3; }
+      75%, 100% { opacity: 0; transform: translate(20px, 20px) scale(0.95); z-index: 1; }
+    }
+
+    @keyframes stack3 {
+      0%, 70% { opacity: 0; transform: translate(20px, 20px) scale(0.95); z-index: 1; }
+      75%, 95% { opacity: 1; transform: translate(0, 0) scale(1); z-index: 3; }
+      100% { opacity: 0; transform: translate(20px, 20px) scale(0.95); z-index: 1; }
+    }
+
+    .animate-stack1 {
+      animation: stack1 5s infinite ease-in-out;
+    }
+    .animate-stack2 {
+      animation: stack2 5s infinite ease-in-out;
+    }
+    .animate-stack3 {
+      animation: stack3 5s infinite ease-in-out;
+    }
+  `}</style>
+</div>
+  </div>
+
+  {/* Centered Paragraph */}
+  <motion.p
+    className="mt-12 text-lg  text-gray-700 font-sans text-center max-w-3xl mx-auto"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
+    variants={letterVariants}
+    transition={{ duration: 0.6 }}
+  >
+  At Barco Global Logistics (Pvt) Ltd, we are more
+   than just a logistics provider — we are 
+    partners in global connectivity, builders of 
+     supply chains, and catalysts for business transformation.
+      With a firm belief in innovation and operational excellence, 
+       have continuously evolved to meet the dynamic demands of the 
+       logistics landscape. Established with a vision to revolutionize 
+       the movement of goods, Barco began its journey with a strong 
+       commitment to reliability, agility, and customer satisfaction. 
+       Over the years, we have grown into a trusted name in the industry, 
+       facilitating seamless trade and transport across borders and industries. 
+       Our mission is to empower businesses by delivering tailored logistics solutions
+        that simplify complexity, accelerate growth, and unlock global opportunities.
+         At Barco, we bridge distances — not just geographically, but between ambition and achievement.
+  </motion.p>
+</section>
+
+
+
 
       {/* Vision and Mission Sections */}
       <section className="max-w-3xl mx-auto mb-12">
