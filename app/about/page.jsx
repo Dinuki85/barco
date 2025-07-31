@@ -1,3 +1,4 @@
+"use client"
 import { FaBullseye, FaEye } from "react-icons/fa";
 import Footer from "../components/Footer";
 
@@ -57,29 +58,52 @@ export default function AboutPage() {
       </section>
 
       <section
-  className="relative w-full h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
+  className="relative w-screen left-1/2 -translate-x-1/2 h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
   style={{ backgroundImage: "url('/assets/barco1.png')" }}
 >
-  {/* Overlay for readability */}
-  <div className="absolute inset-0 bg-white/60"></div>
-  {/* Core Values horizontally over the image */}
-  <div className="relative z-10 flex flex-wrap items-center justify-center w-full gap-8 px-4 py-8">
-    <span className="text-2xl font-bold leading-tight text-center text-blue-900 whitespace-pre-line">
-      Integrity & Trust
-    </span>
-    <span className="text-2xl font-bold leading-tight text-center text-blue-900 whitespace-pre-line">
-      Customer Focus
-    </span>
-    <span className="text-2xl font-bold leading-tight text-center text-blue-900 whitespace-pre-line">
-      Innovation
-    </span>
-    <span className="text-2xl font-bold leading-tight text-center text-blue-900 whitespace-pre-line">
-      Reliability
-    </span>
-    <span className="text-2xl font-bold leading-tight text-center text-blue-900 whitespace-pre-line">
-      Teamwork
-    </span>
+ {/* Overlay for readability */}
+  <div className="absolute inset-0 bg-black/30"></div>
+  {/* Animated Core Values */}
+  <div className="relative z-10 flex items-center justify-center w-full h-full">
+    <div className="flex items-center justify-center w-full overflow-hidden">
+      <div className="flex gap-16 animate-marquee whitespace-nowrap w-max">
+        {[
+          "Integrity & Trust",
+          "Customer Focus",
+          "Innovation",
+          "Reliability",
+          "Teamwork",
+          "Integrity & Trust",
+          "Customer Focus",
+          "Innovation",
+          "Reliability",
+          "Teamwork",
+        ].map((value, idx) => (
+          <span
+            key={idx}
+            className="mx-8 text-4xl font-extrabold text-transparent md:text-6xl lg:text-7xl"
+            style={{
+              WebkitTextStroke: "2px #fff",
+              textStroke: "2px #fff",
+              letterSpacing: "0.1em",
+            }}
+          >
+            {value}
+          </span>
+        ))}
+      </div>
+    </div>
   </div>
+  {/* Animation CSS */}
+  <style jsx>{`
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 18s linear infinite;
+    }
+  `}</style>
 </section>
 
 
