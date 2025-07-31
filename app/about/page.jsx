@@ -71,7 +71,7 @@ export default function AboutPage() {
   return (
     <>
     {/* Top full-width image */}
-      <div className="w-screen relative left-1/2 -translate-x-1/2 h-[350px] md:h-[450px] lg:h-[550px] bg-black">
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-[200px] md:h-[450px] lg:h-[550px] bg-black">
         <img
           src="/assets/barco1.png" // <-- use your high quality image path here
           alt="About Barco Global Logistics"
