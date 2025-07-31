@@ -8,7 +8,7 @@ export default function TeamMember({ image, name, position, company, email }) {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 40 }}
       transition={{ duration: 0.6 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       whileHover={{ scale: 1.03 }}
       className="relative w-full max-w-xs overflow-hidden shadow-xl cursor-pointer h-96 rounded-xl group"
     >

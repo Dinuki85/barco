@@ -266,7 +266,7 @@ export default function AboutPage() {
     variants={containerVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: false, amount: 0.7 }}
+    viewport={{ once: true, amount: 0.7 }}
   >
     {heading2.split("").map((char, idx) => (
       <motion.span

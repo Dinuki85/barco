@@ -91,7 +91,7 @@ const LogisticIntroduceSection = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.7 }}
+                    viewport={{ once: true, amount: 0.7 }}
                 >
                     {heading.split("").map((char, idx) => (
                         <motion.span
@@ -121,7 +121,7 @@ const LogisticIntroduceSection = () => {
                 variants={h2ContainerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
             >
                 {"Delivering Posibilities, On Time".split("").map((word, idx) => (
                     <motion.span
@@ -139,7 +139,7 @@ const LogisticIntroduceSection = () => {
                 variants={ulVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
             >
                 <motion.li variants={liVariants} className="flex items-center gap-2">
                     <MdWarehouse className="text-xl text-blue-700 " />

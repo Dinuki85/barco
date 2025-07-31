@@ -25,11 +25,11 @@ export default function Footer() {
             {/* Heading Section - OUTSIDE FOOTER */}
             <div className="relative w-full px-4 pt-10 pb-0 text-center md:px-[8%] lg:px-[15%]">
                 <motion.h1
-                    className="w-full font-serif text-3xl font-bold text-black sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.7 }}
+                    viewport={{ once: true, amount: 0.7 }}
                 >
                     {heading.split("").map((char, idx) => (
                         <motion.span

@@ -96,10 +96,10 @@ const WhyChooseUsSection = () => {
                 {/* Left: Description & List */}
                 <div className="w-full mb-10 md:w-1/2 md:mb-0">
                   <motion.p
-                        className="mb-6 text-justify text-gray-700"
+                        className="mb-6 text-justify text-gray-700 text-sm"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         variants={letterVariants}
                         transition={{ duration: 0.6 }}
                     >
