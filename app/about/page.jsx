@@ -44,6 +44,7 @@ const buttonRightVariants = {
 function AnimatedParagraph({ text }) {
   const words = text.split(" ");
   return (
+    
     <motion.p
       className="flex flex-wrap mb-8 text-lg text-black"
       initial="hidden"
@@ -68,6 +69,18 @@ function AnimatedParagraph({ text }) {
 
 export default function AboutPage() {
   return (
+    <>
+    {/* Top full-width image */}
+      <div className="w-screen relative left-1/2 -translate-x-1/2 h-[350px] md:h-[450px] lg:h-[550px] bg-black">
+        <img
+          src="/assets/barco1.png" // <-- use your high quality image path here
+          alt="About Barco Global Logistics"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        {/* Optional overlay for readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
     <main className="min-h-screen px-4 pt-20 pb-12 ">
       <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
         {/* Left: About Content */}
@@ -281,5 +294,6 @@ export default function AboutPage() {
       </div>
 
     </main>
+    </>
   );
 }
