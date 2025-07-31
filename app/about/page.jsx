@@ -2,8 +2,7 @@ import Footer from "../components/Footer";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen px-4 py-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">
-      <section className="max-w-3xl mx-auto mb-12 text-center">
+<main className="min-h-screen px-4 pt-24 pb-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">      <section className="max-w-3xl mx-auto mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-blue-900">About Barco Global Logistics</h1>
         <p className="text-lg text-blue-800">
           Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide.
