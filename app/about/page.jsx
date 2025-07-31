@@ -15,7 +15,7 @@ export default function AboutPage() {
   </div>
   {/* Right: Animated Image */}
   <div className="flex items-center justify-center">
-    <div className="relative w-full h-64 max-w-xs mx-auto overflow-hidden transition-transform duration-300 shadow-lg rounded-2xl hover:scale-105">
+    <div className="relative w-full overflow-hidden transition-transform duration-300 shadow-lg mx-au to h-100max-w-xs rounded-2xl hover:scale-105">
       <img
         src="/assets/barco1.png"
         alt="Barco Global Logistics"
