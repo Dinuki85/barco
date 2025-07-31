@@ -166,14 +166,15 @@ export default function AboutPage() {
   </div>
 
   {/* Centered Paragraph */}
-  <motion.p
-    className="mt-12 text-lg  text-gray-700 font-sans text-center max-w-3xl mx-auto"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.5 }}
-    variants={letterVariants}
-    transition={{ duration: 0.6 }}
-  >
+  {/* Centered and Justified Paragraph */}
+<motion.p
+  className="mt-12 text-base leading-relaxed text-justify text-gray-700 font-sans max-w-4xl mx-auto px-2"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+  variants={letterVariants}
+  transition={{ duration: 0.6 }}
+>
   At Barco Global Logistics (Pvt) Ltd, we are more
    than just a logistics provider — we are 
     partners in global connectivity, builders of 
