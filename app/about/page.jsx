@@ -8,7 +8,7 @@ export default function AboutPage() {
   <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
   {/* Left: About Content */}
   <div>
-    <h1 className="mb-4 text-4xl font-extrabold text-black md:text-5xl">About Us</h1>
+    <h1 className="w-full font-serif text-3xl font-bold text-black sm:text-5xl md:text-6xl lg:text-7xl">About Us</h1>
     <p className="text-lg text-black">
       Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide. 
       <br /><br />
@@ -98,7 +98,7 @@ export default function AboutPage() {
 {/*why choose us section*/}
 <section className="max-w-5xl px-4 mx-auto mb-16">
   {/* Intro Paragraph */}
-  <h1 className="mb-4 text-4xl font-bold text-center text-black">Why Choose Us?</h1>
+  <h1 className="w-full font-serif text-3xl font-bold text-center text-black sm:text-5xl md:text-6xl lg:text-7xl">Why Choose Us?</h1>
   <p className="mb-8 text-lg text-black">
     At Barco Global Logistics, we deliver more than just shipments. Our commitment to reliability, transparency, and customer satisfaction sets us apart. With advanced technology and a dedicated team, we ensure your business moves forward—smoothly and securely.
   </p>
