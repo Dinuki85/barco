@@ -92,39 +92,34 @@ const WhyChooseUsSection = () => {
             <hr className="mb-10 border-t border-gray-200" />
 
             {/* Content Row */}
-            <div className="flex flex-col items-center justify-between gap-10 md:flex-row">
+            <div className="justify flex flex-col items-center justify-between gap-10 md:flex-row">
                 {/* Left: Description & List */}
                 <div className="w-full mb-10 md:w-1/2 md:mb-0">
                   <motion.p
-                        className="mb-6 text-lg text-gray-700"
+                        className="mb-6 text-justify text-gray-700"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.5 }}
                         variants={letterVariants}
                         transition={{ duration: 0.6 }}
                     >
-                        At Barco Global Logistic, we don't just move goods; we move businesses forward. As a premium provider of global logistics and freight forwarding services, we empower enterprises to connect markets, navigate global trade, and scale operations with confidence.
+                        At Barco Global Logistics, we do much more than 
+                        simply transport goods — we drive business growth
+                         and enable success across borders. As a premier provider
+                          of comprehensive global logistics and freight forwarding
+                           services, we empower companies of all sizes to seamlessly 
+                           connect with new markets, navigate the complexities of international
+                            trade, and expand their operations with confidence and agility.
 
-                        With a deep understanding of complex supply chains, we provide innovative, efficient, and tailored logistics solutions. Our reliability, strategic partnerships, and technology-driven operations set us apart in a highly competitive industry.
+With deep expertise in managing intricate supply chains, we design and deliver innovative, 
+efficient, and customized logistics solutions tailored to meet the unique needs of each client.
+ Our unwavering commitment to reliability, combined with strong strategic partnerships and 
+ cutting-edge technology, ensures that every shipment is handled with precision and care. 
+ This dedication to excellence and innovation sets us apart in a competitive industry, 
+ making Barco Global Logistics a trusted partner for businesses aiming to thrive in today’s 
+ fast-paced global marketplace.
                     </motion.p>
-                   <motion.ul
-                        className="space-y-4"
-                        variants={listContainer}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: false, amount: 0.5 }}
-                    >
-                        {whyList.map((item, idx) => (
-                            <motion.li
-                                key={idx}
-                                className="flex items-center text-base text-gray-700"
-                                variants={listItem}
-                            >
-                                <FaCheckCircle className="flex-shrink-0 mr-3 text-blue-700" />
-                                <span>{item}</span>
-                            </motion.li>
-                        ))}
-                    </motion.ul>
+                   
                 </div>
                 {/* Right: Stacked, auto-sliding images */}
                 <div className="w-full md:w-1/2 flex justify-center relative min-h-[350px]">

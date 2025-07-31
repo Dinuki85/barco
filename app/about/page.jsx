@@ -43,9 +43,9 @@ const buttonRightVariants = {
 };
 
 const tabContent = {
-  History: `Founded in 1984, Barco Global Logistics began with a commitment to revolutionize supply chain management...`,
-  Vision: `To be the most trusted logistics partner, enabling seamless global trade and growth for our clients.`,
-  Mission: `Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world.`,
+  History: `At Barco Global Logistics (Pvt) Ltd, we are more than a logistics provider — we are the driving force behind efficient, reliable, and innovative supply chain solutions. Since our inception, we have been dedicated to bridging the gap between businesses and markets with precision, speed, and care. Founded on the principles of integrity and customer-centric service, Barco Global Logistics has evolved into a trusted global partner, delivering tailored logistics and freight services that empower our clients to thrive in a dynamic international marketplace. With decades of expertise and a forward-thinking approach, we continue to set the standard for excellence in logistics across borders and industries.`,
+  Vision: `To transform the logistics industry by setting the highest benchmarks for innovation, efficiency, and sustainability. We envision a world where businesses connect effortlessly, borders become gateways, and opportunities are boundless. Through advanced technology, eco-friendly solutions, and an unwavering commitment to excellence, we strive to be the driving force that reshapes global trade. By consistently surpassing expectations, embracing progress, and delivering unmatched value, we aim to be the trusted global leader shaping the future of logistics.`,
+  Mission: `At Barco Global Logistics (Pvt) Ltd, our mission is to be a catalyst for global trade and business growth. We are committed to delivering innovative, dependable, and customized logistics solutions that enable our clients to succeed in an ever-evolving marketplace. Driven by excellence and a customer-first mindset, we work tirelessly to create seamless supply chains, overcome logistical challenges, and unlock new opportunities. Leveraging our expertise, advanced technology, and relentless dedication, we strive to be the trusted partner that businesses rely on to navigate the complexities of logistics with confidence and ease.`,
 };
 
 function AnimatedParagraph({ text }) {
