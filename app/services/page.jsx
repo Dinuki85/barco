@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const slides = [
   { image: "/assets/barco1.png" },
   { image: "/assets/barco2.jpg" },
-  { image: "/assets/barco3.jpg" },
+  { image: "/assets/barco1.png" },
 ];
 
 export default function ServicesPage() {
@@ -22,7 +22,7 @@ export default function ServicesPage() {
   return (
     <div className="w-full min-h-screen bg-white">
       {/* Add spacing below fixed navbar */}
-      <div className="relative w-full h-screen pt-16"> {/* pt-16 pushes content down by 64px */}
+      <div className="relative w-full h-[550px] pt-16"> {/* pt-16 pushes content down by 64px */}
         <AnimatePresence initial={false}>
           <motion.img
             key={slides[current].image}
@@ -32,7 +32,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, scale: 1.2 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
           />
         </AnimatePresence>
       </div>
