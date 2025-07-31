@@ -1,10 +1,10 @@
 "use client"
-import { FaBullseye, FaEye } from "react-icons/fa";
-import Footer from "../components/Footer";
+
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
 import MeatTeam from "../components/MeatTeam";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
+import ParallaxImage from "../components/ParallaxImage";
 
 
 const heading = "About Us";
@@ -47,40 +47,6 @@ const tabContent = {
   Vision: `To transform the logistics industry by setting the highest benchmarks for innovation, efficiency, and sustainability. We envision a world where businesses connect effortlessly, borders become gateways, and opportunities are boundless. Through advanced technology, eco-friendly solutions, and an unwavering commitment to excellence, we strive to be the driving force that reshapes global trade. By consistently surpassing expectations, embracing progress, and delivering unmatched value, we aim to be the trusted global leader shaping the future of logistics.`,
   Mission: `At Barco Global Logistics (Pvt) Ltd, our mission is to be a catalyst for global trade and business growth. We are committed to delivering innovative, dependable, and customized logistics solutions that enable our clients to succeed in an ever-evolving marketplace. Driven by excellence and a customer-first mindset, we work tirelessly to create seamless supply chains, overcome logistical challenges, and unlock new opportunities. Leveraging our expertise, advanced technology, and relentless dedication, we strive to be the trusted partner that businesses rely on to navigate the complexities of logistics with confidence and ease.`,
 };
-
-const tabImages = {
-  History: "/assets/barco1.jpg", // replace with your actual image paths
-  Vision: "/assets/barco1.png",
-  Mission: "/assets/barco2.jpg",
-};
-
-function ParallaxImage({ src, alt, className }) {
-  const [offsetY, setOffsetY] = useState(0);
-
-  useEffect(() => {
-    function handleScroll() {
-      // Adjust multiplier for how much you want it to move (e.g. 0.3)
-      setOffsetY(window.pageYOffset * 0.3);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className={className}
-      style={{ y: offsetY }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      loading="lazy"
-      draggable={false}
-    />
-  );
-}
 
 
 function AnimatedParagraph({ text }) {
@@ -127,7 +93,7 @@ export default function AboutPage() {
     <main className="min-h-screen px-4 pt-20 pb-12 ">
 
 
-   
+   {/* Why Choose Us Section */}
 <section className="max-w-6xl mx-auto px-4 mb-20">
   {/* Heading + Image Grid */}
   <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
@@ -348,12 +314,8 @@ export default function AboutPage() {
     {tabContent[selectedTab]}
   </motion.p>
 
-  {/* New: Right side image with scroll effect */}
-  <ParallaxImage
-    src={tabImages[selectedTab]}
-    alt={`${selectedTab} Image`}
-    className="hidden md:block w-[280px] h-[200px] rounded-lg object-cover shadow-lg"
-  />
+
+  
 </div>
 
   {/* --------- EXISTING BUTTONS SECTION BELOW --------- */}
@@ -411,6 +373,33 @@ export default function AboutPage() {
     </div>
   </div>
 </section>
+{/* New Large Image + Text Section */}
+<section className="max-w-6xl mx-auto mt-20 px-4 w-full">
+  <div className="flex flex-col md:flex-row items-center gap-10">
+
+    {/* Left: Image with no animation */}
+    <ParallaxImage
+      src="/assets/barco1.png" // Replace with your actual large image path
+      alt="Elevating Business through Next-Level Logistics"
+      className="w-full md:w-1/2" // Ensures the image takes up half of the width
+    />
+
+    {/* Right: Text content */}
+    <div className="w-full md:w-1/2 text-gray-700 text-sm leading-relaxed">
+      <h2 className="text-xl font-semibold mb-6 ">Why Choose Barco Global Logistics(PVT) Ltd?</h2>
+      <ol className="list-decimal list-inside space-y-4">
+        <li><strong>Reliability:</strong> Our track record speaks for itself. With a commitment to on-time deliveries and secure handling, your cargo is in safe hands.</li>
+        <li><strong>Innovation:</strong> In a rapidly evolving industry, we stay ahead of the curve by adopting cutting-edge technologies and creative solutions that streamline your supply chain.</li>
+        <li><strong>Global Reach:</strong> No destination is too far. Our extensive network of partners and agents spans the globe, ensuring your goods reach their destination, no matter where that may be.</li>
+        <li><strong>Transparency:</strong> We believe in open communication. Throughout the journey, you’ll have real-time access to tracking and updates, giving you peace of mind.</li>
+        <li><strong>Sustainability:</strong> Responsibility is at the heart of what we do. We’re committed to reducing our environmental footprint and promoting eco-friendly practices.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+
 
       <div className="w-full px-0 mx-auto">
         <MeatTeam />
