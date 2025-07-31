@@ -206,9 +206,15 @@ export default function AboutPage() {
                               ))}
                           </motion.h1>
                           
-                                  <p className="mb-8 text-lg text-black">
-          Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
-        </p>
+  <motion.p
+      className="mb-6 text-lg text-gray-700"
+                                 initial="hidden"
+                                 whileInView="visible"
+                                 viewport={{ once: false, amount: 0.5 }}
+                                 variants={letterVariants}
+                                 transition={{ duration: 0.6 }}
+                             >          Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
+        </motion.p>
         <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
           {/* Left side buttons */}
           <div className="flex flex-col gap-6">
