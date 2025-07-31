@@ -6,7 +6,7 @@ import MeatTeam from "../components/MeatTeam";
 
 export default function AboutPage() {
   return (
-<main className="min-h-screen px-4 pt-24 pb-12 ">      
+<main className="min-h-screen px-4 pt-20 pb-12 ">      
   <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
   {/* Left: About Content */}
   <div>
@@ -149,9 +149,9 @@ export default function AboutPage() {
 </section>
 
 
-{/*team introduction section */}
-      <MeatTeam/>
-
+<div className="w-full px-0 mx-auto">
+  <MeatTeam />
+</div>
       
     </main>
   );
