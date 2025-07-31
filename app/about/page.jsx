@@ -32,6 +32,15 @@ const wordVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
+const buttonLeftVariants = {
+  hidden: { opacity: 0, x: -60 },
+  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 60, damping: 12 } }
+};
+const buttonRightVariants = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 60, damping: 12 } }
+};
+
 function AnimatedParagraph({ text }) {
   const words = text.split(" ");
   return (
@@ -215,47 +224,55 @@ export default function AboutPage() {
                                  transition={{ duration: 0.6 }}
                              >          Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
         </motion.p>
-        <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
-          {/* Left side buttons */}
-          <div className="flex flex-col gap-6">
-            {[
-              { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-            ].map((service, idx) => (
-              <button
-                key={service.label}
-                className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
-                onClick={() => window.location.href = "/services"}
-              >
-                {service.icon}
-                {service.label}
-              </button>
-            ))}
-          </div>
+       <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+  {/* Left side buttons */}
+  <div className="flex flex-col gap-6">
+    {[
+      { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+    ].map((service, idx) => (
+      <motion.button
+        key={service.label}
+        className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
+        onClick={() => window.location.href = "/services"}
+        variants={buttonLeftVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.7 }}
+      >
+        {service.icon}
+        {service.label}
+      </motion.button>
+    ))}
+  </div>
           {/* Vertical line */}
-          <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
-          {/* Right side buttons */}
-          <div className="flex flex-col gap-6">
-            {[
-              { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-              { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-            ].map((service, idx) => (
-              <button
-                key={service.label}
-                className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
-                onClick={() => window.location.href = "/services"}
-              >
-                {service.icon}
-                {service.label}
-              </button>
-            ))}
-          </div>
-        </div>
+  <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
+  {/* Right side buttons */}
+  <div className="flex flex-col gap-6">
+    {[
+      { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+      { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+    ].map((service, idx) => (
+      <motion.button
+        key={service.label}
+        className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
+        onClick={() => window.location.href = "/services"}
+        variants={buttonRightVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.7 }}
+      >
+        {service.icon}
+        {service.label}
+      </motion.button>
+    ))}
+  </div>
+</div>
       </section>
 
 
