@@ -7,7 +7,7 @@ export default function AboutPage() {
   {/* Left: About Content */}
   <div>
     <h1 className="mb-4 text-4xl font-extrabold text-black md:text-5xl">About Us</h1>
-    <p className="text-lg text-blue-800">
+    <p className="text-lg text-black">
       Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide. 
       <br /><br />
       With a global network and a commitment to innovation, we help our clients move goods efficiently and securely across borders.
