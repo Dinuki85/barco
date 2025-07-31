@@ -30,15 +30,15 @@ export default function AboutPage() {
        {/* Vision and Mission Sections */}
       <section className="max-w-3xl mx-auto mb-12">
         <div className="flex items-center mb-4">
-          <FaEye className="mr-3 text-2xl text-black" />
-          <h2 className="text-3xl font-bold text-black">Vision</h2>
+          <FaEye className="mr-3 text-2xl text-blue-900" />
+          <h2 className="text-3xl font-bold text-blue-900">Vision</h2>
         </div>
         <p className="mb-8 text-lg text-black">
           To be the most trusted logistics partner, enabling seamless global trade and growth for our clients.
         </p>
         <div className="flex items-center mb-4">
-          <FaBullseye className="mr-3 text-2xl text-black" />
-          <h2 className="text-3xl font-bold text-black">Mission</h2>
+          <FaBullseye className="mr-3 text-2xl text-blue-900" />
+          <h2 className="text-3xl font-bold text-blue-900">Mission</h2>
         </div>
         <p className="text-lg text-black">
           Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world.
