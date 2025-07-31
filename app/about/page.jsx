@@ -21,6 +21,41 @@ const containerVariants = {
     }
 };
 
+const zigzagVariants = (direction) => ({
+  hidden: { opacity: 0, x: direction === "left" ? -60 : 60, y: -30 },
+  visible: { opacity: 1, x: 0, y: 0, transition: { type: "spring", stiffness: 60, damping: 12 } }
+});
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+function AnimatedParagraph({ text }) {
+  const words = text.split(" ");
+  return (
+    <motion.p
+      className="flex flex-wrap mb-8 text-lg text-black"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.7 }}
+      variants={{
+        visible: { transition: { staggerChildren: 0.07 } }
+      }}
+    >
+      {words.map((word, idx) => (
+        <motion.span
+          key={idx}
+          variants={wordVariants}
+          className="inline-block mr-2"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.p>
+  );
+}
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen px-4 pt-20 pb-12 ">
@@ -70,23 +105,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Vision and Mission Sections */}
-      <section className="max-w-3xl mx-auto mb-12">
-        <div className="flex items-center mb-4">
-          <FaEye className="mr-3 text-2xl text-blue-900" />
-          <h2 className="text-3xl font-bold text-blue-900">Vision</h2>
-        </div>
-        <p className="mb-8 text-lg text-black">
-          To be the most trusted logistics partner, enabling seamless global trade and growth for our clients.
-        </p>
-        <div className="flex items-center mb-4">
-          <FaBullseye className="mr-3 text-2xl text-blue-900" />
-          <h2 className="text-3xl font-bold text-blue-900">Mission</h2>
-        </div>
-        <p className="text-lg text-black">
-          Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world.
-        </p>
-      </section>
+    {/* Vision and Mission Sections */}
+<section className="max-w-3xl mx-auto mb-12">
+  {/* Vision */}
+  <motion.div
+    className="flex items-center mb-4"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.7 }}
+    variants={zigzagVariants("left")}
+  >
+    <FaEye className="mr-3 text-2xl text-blue-900" />
+    <h2 className="text-3xl font-bold text-blue-900">Vision</h2>
+  </motion.div>
+  <AnimatedParagraph text="To be the most trusted logistics partner, enabling seamless global trade and growth for our clients." />
+
+  {/* Mission */}
+  <motion.div
+    className="flex items-center mb-4"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.7 }}
+    variants={zigzagVariants("right")}
+  >
+    <FaBullseye className="mr-3 text-2xl text-blue-900" />
+    <h2 className="text-3xl font-bold text-blue-900">Mission</h2>
+  </motion.div>
+  <AnimatedParagraph text="Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world." />
+</section>
       {/*core values section*/}
       <section
         className="relative w-screen left-1/2 -translate-x-1/2 h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
