@@ -7,6 +7,7 @@ import {motion} from "framer-motion";
 
 
 const heading = "About Us";
+const heading2="Why Choose Us";
 const letterVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 }
@@ -187,8 +188,25 @@ export default function AboutPage() {
 
       {/* Why Choose Us Section */}
       <section className="max-w-5xl px-4 mx-auto mb-16">
-        <h2 className="w-full font-serif text-3xl font-bold text-center text-black sm:text-5xl md:text-6xl lg:text-7xl">Why Choose Us?</h2>
-        <p className="mb-8 text-lg text-black">
+<motion.h1
+                              className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+                              variants={containerVariants}
+                              initial="hidden"
+                              whileInView="visible"
+                              viewport={{ once: false, amount: 0.7 }}
+                          >
+                              {heading2.split("").map((char, idx) => (
+                                  <motion.span
+                                      key={idx}
+                                      variants={letterVariants}
+                                      className={char === " " ? "mx-2" : ""}
+                                  >
+                                      {char}
+                                  </motion.span>
+                              ))}
+                          </motion.h1>
+                          
+                                  <p className="mb-8 text-lg text-black">
           Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
         </p>
         <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
