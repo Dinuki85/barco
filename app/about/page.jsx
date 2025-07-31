@@ -3,6 +3,23 @@ import { FaBullseye, FaEye } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
 import MeatTeam from "../components/MeatTeam";
+import {motion} from "framer-motion";
+
+
+const heading = "About Us";
+const letterVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.06
+        }
+    }
+};
 
 export default function AboutPage() {
   return (
@@ -10,7 +27,23 @@ export default function AboutPage() {
       <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
         {/* Left: About Content */}
         <div>
-          <h1 className="w-full font-serif text-3xl font-bold text-black sm:text-5xl md:text-6xl lg:text-7xl">About Us</h1>
+           <motion.h1
+                              className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+                              variants={containerVariants}
+                              initial="hidden"
+                              whileInView="visible"
+                              viewport={{ once: false, amount: 0.7 }}
+                          >
+                              {heading.split("").map((char, idx) => (
+                                  <motion.span
+                                      key={idx}
+                                      variants={letterVariants}
+                                      className={char === " " ? "mx-2" : ""}
+                                  >
+                                      {char}
+                                  </motion.span>
+                              ))}
+                          </motion.h1>
           <p className="text-lg text-black">
             Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide.
             <br /><br />
