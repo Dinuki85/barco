@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 
 export default function AboutPage() {
   return (
-<main className="min-h-screen px-4 pt-24 pb-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">      
+<main className="min-h-screen px-4 pt-24 pb-12 ">      
   <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
   {/* Left: About Content */}
   <div>
