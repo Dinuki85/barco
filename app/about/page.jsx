@@ -44,11 +44,18 @@ export default function AboutPage() {
                                   </motion.span>
                               ))}
                           </motion.h1>
-          <p className="text-lg text-black">
+         <motion.p
+      className="mb-6 text-lg text-gray-700"
+                                 initial="hidden"
+                                 whileInView="visible"
+                                 viewport={{ once: false, amount: 0.5 }}
+                                 variants={letterVariants}
+                                 transition={{ duration: 0.6 }}
+                             >
             Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide.
             <br /><br />
             With a global network and a commitment to innovation, we help our clients move goods efficiently and securely across borders.
-          </p>
+          </motion.p>
         </div>
         {/* Right: Animated Image */}
         <div className="flex items-center justify-center">
