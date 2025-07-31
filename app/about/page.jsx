@@ -2,6 +2,7 @@
 import { FaBullseye, FaEye } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
+import MeatTeam from "../components/MeatTeam";
 
 export default function AboutPage() {
   return (
@@ -149,27 +150,7 @@ export default function AboutPage() {
 
 
 {/*team introduction section */}
-      <section className="max-w-4xl mx-auto mb-12">
-        <h2 className="mb-4 text-2xl font-bold text-blue-900">Meet the Team</h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* Example team members, replace with your real data */}
-          <div className="flex flex-col items-center p-6 bg-white shadow bg-opacity-90 rounded-xl">
-            <img src="/assets/team1.jpg" alt="CEO" className="object-cover w-24 h-24 mb-3 rounded-full" />
-            <h3 className="font-semibold text-blue-900">Jane Fernando</h3>
-            <p className="text-blue-700">Chief Executive Officer</p>
-          </div>
-          <div className="flex flex-col items-center p-6 bg-white shadow bg-opacity-90 rounded-xl">
-            <img src="/assets/team2.jpg" alt="COO" className="object-cover w-24 h-24 mb-3 rounded-full" />
-            <h3 className="font-semibold text-blue-900">Ruwan Perera</h3>
-            <p className="text-blue-700">Chief Operations Officer</p>
-          </div>
-          <div className="flex flex-col items-center p-6 bg-white shadow bg-opacity-90 rounded-xl">
-            <img src="/assets/team3.jpg" alt="Head of Logistics" className="object-cover w-24 h-24 mb-3 rounded-full" />
-            <h3 className="font-semibold text-blue-900">Samantha Silva</h3>
-            <p className="text-blue-700">Head of Logistics</p>
-          </div>
-        </div>
-      </section>
+      <MeatTeam/>
 
       
     </main>
