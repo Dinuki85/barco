@@ -118,7 +118,7 @@ export default function AboutPage() {
       </motion.h1>
 
       {/* Underline */}
-      <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-400 rounded-full"></div>
+      <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
 
       {/* Subheading */}
       <h3 className="text-xl font-medium text-blue-900">
@@ -262,7 +262,7 @@ export default function AboutPage() {
       {/* Why Choose Us Section */}
         <section className="max-w-5xl px-4 mx-auto mb-16">
   <motion.h1
-    className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+    className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-center"
     variants={containerVariants}
     initial="hidden"
     whileInView="visible"
@@ -278,6 +278,15 @@ export default function AboutPage() {
       </motion.span>
     ))}
   </motion.h1>
+
+  {/*UNDERLINE */}
+
+  <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
+
+  {/* Subheading */}
+      <h3 className="text-xl font-medium text-blue-900">
+        Beyond Logistics, It's Our Passion
+      </h3>
 
   {/* --------- ADD TAB + PARAGRAPH SECTION ABOVE BUTTONS --------- */}
 <div className="flex gap-6 mb-12 mt-8 items-start">
