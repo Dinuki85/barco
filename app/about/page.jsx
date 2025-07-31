@@ -409,6 +409,38 @@ export default function AboutPage() {
 </section>
 
 
+{/* Beyond Logistics Image Grid Section */}
+<section className="max-w-6xl mx-auto mt-20 px-4">
+  {/* Subheading */}
+  <div className="mb-10 text-center">
+    <h2 className="text-3xl font-extrabold text-black mb-2">Beyond Logistics, It's Our Passion</h2>
+    <p className="text-gray-600 text-base">A visual journey through our commitment, precision, and innovation</p>
+    <div className="w-20 h-100 mx-auto mt-4 bg-blue-600 rounded-full"></div>
+  </div>
+
+  {/* Image Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {[
+      "/assets/barco1.png",
+      "/assets/barco1.png",
+      "/assets/barco1.png",
+      "/assets/barco1.png",
+      "/assets/barco1.png",
+      "/assets/barco1.png"
+      
+    ].map((src, idx) => (
+      <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
+        <img
+          src={src}
+          alt={`Gallery Image ${idx + 1}`}
+          className="w-full h-64 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
 
       <div className="w-full px-0 mx-auto">
         <MeatTeam />
