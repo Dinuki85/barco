@@ -70,28 +70,28 @@ image: "/assets/barco1.png",
     id: "freight",
     title: "Freight Forwarding",
     description:
-      "We provide comprehensive freight forwarding solutions that simplify international shipping, optimize costs, and guarantee safety across all transportation modes.",
+      "At Barco Global Logistics, our freight forwarding service acts as a strategic bridge between shippers and global carriers. We coordinate the efficient movement of goods across international borders using air, sea, and land transportation. Our experienced team handles all aspects of the shipping process — from negotiating competitive freight rates and selecting optimal routes to managing customs documentation and compliance requirements. With deep industry knowledge and a global partner network, Barco ensures your cargo moves smoothly, securely, and on time, no matter the destination.",
     image: "/assets/barco2.jpg",
   },
   {
     id: "supply",
     title: "Supply Chain Management",
     description:
-      "Our supply chain management service enhances efficiency by integrating all logistics activities, providing real-time visibility, and ensuring smooth operations.",
+      "At Barco Global Logistics, our supply chain management services are designed to streamline your operations from end to end. We integrate every aspect of the logistics process — from procurement and inventory to warehousing and final delivery — to create a unified, efficient supply chain. Leveraging advanced technology, we provide real-time visibility into your goods at every stage, enabling faster decision-making and minimizing disruptions. Our goal is to enhance operational flow, reduce costs, and ensure that your products reach the right place at the right time, every time.",
     image: "/assets/barco1.png",
   },
   {
     id: "ecommerce",
     title: "E-commerce Logistics",
     description:
-      "Tailored logistics services designed to meet the rapid demands of e-commerce businesses including last-mile delivery, returns management, and customer experience enhancement.",
+      "At Barco Global Logistics, our e-commerce logistics solutions are specifically crafted to meet the fast-paced demands of modern online retail. We offer end-to-end services including efficient last-mile delivery, seamless returns management, and fulfillment strategies that enhance customer satisfaction. By integrating advanced tracking systems and flexible delivery options, we ensure your customers receive a smooth, reliable, and responsive shopping experience — helping your e-commerce business grow with confidence and agility.",
     image: "/assets/barco2.jpg",
   },
   {
     id: "lastmile",
     title: "Last-Mile Delivery",
     description:
-      "We specialize in last-mile delivery ensuring your products reach customers quickly and reliably with a transparent tracking system.",
+      "At Barco Global Logistics, we specialize in last-mile delivery solutions that ensure your products reach customers swiftly, safely, and reliably. Our advanced logistics network is designed to optimize the final leg of the delivery journey, with real-time tracking and status updates that keep both you and your customers informed. Whether it's residential or business delivery, we prioritize speed, accuracy, and customer satisfaction — turning the last mile into a competitive advantage for your brand.",
     image: "/assets/barco1.png",
   },
 ];
@@ -222,7 +222,7 @@ export default function ServicesPage() {
       {/* New Section: Left description + Right vertical tabs */}
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto px-4 md:px-8 py-12 gap-10">
         {/* Left side: Only show active paragraph with transparent background image */}
-        <div className="relative flex-1 p-6 bg-gray-50 rounded-lg overflow-hidden min-h-[450px]">
+       <div className="relative flex-1 px-6 py-6 bg-gray-50 rounded-lg overflow-hidden min-h-[450px] max-w-3xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.img
               key={activeService.id}
@@ -243,8 +243,8 @@ export default function ServicesPage() {
   transition={{ duration: 0.5 }}
   className="relative z-10 max-h-[450px] overflow-y-auto p-6"
 >
-  <h2 className="mb-4 text-2xl font-semibold text-slate-900">{activeService.title}</h2>
-  <p className="text-sm text-justify text-gray-700">{activeService.description}</p>
+  <h2 className="mb-4 text-4xl font-semibold text-slate-900 text-center">{activeService.title}</h2>
+  <p className="text-sm  text-gray-700 text-center">{activeService.description}</p>
 </motion.div>
           </AnimatePresence>
         </div>
