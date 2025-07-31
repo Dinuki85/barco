@@ -63,7 +63,7 @@ const WhyChooseUsSection = () => {
             {/* Header Row */}
             <div className="flex flex-col items-start justify-between mb-8 md:flex-row">
                 <motion.h1
-                    className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"

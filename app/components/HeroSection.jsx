@@ -54,7 +54,7 @@ export default function HeroSection() {
         <AnimatePresence mode="wait">
           <motion.h1
             key={slides[current].heading}
-            className="mb-6 text-xl font-bold text-center text-white xs:text-2xl sm:text-3xl md:text-5xl sm:mb-8 drop-shadow-lg"
+            className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -40, opacity: 0 }}

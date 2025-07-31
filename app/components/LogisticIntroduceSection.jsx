@@ -87,7 +87,7 @@ const LogisticIntroduceSection = () => {
             
             <div className="relative w-full px-4 pt-10 pb-0 md:px-[8%] lg:px-[15%]">
                 <motion.h1
-                    className='w-full font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl'
+                    className='font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800'
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
