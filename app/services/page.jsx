@@ -167,7 +167,7 @@ export default function ServicesPage() {
             </motion.h1>
             <hr className="mt-4 mb-4 border-4 border-light-blue-300 w-1/2" />
             <motion.h2
-              className="flex flex-wrap items-center text-left font-serif text-lg font-thin sm:text-xl md:text-2xl"
+              className="flex flex-wrap items-center text-left font-serif text-sm font-thin sm:text-xl md:text-2xl"
               variants={h2ContainerVariants}
               initial="hidden"
               whileInView="visible"
@@ -182,28 +182,28 @@ export default function ServicesPage() {
           </div>
 
           <motion.ul
-            className="grid max-w-2xl grid-cols-1 gap-6 py-3 font-serif lg:text-sm list-none sm:grid-cols-2 md:grid-cols-2 sm:text-lg flex-1"
-            variants={ulVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            {[
-              [<MdWarehouse />, "Warehousing and Distribution"],
-              [<FaShippingFast />, "Freight Forwarding"],
-              [<GiCargoCrate />, "Supply Chain Management"],
-              [<MdOutlineLocalShipping />, "E‑commerce Logistics"],
-              [<MdOutlineSupportAgent />, "Last‑Mile Delivery"],
-              [<MdWarehouse />, "Inventory Management"],
-              [<FaShippingFast />, "Customs Clearance"],
-              [<GiCargoCrate />, "Packaging Solutions"],
-              [<MdOutlineLocalShipping />, "Express Delivery"],
-            ].map(([icon, label], i) => (
-              <motion.li key={i} variants={liVariants} className="flex items-center gap-2">
-                {icon} {label}
-              </motion.li>
-            ))}
-          </motion.ul>
+  className="grid max-w-2xl grid-cols-1 gap-6 py-3 font-serif lg:text-sm list-none sm:grid-cols-2 md:grid-cols-2 sm:text-lg flex-1"
+  variants={ulVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+>
+  {[
+    [MdWarehouse, "Warehousing and Distribution"],
+    [FaShippingFast, "Freight Forwarding"],
+    [GiCargoCrate, "Supply Chain Management"],
+    [MdOutlineLocalShipping, "E‑commerce Logistics"],
+    [MdOutlineSupportAgent, "Last‑Mile Delivery"],
+    [MdWarehouse, "Inventory Management"],
+    [FaShippingFast, "Customs Clearance"],
+    [GiCargoCrate, "Packaging Solutions"],
+    [MdOutlineLocalShipping, "Express Delivery"],
+  ].map(([Icon, label], i) => (
+    <motion.li key={i} variants={liVariants} className="flex items-center gap-2">
+      <Icon className="text-blue-700 text-xl" /> {label}
+    </motion.li>
+  ))}
+</motion.ul>
         </div>
       </div>
 
@@ -258,58 +258,50 @@ export default function ServicesPage() {
           ))}
         </nav>
       </div>
-
-      {/* Accordion Section */}
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto px-4 md:px-8 py-16 gap-10">
-        <div className="flex-1 space-y-4">
-          {additionalServices.map(({ id, title, description }) => {
-            const isOpen = accordionOpen === id;
-            return (
-              <div key={id} className="border-b pb-2">
-                <button
-                  onClick={() => setAccordionOpen(isOpen ? "" : id)}
-                  className="flex items-center justify-between w-full text-left text-slate-800 font-semibold text-lg hover:text-blue-700 transition-colors"
+{/* Accordion Section */}
+<div className="flex justify-center w-full py-16 px-4">
+  <div className="flex flex-col lg:flex-row max-w-7xl w-full md:px-8 gap-10">
+    <div className="flex-1 space-y-4">
+      {additionalServices.map(({ id, title, description }) => {
+        const isOpen = accordionOpen === id;
+        return (
+          <div key={id} className="border-b pb-2">
+            <button
+              onClick={() => setAccordionOpen(isOpen ? "" : id)}
+              className="flex items-center justify-between w-full text-left text-slate-800 font-semibold text-lg hover:text-blue-700 transition-colors"
+            >
+              <h4>{title}</h4>
+              <span className="text-blue-700">{isOpen ? <FaMinus /> : <FaPlus />}</span>
+            </button>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.p
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-2 text-sm text-gray-600 font-sans leading-relaxed"
                 >
-                  <h4>{title}</h4>
-                  <span className="text-blue-700">{isOpen ? <FaMinus /> : <FaPlus />}</span>
-                </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-2 text-sm text-gray-600 font-sans leading-relaxed"
-                    >
-                      {description}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-        <div className="w-full lg:w-[40%]">
-          <img
-            src="/assets/barco2.jpg"
-            alt="Additional Services"
-            className="rounded-lg shadow-md w-full h-full object-cover"
-          />
-        </div>
-      </div>
+                  {description}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      })}
+    </div>
+    <div className="w-full lg:w-[40%]">
+      <img
+        src="/assets/barco2.jpg"
+        alt="Additional Services"
+        className="rounded-lg shadow-md w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
 
-      {/* Footer List */}
-      <div className="flex flex-col items-center justify-center w-full bg-gray-100 py-16 px-4">
-        <h1 className="mb-4 text-3xl font-bold">Our Services</h1>
-        <p className="max-w-xl text-lg text-center mb-6">Discover the services we offer to help you succeed.</p>
-        <ul className="text-lg list-disc list-inside space-y-2">
-          <li>Global Shipping</li>
-          <li>Secure Warehousing</li>
-          <li>Customs Clearance</li>
-          <li>Customer Support</li>
-        </ul>
-      </div>
+   
+      
     </div>
   );
 }
