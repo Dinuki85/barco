@@ -100,7 +100,7 @@ export default function AboutPage() {
     {/* Left: Heading & Slogan */}
     <div>
       <motion.h1
-        className="font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight text-gray-900"
+        className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -262,7 +262,7 @@ export default function AboutPage() {
       {/* Why Choose Us Section */}
         <section className="max-w-5xl px-4 mx-auto mb-16">
   <motion.h1
-    className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-center"
+    className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
     variants={containerVariants}
     initial="hidden"
     whileInView="visible"
