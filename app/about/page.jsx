@@ -2,12 +2,29 @@ import Footer from "../components/Footer";
 
 export default function AboutPage() {
   return (
-<main className="min-h-screen px-4 pt-24 pb-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">      <section className="max-w-3xl mx-auto mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold text-blue-900">About Barco Global Logistics</h1>
-        <p className="text-lg text-blue-800">
-          Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide.
-        </p>
-      </section>
+<main className="min-h-screen px-4 pt-24 pb-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">      
+  <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
+  {/* Left: About Content */}
+  <div>
+    <h1 className="mb-4 text-4xl font-extrabold text-black md:text-5xl">About Us</h1>
+    <p className="text-lg text-blue-800">
+      Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide. 
+      <br /><br />
+      With a global network and a commitment to innovation, we help our clients move goods efficiently and securely across borders.
+    </p>
+  </div>
+  {/* Right: Animated Image */}
+  <div className="flex items-center justify-center">
+    <div className="relative w-full h-64 max-w-xs mx-auto overflow-hidden shadow-lg rounded-2xl animate-pulse">
+      <img
+        src="/assets/about-animated.jpg"
+        alt="Barco Global Logistics"
+        className="object-cover w-full h-full"
+      />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-blue-200/40 via-blue-400/30 to-blue-900/20"></div>
+    </div>
+  </div>
+</section>
 
       <section className="grid max-w-4xl gap-8 mx-auto mb-12 md:grid-cols-3">
         <div className="p-6 bg-white shadow-md bg-opacity-90 rounded-xl">
