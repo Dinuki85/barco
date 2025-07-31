@@ -1,3 +1,4 @@
+import { FaBullseye, FaEye } from "react-icons/fa";
 import Footer from "../components/Footer";
 
 export default function AboutPage() {
@@ -26,25 +27,22 @@ export default function AboutPage() {
   </div>
 </section>
 
-      <section className="grid max-w-4xl gap-8 mx-auto mb-12 md:grid-cols-3">
-        <div className="p-6 bg-white shadow-md bg-opacity-90 rounded-xl">
-          <h2 className="mb-2 text-xl font-semibold text-blue-900">Vision</h2>
-          <p className="text-blue-800">To be the most trusted logistics partner, enabling seamless global trade and growth for our clients.</p>
+       {/* Vision and Mission Sections */}
+      <section className="max-w-3xl mx-auto mb-12">
+        <div className="flex items-center mb-4">
+          <FaEye className="mr-3 text-2xl text-black" />
+          <h2 className="text-2xl font-bold text-black">Vision</h2>
         </div>
-        <div className="p-6 bg-white shadow-md bg-opacity-90 rounded-xl">
-          <h2 className="mb-2 text-xl font-semibold text-blue-900">Mission</h2>
-          <p className="text-blue-800">Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world.</p>
+        <p className="mb-8 text-lg text-black">
+          To be the most trusted logistics partner, enabling seamless global trade and growth for our clients.
+        </p>
+        <div className="flex items-center mb-4">
+          <FaBullseye className="mr-3 text-2xl text-black" />
+          <h2 className="text-2xl font-bold text-black">Mission</h2>
         </div>
-        <div className="p-6 bg-white shadow-md bg-opacity-90 rounded-xl">
-          <h2 className="mb-2 text-xl font-semibold text-blue-900">Core Values</h2>
-          <ul className="text-blue-800 list-disc list-inside">
-            <li>Integrity & Trust</li>
-            <li>Customer Focus</li>
-            <li>Innovation</li>
-            <li>Reliability</li>
-            <li>Teamwork</li>
-          </ul>
-        </div>
+        <p className="text-lg text-black">
+          Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world.
+        </p>
       </section>
 
       <section className="max-w-4xl mx-auto mb-12">
