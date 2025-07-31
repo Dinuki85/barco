@@ -100,7 +100,7 @@ export default function AboutPage() {
 
 {/* Why Choose Us Section */}
 <section className="max-w-5xl px-4 mx-auto mb-16">
-  <h2 className="mb-4 text-3xl font-bold text-black">Why Choose Us?</h2>
+  <h2 className="w-full font-serif text-3xl font-bold text-center text-black sm:text-5xl md:text-6xl lg:text-7xl">Why Choose Us?</h2>
   <p className="mb-8 text-lg text-black">
     Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
   </p>
