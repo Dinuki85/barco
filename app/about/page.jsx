@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
 import MeatTeam from "../components/MeatTeam";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const heading = "About Us";
@@ -48,6 +48,41 @@ const tabContent = {
   Mission: `At Barco Global Logistics (Pvt) Ltd, our mission is to be a catalyst for global trade and business growth. We are committed to delivering innovative, dependable, and customized logistics solutions that enable our clients to succeed in an ever-evolving marketplace. Driven by excellence and a customer-first mindset, we work tirelessly to create seamless supply chains, overcome logistical challenges, and unlock new opportunities. Leveraging our expertise, advanced technology, and relentless dedication, we strive to be the trusted partner that businesses rely on to navigate the complexities of logistics with confidence and ease.`,
 };
 
+const tabImages = {
+  History: "/assets/barco1.jpg", // replace with your actual image paths
+  Vision: "/assets/barco1.png",
+  Mission: "/assets/barco2.jpg",
+};
+
+function ParallaxImage({ src, alt, className }) {
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      // Adjust multiplier for how much you want it to move (e.g. 0.3)
+      setOffsetY(window.pageYOffset * 0.3);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <motion.img
+      src={src}
+      alt={alt}
+      className={className}
+      style={{ y: offsetY }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      loading="lazy"
+      draggable={false}
+    />
+  );
+}
+
+
 function AnimatedParagraph({ text }) {
   const words = text.split(" ");
   return (
@@ -90,7 +125,9 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
     <main className="min-h-screen px-4 pt-20 pb-12 ">
-   {/* Why Choose Us Section */}
+
+
+   
 <section className="max-w-6xl mx-auto px-4 mb-20">
   {/* Heading + Image Grid */}
   <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
@@ -173,7 +210,7 @@ export default function AboutPage() {
 </div>
   </div>
 
-  {/* Centered Paragraph */}
+
   {/* Centered and Justified Paragraph */}
 <motion.p
   className="mt-12 text-base leading-relaxed text-justify text-gray-700 font-sans max-w-4xl mx-auto px-2"
@@ -277,40 +314,47 @@ export default function AboutPage() {
   </motion.h1>
 
   {/* --------- ADD TAB + PARAGRAPH SECTION ABOVE BUTTONS --------- */}
-  <div className="flex gap-6 mb-12 mt-8">
-    {/* Left side - tab list */}
-    <div className="flex flex-col justify-start gap-6 min-w-[140px]">
-      {Object.keys(tabContent).map((tab) => {
-        const isSelected = tab === selectedTab;
-        return (
-          <h4
-            key={tab}
-            onClick={() => setSelectedTab(tab)}
-            className={`cursor-pointer pb-2 font-semibold text-lg
-              ${
-                isSelected
-                  ? "text-blue-700 border-b-4 border-transparent bg-gradient-to-r from-blue-400 to-blue-900 bg-clip-text text-transparent"
-                  : "text-gray-600 border-b-4 border-gray-300 hover:text-blue-400 hover:border-blue-400"
-              }
-              transition-colors duration-300`}
-          >
-            {tab}
-          </h4>
-        );
-      })}
-    </div>
-
-    {/* Right side - paragraph content */}
-    <motion.p
-      key={selectedTab} // key to trigger re-animate on tab change
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="text-gray-700 text-justify flex-1"
-    >
-      {tabContent[selectedTab]}
-    </motion.p>
+<div className="flex gap-6 mb-12 mt-8 items-start">
+  {/* Left side - tab list */}
+  <div className="flex flex-col justify-start gap-6 min-w-[140px]">
+    {Object.keys(tabContent).map((tab) => {
+      const isSelected = tab === selectedTab;
+      return (
+        <h4
+          key={tab}
+          onClick={() => setSelectedTab(tab)}
+          className={`cursor-pointer pb-2 font-semibold text-lg
+            ${
+              isSelected
+                ? "text-blue-700 border-b-4 border-transparent bg-gradient-to-r from-blue-400 to-blue-900 bg-clip-text text-transparent"
+                : "text-gray-600 border-b-4 border-gray-300 hover:text-blue-400 hover:border-blue-400"
+            }
+            transition-colors duration-300`}
+        >
+          {tab}
+        </h4>
+      );
+    })}
   </div>
+
+  {/* Right side - paragraph content */}
+  <motion.p
+    key={selectedTab} // key to trigger re-animate on tab change
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4 }}
+    className="text-gray-700 text-justify flex-1"
+  >
+    {tabContent[selectedTab]}
+  </motion.p>
+
+  {/* New: Right side image with scroll effect */}
+  <ParallaxImage
+    src={tabImages[selectedTab]}
+    alt={`${selectedTab} Image`}
+    className="hidden md:block w-[280px] h-[200px] rounded-lg object-cover shadow-lg"
+  />
+</div>
 
   {/* --------- EXISTING BUTTONS SECTION BELOW --------- */}
   <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
