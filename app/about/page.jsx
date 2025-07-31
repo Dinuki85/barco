@@ -3,7 +3,7 @@
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
 import MeatTeam from "../components/MeatTeam";
 import { motion } from "framer-motion";
-import {  useState } from "react";
+import { useState } from "react";
 import ParallaxImage from "../components/ParallaxImage";
 
 
@@ -52,7 +52,7 @@ const tabContent = {
 function AnimatedParagraph({ text }) {
   const words = text.split(" ");
   return (
-    
+
     <motion.p
       className="flex flex-wrap mb-8 text-lg text-black"
       initial="hidden"
@@ -76,10 +76,10 @@ function AnimatedParagraph({ text }) {
 }
 
 export default function AboutPage() {
-   const [selectedTab, setSelectedTab] = useState("History");
+  const [selectedTab, setSelectedTab] = useState("History");
   return (
     <>
-    {/* Top full-width image */}
+      {/* Top full-width image */}
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-[200px] md:h-[450px] lg:h-[550px] bg-black">
         <img
           src="/assets/barco1.png" // <-- use your high quality image path here
@@ -90,62 +90,62 @@ export default function AboutPage() {
         {/* Optional overlay for readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
-    <main className="min-h-screen px-4 pt-20 pb-12 ">
+      <main className="min-h-screen px-4 pt-20 pb-12 ">
 
 
-   {/* Why Choose Us Section */}
-<section className="max-w-6xl mx-auto px-4 mb-20">
-  {/* Heading + Image Grid */}
-  <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
-    {/* Left: Heading & Slogan */}
-    <div>
-      <motion.h1
-        className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.7 }}
-      >
-        {heading.split("").map((char, idx) => (
-          <motion.span
-            key={idx}
-            variants={letterVariants}
-            className={char === " " ? "mx-2" : ""}
-          >
-            {char}
-          </motion.span>
-        ))}
-      </motion.h1>
+        {/* Why Choose Us Section */}
+        <section className="max-w-6xl mx-auto px-4 mb-20">
+          {/* Heading + Image Grid */}
+          <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
+            {/* Left: Heading & Slogan */}
+            <div>
+              <motion.h1
+                className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.7 }}
+              >
+                {heading.split("").map((char, idx) => (
+                  <motion.span
+                    key={idx}
+                    variants={letterVariants}
+                    className={char === " " ? "mx-2" : ""}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h1>
 
-      {/* Underline */}
-      <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
+              {/* Underline */}
+              <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
 
-      {/* Subheading */}
-      <h3 className="text-xl font-medium text-blue-900">
-        Beyond Logistics, It's Our Passion
-      </h3>
-    </div>
+              {/* Subheading */}
+              <h3 className="text-xl font-medium text-blue-900">
+                Beyond Logistics, It's Our Passion
+              </h3>
+            </div>
 
-    {/* Right: Stacked Carousel */}
-<div className="relative w-full h-72 md:h-80 lg:h-96 overflow-hidden rounded-xl shadow-xl">
-  <img
-    src="/assets/barco1.png"
-    alt="Stack 1"
-    className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack1"
-  />
-  <img
-    src="/assets/barco1.jpg"
-    alt="Stack 2"
-    className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack2"
-  />
-  <img
-    src="/assets/barco2.jpg"
-    alt="Stack 3"
-    className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack3"
-  />
+            {/* Right: Stacked Carousel */}
+            <div className="relative w-full h-72 md:h-80 lg:h-96 overflow-hidden rounded-xl shadow-xl">
+              <img
+                src="/assets/barco1.png"
+                alt="Stack 1"
+                className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack1"
+              />
+              <img
+                src="/assets/barco1.jpg"
+                alt="Stack 2"
+                className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack2"
+              />
+              <img
+                src="/assets/barco2.jpg"
+                alt="Stack 3"
+                className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack3"
+              />
 
-  {/* Stack animation styles */}
-  <style jsx>{`
+              {/* Stack animation styles */}
+              <style jsx>{`
     @keyframes stack1 {
       0%, 20% { opacity: 1; transform: translate(0, 0) scale(1); z-index: 3; }
       25%, 100% { opacity: 0; transform: translate(20px, 20px) scale(0.95); z-index: 1; }
@@ -173,80 +173,80 @@ export default function AboutPage() {
       animation: stack3 5s infinite ease-in-out;
     }
   `}</style>
-</div>
-  </div>
-
-
-  {/* Centered and Justified Paragraph */}
-<motion.p
-  className="mt-12 text-base leading-relaxed text-justify text-gray-700 font-sans max-w-4xl mx-auto px-2"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.5 }}
-  variants={letterVariants}
-  transition={{ duration: 0.6 }}
->
-  At Barco Global Logistics (Pvt) Ltd, we are more
-   than just a logistics provider — we are 
-    partners in global connectivity, builders of 
-     supply chains, and catalysts for business transformation.
-      With a firm belief in innovation and operational excellence, 
-       have continuously evolved to meet the dynamic demands of the 
-       logistics landscape. Established with a vision to revolutionize 
-       the movement of goods, Barco began its journey with a strong 
-       commitment to reliability, agility, and customer satisfaction. 
-       Over the years, we have grown into a trusted name in the industry, 
-       facilitating seamless trade and transport across borders and industries. 
-       Our mission is to empower businesses by delivering tailored logistics solutions
-        that simplify complexity, accelerate growth, and unlock global opportunities.
-         At Barco, we bridge distances — not just geographically, but between ambition and achievement.
-  </motion.p>
-</section>
-
-
-
-
-      
-      {/*core values section*/}
-      <section
-        className="relative w-screen left-1/2 -translate-x-1/2 h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
-        style={{ backgroundImage: "url('/assets/barco1.png')" }}
-      >
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/30"></div>
-        {/* Animated Core Values */}
-        <div className="relative z-10 flex items-center justify-center w-full h-full">
-          <div className="flex items-center justify-center w-full overflow-hidden">
-            <div className="flex gap-16 animate-marquee whitespace-nowrap w-max">
-              {[
-                "Integrity & Trust",
-                "Customer Focus",
-                "Innovation",
-                "Reliability",
-                "Teamwork",
-                "Integrity & Trust",
-                "Customer Focus",
-                "Innovation",
-                "Reliability",
-                "Teamwork",
-              ].map((value, idx) => (
-                <span
-                  key={idx}
-                  className="mx-8 text-4xl font-extrabold text-transparent md:text-6xl lg:text-7xl"
-                  style={{
-                    WebkitTextStroke: "2px #fff",
-                    textStroke: "2px #fff",
-                    letterSpacing: "0.1em",
-                  }}
-                >
-                  {value}
-                </span>
-              ))}
             </div>
           </div>
-        </div>
-        {/* Animation CSS */}
-        <style jsx>{`
+
+
+          {/* Centered and Justified Paragraph */}
+          <motion.p
+            className="mt-12 text-base leading-relaxed text-justify text-gray-700 font-sans max-w-4xl mx-auto px-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={letterVariants}
+            transition={{ duration: 0.6 }}
+          >
+            At Barco Global Logistics (Pvt) Ltd, we are more
+            than just a logistics provider — we are
+            partners in global connectivity, builders of
+            supply chains, and catalysts for business transformation.
+            With a firm belief in innovation and operational excellence,
+            have continuously evolved to meet the dynamic demands of the
+            logistics landscape. Established with a vision to revolutionize
+            the movement of goods, Barco began its journey with a strong
+            commitment to reliability, agility, and customer satisfaction.
+            Over the years, we have grown into a trusted name in the industry,
+            facilitating seamless trade and transport across borders and industries.
+            Our mission is to empower businesses by delivering tailored logistics solutions
+            that simplify complexity, accelerate growth, and unlock global opportunities.
+            At Barco, we bridge distances — not just geographically, but between ambition and achievement.
+          </motion.p>
+        </section>
+
+
+
+
+
+        {/*core values section*/}
+        <section
+          className="relative w-screen left-1/2 -translate-x-1/2 h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
+          style={{ backgroundImage: "url('/assets/barco1.png')" }}
+        >
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-black/30"></div>
+          {/* Animated Core Values */}
+          <div className="relative z-10 flex items-center justify-center w-full h-full">
+            <div className="flex items-center justify-center w-full overflow-hidden">
+              <div className="flex gap-16 animate-marquee whitespace-nowrap w-max">
+                {[
+                  "Integrity & Trust",
+                  "Customer Focus",
+                  "Innovation",
+                  "Reliability",
+                  "Teamwork",
+                  "Integrity & Trust",
+                  "Customer Focus",
+                  "Innovation",
+                  "Reliability",
+                  "Teamwork",
+                ].map((value, idx) => (
+                  <span
+                    key={idx}
+                    className="mx-8 text-4xl font-extrabold text-transparent md:text-6xl lg:text-7xl"
+                    style={{
+                      WebkitTextStroke: "2px #fff",
+                      textStroke: "2px #fff",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    {value}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Animation CSS */}
+          <style jsx>{`
     @keyframes marquee {
       0% { transform: translateX(0%); }
       100% { transform: translateX(-50%); }
@@ -255,198 +255,197 @@ export default function AboutPage() {
       animation: marquee 18s linear infinite;
     }
   `}</style>
-      </section>
+        </section>
 
 
 
-      {/* Why Choose Us Section */}
+        {/* Why Choose Us Section */}
         <section className="max-w-5xl px-4 mx-auto mb-16">
-  <motion.h1
-    className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.7 }}
-  >
-    {heading2.split("").map((char, idx) => (
-      <motion.span
-        key={idx}
-        variants={letterVariants}
-        className={char === " " ? "mx-2" : ""}
-      >
-        {char}
-      </motion.span>
-    ))}
-  </motion.h1>
+          <motion.h1
+            className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            {heading2.split("").map((char, idx) => (
+              <motion.span
+                key={idx}
+                variants={letterVariants}
+                className={char === " " ? "mx-2" : ""}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
 
-  {/*UNDERLINE */}
+          {/*UNDERLINE */}
 
-  <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
+          <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
 
-  {/* Subheading */}
-      <h3 className="text-xl font-medium text-blue-900">
-        Beyond Logistics, It's Our Passion
-      </h3>
+          {/* Subheading */}
+          <h3 className="text-xl font-medium text-blue-900">
+            Beyond Logistics, It's Our Passion
+          </h3>
 
-  {/* --------- ADD TAB + PARAGRAPH SECTION ABOVE BUTTONS --------- */}
-<div className="flex gap-6 mb-12 mt-8 items-start">
-  {/* Left side - tab list */}
-  <div className="flex flex-col justify-start gap-6 min-w-[140px]">
-    {Object.keys(tabContent).map((tab) => {
-      const isSelected = tab === selectedTab;
-      return (
-        <h4
-          key={tab}
-          onClick={() => setSelectedTab(tab)}
-          className={`cursor-pointer pb-2 font-semibold text-lg
-            ${
-              isSelected
-                ? "text-blue-700 border-b-4 border-transparent bg-gradient-to-r from-blue-400 to-blue-900 bg-clip-text text-transparent"
-                : "text-gray-600 border-b-4 border-gray-300 hover:text-blue-400 hover:border-blue-400"
-            }
+          {/* --------- ADD TAB + PARAGRAPH SECTION ABOVE BUTTONS --------- */}
+          <div className="flex gap-6 mb-12 mt-8 items-start">
+            {/* Left side - tab list */}
+            <div className="flex flex-col justify-start gap-6 min-w-[140px]">
+              {Object.keys(tabContent).map((tab) => {
+                const isSelected = tab === selectedTab;
+                return (
+                  <h4
+                    key={tab}
+                    onClick={() => setSelectedTab(tab)}
+                    className={`cursor-pointer pb-2 font-semibold text-lg
+            ${isSelected
+                        ? "text-blue-700 border-b-4 border-transparent bg-gradient-to-r from-blue-400 to-blue-900 bg-clip-text text-transparent"
+                        : "text-gray-600 border-b-4 border-gray-300 hover:text-blue-400 hover:border-blue-400"
+                      }
             transition-colors duration-300`}
-        >
-          {tab}
-        </h4>
-      );
-    })}
-  </div>
+                  >
+                    {tab}
+                  </h4>
+                );
+              })}
+            </div>
 
-  {/* Right side - paragraph content */}
-  <motion.p
-    key={selectedTab} // key to trigger re-animate on tab change
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4 }}
-    className="text-gray-700 text-justify flex-1"
-  >
-    {tabContent[selectedTab]}
-  </motion.p>
-
-
-  
-</div>
-
-  {/* --------- EXISTING BUTTONS SECTION BELOW --------- */}
-  <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
-    {/* Left side buttons */}
-    <div className="flex flex-col gap-6">
-      {[
-        { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      ].map((service) => (
-        <motion.button
-          key={service.label}
-          className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
-          onClick={() => window.location.href = "/services"}
-          variants={buttonLeftVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.7 }}
-          type="button"
-        >
-          {service.icon}
-          {service.label}
-        </motion.button>
-      ))}
-    </div>
-
-    {/* Vertical line */}
-    <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
-
-    {/* Right side buttons */}
-    <div className="flex flex-col gap-6 w-full md:w-1/2">
-      {[
-        { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-        { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      ].map((service) => (
-        <motion.button
-          key={service.label}
-          className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
-          onClick={() => window.location.href = "/services"}
-          variants={buttonRightVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.7 }}
-          type="button"
-        >
-          {service.icon}
-          {service.label}
-        </motion.button>
-      ))}
-    </div>
-  </div>
-</section>
-{/* New Large Image + Text Section */}
-<section className="max-w-6xl mx-auto mt-20 px-4 w-full">
-  <div className="flex flex-col md:flex-row items-center gap-10">
-
-    {/* Left: Image with no animation */}
-    <ParallaxImage
-      src="/assets/barco1.png" // Replace with your actual large image path
-      alt="Elevating Business through Next-Level Logistics"
-      className="w-full md:w-1/2" // Ensures the image takes up half of the width
-    />
-
-    {/* Right: Text content */}
-    <div className="w-full md:w-1/2 text-gray-700 text-sm leading-relaxed">
-      <h2 className="text-xl font-semibold mb-6 ">Why Choose Barco Global Logistics(PVT) Ltd?</h2>
-      <ol className="list-decimal list-inside space-y-4">
-        <li><strong>Reliability:</strong> Our track record speaks for itself. With a commitment to on-time deliveries and secure handling, your cargo is in safe hands.</li>
-        <li><strong>Innovation:</strong> In a rapidly evolving industry, we stay ahead of the curve by adopting cutting-edge technologies and creative solutions that streamline your supply chain.</li>
-        <li><strong>Global Reach:</strong> No destination is too far. Our extensive network of partners and agents spans the globe, ensuring your goods reach their destination, no matter where that may be.</li>
-        <li><strong>Transparency:</strong> We believe in open communication. Throughout the journey, you’ll have real-time access to tracking and updates, giving you peace of mind.</li>
-        <li><strong>Sustainability:</strong> Responsibility is at the heart of what we do. We’re committed to reducing our environmental footprint and promoting eco-friendly practices.</li>
-      </ol>
-    </div>
-
-  </div>
-</section>
+            {/* Right side - paragraph content */}
+            <motion.p
+              key={selectedTab} // key to trigger re-animate on tab change
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="text-gray-700 text-justify flex-1"
+            >
+              {tabContent[selectedTab]}
+            </motion.p>
 
 
-{/* Beyond Logistics Image Grid Section */}
-<section className="max-w-6xl mx-auto mt-20 px-4">
-  {/* Subheading */}
-  <div className="mb-10 text-center">
-    <h2 className="text-3xl font-extrabold text-black mb-2">Beyond Logistics, It's Our Passion</h2>
-    <p className="text-gray-600 text-base">A visual journey through our commitment, precision, and innovation</p>
-    <div className="w-20 h-100 mx-auto mt-4 bg-blue-600 rounded-full"></div>
-  </div>
 
-  {/* Image Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {[
-      "/assets/barco1.png",
-      "/assets/barco1.png",
-      "/assets/barco1.png",
-      "/assets/barco1.png",
-      "/assets/barco1.png",
-      "/assets/barco1.png"
-      
-    ].map((src, idx) => (
-      <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src={src}
-          alt={`Gallery Image ${idx + 1}`}
-          className="w-full h-64 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
-          loading="lazy"
-        />
-      </div>
-    ))}
-  </div>
-</section>
+          </div>
+
+          {/* --------- EXISTING BUTTONS SECTION BELOW --------- */}
+          <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+            {/* Left side buttons */}
+            <div className="flex flex-col gap-6">
+              {[
+                { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              ].map((service) => (
+                <motion.button
+                  key={service.label}
+                  className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
+                  onClick={() => window.location.href = "/services"}
+                  variants={buttonLeftVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.7 }}
+                  type="button"
+                >
+                  {service.icon}
+                  {service.label}
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Vertical line */}
+            <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
+
+            {/* Right side buttons */}
+            <div className="flex flex-col gap-6 w-full md:w-1/2">
+              {[
+                { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+                { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              ].map((service) => (
+                <motion.button
+                  key={service.label}
+                  className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
+                  onClick={() => window.location.href = "/services"}
+                  variants={buttonRightVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.7 }}
+                  type="button"
+                >
+                  {service.icon}
+                  {service.label}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* New Large Image + Text Section */}
+        <section className="max-w-6xl mx-auto mt-20 px-4 w-full">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+
+            {/* Left: Image with no animation */}
+            <ParallaxImage
+              src="/assets/barco1.png" // Replace with your actual large image path
+              alt="Elevating Business through Next-Level Logistics"
+              className="w-full md:w-1/2" // Ensures the image takes up half of the width
+            />
+
+            {/* Right: Text content */}
+            <div className="w-full md:w-1/2 text-gray-700 text-sm leading-relaxed">
+              <h2 className="text-xl font-semibold mb-6 ">Why Choose Barco Global Logistics(PVT) Ltd?</h2>
+              <ol className="list-decimal list-inside space-y-4">
+                <li><strong>Reliability:</strong> Our track record speaks for itself. With a commitment to on-time deliveries and secure handling, your cargo is in safe hands.</li>
+                <li><strong>Innovation:</strong> In a rapidly evolving industry, we stay ahead of the curve by adopting cutting-edge technologies and creative solutions that streamline your supply chain.</li>
+                <li><strong>Global Reach:</strong> No destination is too far. Our extensive network of partners and agents spans the globe, ensuring your goods reach their destination, no matter where that may be.</li>
+                <li><strong>Transparency:</strong> We believe in open communication. Throughout the journey, you’ll have real-time access to tracking and updates, giving you peace of mind.</li>
+                <li><strong>Sustainability:</strong> Responsibility is at the heart of what we do. We’re committed to reducing our environmental footprint and promoting eco-friendly practices.</li>
+              </ol>
+            </div>
+
+          </div>
+        </section>
 
 
-      <div className="w-full px-0 mx-auto">
-        <MeatTeam />
-      </div>
+        {/* Beyond Logistics Image Grid Section */}
+        <section className="max-w-6xl mx-auto mt-20 px-4">
+          {/* Subheading */}
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-extrabold text-black mb-2">Beyond Logistics, It's Our Passion</h2>
+            <p className="text-gray-600 text-base">A visual journey through our commitment, precision, and innovation</p>
+            <div className="w-20 h-100 mx-auto mt-4 bg-blue-600 rounded-full"></div>
+          </div>
 
-    </main>
+          {/* Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "/assets/barco1.png",
+              "/assets/barco1.png",
+              "/assets/barco1.png",
+              "/assets/barco1.png",
+              "/assets/barco1.png",
+              "/assets/barco1.png"
+
+            ].map((src, idx) => (
+              <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src={src}
+                  alt={`Gallery Image ${idx + 1}`}
+                  className="w-full h-64 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+        <div className="w-full px-0 mx-auto">
+          <MeatTeam />
+        </div>
+
+      </main>
     </>
   );
 }

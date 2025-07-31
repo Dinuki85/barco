@@ -37,6 +37,7 @@ export default function ServicesPage() {
         </AnimatePresence>
       </div>
 
+
       {/* Services Content */}
       <div className="flex flex-col items-center justify-center w-full bg-gray-100 py-16 px-4">
         <h1 className="mb-4 text-3xl font-bold">Our Services</h1>
