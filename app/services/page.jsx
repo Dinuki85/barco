@@ -9,6 +9,7 @@ import {
   MdOutlineSupportAgent,
   MdWarehouse,
 } from "react-icons/md";
+import MeatTeam from "../components/MeatTeam";
 
 const slides = [
   { image: "/assets/barco1.png" },
