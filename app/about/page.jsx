@@ -1,6 +1,7 @@
 "use client"
 import { FaBullseye, FaEye } from "react-icons/fa";
 import Footer from "../components/Footer";
+import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
 
 export default function AboutPage() {
   return (
@@ -95,50 +96,57 @@ export default function AboutPage() {
   `}</style>
 </section>
 
-{/*why choose us section*/}
+
+
+{/* Why Choose Us Section */}
 <section className="max-w-5xl px-4 mx-auto mb-16">
-  {/* Intro Paragraph */}
-  <h1 className="w-full font-serif text-3xl font-bold text-center text-black sm:text-5xl md:text-6xl lg:text-7xl">Why Choose Us?</h1>
+  <h2 className="mb-4 text-3xl font-bold text-black">Why Choose Us?</h2>
   <p className="mb-8 text-lg text-black">
-    At Barco Global Logistics, we deliver more than just shipments. Our commitment to reliability, transparency, and customer satisfaction sets us apart. With advanced technology and a dedicated team, we ensure your business moves forward—smoothly and securely.
+    Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
   </p>
-  {/* Services Grid */}
-  <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-    {/* Service 1 */}
-    <div
-      className="flex items-center gap-4 p-6 transition bg-white shadow cursor-pointer rounded-xl hover:bg-blue-50"
-      onClick={() => window.location.href = "/services"}
-    >
-      <span className="text-3xl text-blue-700">
-        {/* Example icon: FaShippingFast */}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m-6 0h6m-6 0a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2m-6 0v2a2 2 0 002 2h6a2 2 0 002-2v-2" /></svg>
-      </span>
-      <span className="text-lg font-semibold text-blue-900">Global Freight Solutions</span>
+  <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+    {/* Left side buttons */}
+    <div className="flex flex-col gap-6">
+      {[
+        { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700" /> },
+        { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700" /> },
+        { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700" /> },
+        { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700" /> },
+        { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700" /> },
+      ].map((service, idx) => (
+        <button
+          key={service.label}
+          className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow hover:bg-blue-700 hover:text-white"
+          onClick={() => window.location.href = "/services"}
+        >
+          {service.icon}
+          {service.label}
+        </button>
+      ))}
     </div>
-    {/* Service 2 */}
-    <div
-      className="flex items-center gap-4 p-6 transition bg-white shadow cursor-pointer rounded-xl hover:bg-blue-50"
-      onClick={() => window.location.href = "/services"}
-    >
-      <span className="text-3xl text-blue-700">
-        {/* Example icon: FaClipboardList */}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6M9 9h6m-6 4h6m-6 4h6" /></svg>
-      </span>
-      <span className="text-lg font-semibold text-blue-900">Customs & Compliance</span>
-    </div>
-    {/* Service 3 */}
-    <div
-      className="flex items-center gap-4 p-6 transition bg-white shadow cursor-pointer rounded-xl hover:bg-blue-50"
-      onClick={() => window.location.href = "/services"}
-    >
-      <span className="text-3xl text-blue-700">
-        {/* Example icon: FaWarehouse */}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9-7 9 7v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8z" /></svg>
-      </span>
-      <span className="text-lg font-semibold text-blue-900">Warehousing & Distribution</span>
+    {/* Vertical line */}
+    <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
+    {/* Right side buttons */}
+    <div className="flex flex-col gap-6">
+      {[
+        { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700" /> },
+        { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700" /> },
+        { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700" /> },
+        { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700" /> },
+      ].map((service, idx) => (
+        <button
+          key={service.label}
+          className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow hover:bg-blue-700 hover:text-white"
+          onClick={() => window.location.href = "/services"}
+        >
+          {service.icon}
+          {service.label}
+        </button>
+      ))}
     </div>
   </div>
 </section>
+
 
 {/*team introduction section */}
       <section className="max-w-4xl mx-auto mb-12">
