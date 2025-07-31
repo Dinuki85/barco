@@ -300,6 +300,9 @@ export default function ServicesPage() {
   </div>
 </div>
 
+   <div className="w-full px-0 mx-auto">
+             <MeatTeam />
+           </div>
    
       
     </div>
