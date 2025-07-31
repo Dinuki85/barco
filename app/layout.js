@@ -1,10 +1,12 @@
+"use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import { ClerkProvider } from "@clerk/nextjs";
+
 import Footer from "./components/Footer";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,21 +19,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Barco Global Logistics(PVT) LTD",
-  description: "",
-};
+
 
 export default function RootLayout({ children } ) {
+
+  const pathname = usePathname();
   return (
-    <ClerkProvider>
+    
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
        <Header />
         {children}
-        <Footer/>
+        {pathname !== "/contact" && <Footer />}
       </body>
     </html>
-    </ClerkProvider>
+   
   );
 }
