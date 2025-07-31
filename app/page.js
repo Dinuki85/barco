@@ -5,7 +5,7 @@ import ImageContainer from "./components/ImageContainer";
 import MeatTeam from "./components/MeatTeam";
 import WhyChooseUsSection from "./components/WhyChooseUs";
 import LogisticsProcess from "./components/LogisticsProcess ";
-import Footer from "./components/Footer";
+
 
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <WhyChooseUsSection />
       <LogisticsProcess />
       <MeatTeam />
-      <Footer />
+   
 
     </>
   );

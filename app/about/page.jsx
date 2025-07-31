@@ -45,18 +45,7 @@ export default function AboutPage() {
           Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world.
         </p>
       </section>
-
-      <section className="max-w-4xl mx-auto mb-12">
-        <h2 className="mb-4 text-2xl font-bold text-blue-900">Why Choose Us?</h2>
-        <ul className="space-y-2 text-blue-800 list-disc list-inside">
-          <li>Global network and expertise</li>
-          <li>Transparent and competitive pricing</li>
-          <li>Personalized customer service</li>
-          <li>Advanced technology and tracking</li>
-          <li>Proven track record of reliability</li>
-        </ul>
-      </section>
-
+{/*core values section*/}
       <section
   className="relative w-screen left-1/2 -translate-x-1/2 h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
   style={{ backgroundImage: "url('/assets/barco1.png')" }}
@@ -106,7 +95,52 @@ export default function AboutPage() {
   `}</style>
 </section>
 
+{/*why choose us section*/}
+<section className="max-w-5xl px-4 mx-auto mb-16">
+  {/* Intro Paragraph */}
+  <h1 className="mb-4 text-4xl font-bold text-center text-black">Why Choose Us?</h1>
+  <p className="mb-8 text-lg text-black">
+    At Barco Global Logistics, we deliver more than just shipments. Our commitment to reliability, transparency, and customer satisfaction sets us apart. With advanced technology and a dedicated team, we ensure your business moves forward—smoothly and securely.
+  </p>
+  {/* Services Grid */}
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+    {/* Service 1 */}
+    <div
+      className="flex items-center gap-4 p-6 transition bg-white shadow cursor-pointer rounded-xl hover:bg-blue-50"
+      onClick={() => window.location.href = "/services"}
+    >
+      <span className="text-3xl text-blue-700">
+        {/* Example icon: FaShippingFast */}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2m-6 0h6m-6 0a2 2 0 01-2-2v-2a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2m-6 0v2a2 2 0 002 2h6a2 2 0 002-2v-2" /></svg>
+      </span>
+      <span className="text-lg font-semibold text-blue-900">Global Freight Solutions</span>
+    </div>
+    {/* Service 2 */}
+    <div
+      className="flex items-center gap-4 p-6 transition bg-white shadow cursor-pointer rounded-xl hover:bg-blue-50"
+      onClick={() => window.location.href = "/services"}
+    >
+      <span className="text-3xl text-blue-700">
+        {/* Example icon: FaClipboardList */}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6M9 9h6m-6 4h6m-6 4h6" /></svg>
+      </span>
+      <span className="text-lg font-semibold text-blue-900">Customs & Compliance</span>
+    </div>
+    {/* Service 3 */}
+    <div
+      className="flex items-center gap-4 p-6 transition bg-white shadow cursor-pointer rounded-xl hover:bg-blue-50"
+      onClick={() => window.location.href = "/services"}
+    >
+      <span className="text-3xl text-blue-700">
+        {/* Example icon: FaWarehouse */}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9-7 9 7v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8z" /></svg>
+      </span>
+      <span className="text-lg font-semibold text-blue-900">Warehousing & Distribution</span>
+    </div>
+  </div>
+</section>
 
+{/*team introduction section */}
       <section className="max-w-4xl mx-auto mb-12">
         <h2 className="mb-4 text-2xl font-bold text-blue-900">Meet the Team</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -129,7 +163,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer />
+      
     </main>
   );
 }

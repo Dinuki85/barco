@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children } ) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
        <Header />
         {children}
+        <Footer/>
       </body>
     </html>
     </ClerkProvider>

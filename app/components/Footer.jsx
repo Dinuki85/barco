@@ -57,7 +57,7 @@ export default function Footer() {
 
 
                     {/* Content */}
-                    {/* Content */}
+                    
                     <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
                         <h2 className="mb-3 text-4xl font-bold">
                             <span className="text-white">Barco Global Logistics(PVT) Ltd</span>
