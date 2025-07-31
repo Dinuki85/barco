@@ -3,23 +3,23 @@ import { FaBullseye, FaEye } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
 import MeatTeam from "../components/MeatTeam";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const heading = "About Us";
-const heading2="Why Choose Us";
+const heading2 = "Why Choose Us";
 const letterVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 }
 };
 
 const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.06
-        }
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06
     }
+  }
 };
 
 const zigzagVariants = (direction) => ({
@@ -72,31 +72,31 @@ export default function AboutPage() {
       <section className="grid items-center max-w-5xl grid-cols-1 gap-8 mx-auto mb-16 md:grid-cols-2">
         {/* Left: About Content */}
         <div>
-           <motion.h1
-                              className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
-                              variants={containerVariants}
-                              initial="hidden"
-                              whileInView="visible"
-                              viewport={{ once: false, amount: 0.7 }}
-                          >
-                              {heading.split("").map((char, idx) => (
-                                  <motion.span
-                                      key={idx}
-                                      variants={letterVariants}
-                                      className={char === " " ? "mx-2" : ""}
-                                  >
-                                      {char}
-                                  </motion.span>
-                              ))}
-                          </motion.h1>
-         <motion.p
-      className="mb-6 text-lg text-gray-700"
-                                 initial="hidden"
-                                 whileInView="visible"
-                                 viewport={{ once: false, amount: 0.5 }}
-                                 variants={letterVariants}
-                                 transition={{ duration: 0.6 }}
-                             >
+          <motion.h1
+            className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.7 }}
+          >
+            {heading.split("").map((char, idx) => (
+              <motion.span
+                key={idx}
+                variants={letterVariants}
+                className={char === " " ? "mx-2" : ""}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
+          <motion.p
+            className="mb-6 text-lg text-gray-700"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            variants={letterVariants}
+            transition={{ duration: 0.6 }}
+          >
             Barco Global Logistics (PVT) LTD is a leading provider of global logistics and supply chain solutions, delivering reliability, speed, and transparency for businesses worldwide.
             <br /><br />
             With a global network and a commitment to innovation, we help our clients move goods efficiently and securely across borders.
@@ -115,34 +115,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-    {/* Vision and Mission Sections */}
-<section className="max-w-3xl mx-auto mb-12">
-  {/* Vision */}
-  <motion.div
-    className="flex items-center mb-4"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false, amount: 0.7 }}
-    variants={zigzagVariants("left")}
-  >
-    <FaEye className="mr-3 text-2xl text-blue-900" />
-    <h2 className="text-3xl font-bold text-blue-900">Vision</h2>
-  </motion.div>
-  <AnimatedParagraph text="To be the most trusted logistics partner, enabling seamless global trade and growth for our clients." />
+      {/* Vision and Mission Sections */}
+      <section className="max-w-3xl mx-auto mb-12">
+        {/* Vision */}
+        <motion.div
+          className="flex items-center mb-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.7 }}
+          variants={zigzagVariants("left")}
+        >
+          <FaEye className="mr-3 text-2xl text-blue-900" />
+          <h2 className="text-3xl font-bold text-blue-900">Vision</h2>
+        </motion.div>
+        <AnimatedParagraph text="To be the most trusted logistics partner, enabling seamless global trade and growth for our clients." />
 
-  {/* Mission */}
-  <motion.div
-    className="flex items-center mb-4"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false, amount: 0.7 }}
-    variants={zigzagVariants("right")}
-  >
-    <FaBullseye className="mr-3 text-2xl text-blue-900" />
-    <h2 className="text-3xl font-bold text-blue-900">Mission</h2>
-  </motion.div>
-  <AnimatedParagraph text="Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world." />
-</section>
+        {/* Mission */}
+        <motion.div
+          className="flex items-center mb-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.7 }}
+          variants={zigzagVariants("right")}
+        >
+          <FaBullseye className="mr-3 text-2xl text-blue-900" />
+          <h2 className="text-3xl font-bold text-blue-900">Mission</h2>
+        </motion.div>
+        <AnimatedParagraph text="Deliver innovative, efficient, and transparent logistics solutions that empower businesses to thrive in a connected world." />
+      </section>
       {/*core values section*/}
       <section
         className="relative w-screen left-1/2 -translate-x-1/2 h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center mb-16"
@@ -197,82 +197,82 @@ export default function AboutPage() {
 
       {/* Why Choose Us Section */}
       <section className="max-w-5xl px-4 mx-auto mb-16">
-<motion.h1
-                              className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
-                              variants={containerVariants}
-                              initial="hidden"
-                              whileInView="visible"
-                              viewport={{ once: false, amount: 0.7 }}
-                          >
-                              {heading2.split("").map((char, idx) => (
-                                  <motion.span
-                                      key={idx}
-                                      variants={letterVariants}
-                                      className={char === " " ? "mx-2" : ""}
-                                  >
-                                      {char}
-                                  </motion.span>
-                              ))}
-                          </motion.h1>
-                          
-  <motion.p
-      className="mb-6 text-lg text-gray-700"
-                                 initial="hidden"
-                                 whileInView="visible"
-                                 viewport={{ once: false, amount: 0.5 }}
-                                 variants={letterVariants}
-                                 transition={{ duration: 0.6 }}
-                             >          Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
+        <motion.h1
+          className="font-serif text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.7 }}
+        >
+          {heading2.split("").map((char, idx) => (
+            <motion.span
+              key={idx}
+              variants={letterVariants}
+              className={char === " " ? "mx-2" : ""}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        <motion.p
+          className="mb-6 text-lg text-gray-700"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
+          variants={letterVariants}
+          transition={{ duration: 0.6 }}
+        >          Barco Global Logistics stands out for our reliability, transparency, and customer-first approach. We leverage advanced technology and a dedicated team to ensure your shipments arrive safely and on time, every time. Discover our comprehensive services designed to help your business grow.
         </motion.p>
-       <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
-  {/* Left side buttons */}
-  <div className="flex flex-col gap-6">
-    {[
-      { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-    ].map((service, idx) => (
-      <motion.button
-        key={service.label}
-        className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
-        onClick={() => window.location.href = "/services"}
-        variants={buttonLeftVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.7 }}
-      >
-        {service.icon}
-        {service.label}
-      </motion.button>
-    ))}
-  </div>
+        <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+          {/* Left side buttons */}
+          <div className="flex flex-col gap-6">
+            {[
+              { label: "Global Freight Solutions", icon: <FaShippingFast className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Customs & Compliance", icon: <FaClipboardList className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Warehousing & Distribution", icon: <FaWarehouse className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Supply Chain Management", icon: <FaLink className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Project Cargo Handling", icon: <FaProjectDiagram className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+            ].map((service, idx) => (
+              <motion.button
+                key={service.label}
+                className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
+                onClick={() => window.location.href = "/services"}
+                variants={buttonLeftVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.7 }}
+              >
+                {service.icon}
+                {service.label}
+              </motion.button>
+            ))}
+          </div>
           {/* Vertical line */}
-  <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
-  {/* Right side buttons */}
-  <div className="flex flex-col gap-6">
-    {[
-      { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-      { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
-    ].map((service, idx) => (
-      <motion.button
-        key={service.label}
-        className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
-        onClick={() => window.location.href = "/services"}
-        variants={buttonRightVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.7 }}
-      >
-        {service.icon}
-        {service.label}
-      </motion.button>
-    ))}
-  </div>
-</div>
+          <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
+          {/* Right side buttons */}
+          <div className="flex flex-col gap-6">
+            {[
+              { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Cargo Insurance", icon: <FaShieldAlt className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+              { label: "Last Mile Delivery", icon: <FaRocket className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
+            ].map((service, idx) => (
+              <motion.button
+                key={service.label}
+                className="flex items-center gap-3 px-6 py-3 font-semibold text-blue-900 transition bg-white border border-blue-200 rounded-full shadow group hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-400 hover:text-white"
+                onClick={() => window.location.href = "/services"}
+                variants={buttonRightVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.7 }}
+              >
+                {service.icon}
+                {service.label}
+              </motion.button>
+            ))}
+          </div>
+        </div>
       </section>
 
 
