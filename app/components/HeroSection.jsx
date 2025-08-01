@@ -19,7 +19,7 @@ export default function HeroSection() {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 4500);
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
 
@@ -43,7 +43,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.0}}
           />
         </AnimatePresence>
       </div>

@@ -4,28 +4,28 @@ import React, { useRef, useEffect, useState } from 'react';
 
 const assets = [
   {
-    image: "/assets/barco1.jpg",
-    heading: "Barco Image 1"
+    image: "/assets/barco28.jpg",
+    heading: ""
   },
   {
-    image: "/assets/barco2.jpg",
-    heading: "Barco Image 2"
+    image: "/assets/barco10.jpeg",
+    heading: ""
   },
   {
-    image: "/assets/barco1.jpg",
-    heading: "Barco Image 3"
+    image: "/assets/barco11.jpg",
+    heading: ""
   },
   {
-    image: "/assets/barco2.jpg",
-    heading: "Barco Image 4"
+    image: "/assets/barco14.jpg",
+    heading: ""
   },
    {
-    image: "/assets/barco1.jpg",
-    heading: "Barco Image 1"
+    image: "/assets/barco19.jpeg",
+    heading: ""
   },
   {
-    image: "/assets/barco2.jpg",
-    heading: "Barco Image 2"
+    image: "/assets/barco20.jpg",
+    heading: ""
   },
 ];
 
