@@ -6,9 +6,9 @@ import { HiArrowUpRight } from "react-icons/hi2";
 import { FaCheckCircle } from "react-icons/fa";
 
 const images = [
-    "/assets/barco1.jpg",
-    "/assets/barco2.jpg",
-    "/assets/barco1.jpg"
+    "/assets/barco26.jpg",
+    "/assets/barco10.jpeg",
+    "/assets/barco27.jpg"
 ];
 
 const heading = "Why Choose Us";
@@ -92,11 +92,11 @@ const WhyChooseUsSection = () => {
             <hr className="mb-10 border-t border-gray-200" />
 
             {/* Content Row */}
-            <div className="justify flex flex-col items-center justify-between gap-10 md:flex-row">
+            <div className="flex flex-col items-center justify-between gap-10 justify md:flex-row">
                 {/* Left: Description & List */}
                 <div className="w-full mb-10 md:w-1/2 md:mb-0">
                   <motion.p
-                        className="mb-6 text-justify text-gray-700 text-sm"
+                        className="mb-6 text-sm text-justify text-gray-700"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}

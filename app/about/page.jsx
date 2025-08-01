@@ -82,9 +82,9 @@ export default function AboutPage() {
       {/* Top full-width image */}
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-[200px] md:h-[450px] lg:h-[550px] bg-black">
         <img
-          src="/assets/barco1.png" // <-- use your high quality image path here
+          src="/assets/barco12.png" // <-- use your high quality image path here
           alt="About Barco Global Logistics"
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-full"
           loading="eager"
         />
         {/* Optional overlay for readability */}
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
 
         {/* Why Choose Us Section */}
-        <section className="max-w-6xl mx-auto px-4 mb-20">
+        <section className="max-w-6xl px-4 mx-auto mb-20">
           {/* Heading + Image Grid */}
           <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
             {/* Left: Heading & Slogan */}
@@ -127,21 +127,21 @@ export default function AboutPage() {
             </div>
 
             {/* Right: Stacked Carousel */}
-            <div className="relative w-full h-72 md:h-80 lg:h-96 overflow-hidden rounded-xl shadow-xl">
+            <div className="relative w-full overflow-hidden shadow-xl h-72 md:h-80 lg:h-96 rounded-xl">
               <img
-                src="/assets/barco1.png"
+                src="/assets/barco14.jpg"
                 alt="Stack 1"
-                className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack1"
+                className="absolute inset-0 object-cover w-full h-full rounded-xl animate-stack1"
               />
               <img
-                src="/assets/barco1.jpg"
+                src="/assets/barco30.jpg"
                 alt="Stack 2"
-                className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack2"
+                className="absolute inset-0 object-cover w-full h-full rounded-xl animate-stack2"
               />
               <img
-                src="/assets/barco2.jpg"
+                src="/assets/barco31.jpg"
                 alt="Stack 3"
-                className="absolute inset-0 w-full h-full object-cover rounded-xl animate-stack3"
+                className="absolute inset-0 object-cover w-full h-full rounded-xl animate-stack3"
               />
 
               {/* Stack animation styles */}
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
           {/* Centered and Justified Paragraph */}
           <motion.p
-            className="mt-12 text-base leading-relaxed text-justify text-gray-700 font-sans max-w-4xl mx-auto px-2"
+            className="max-w-4xl px-2 mx-auto mt-12 font-sans text-base leading-relaxed text-justify text-gray-700"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -289,7 +289,7 @@ export default function AboutPage() {
           </h3>
 
           {/* --------- ADD TAB + PARAGRAPH SECTION ABOVE BUTTONS --------- */}
-          <div className="flex gap-6 mb-12 mt-8 items-start">
+          <div className="flex items-start gap-6 mt-8 mb-12">
             {/* Left side - tab list */}
             <div className="flex flex-col justify-start gap-6 min-w-[140px]">
               {Object.keys(tabContent).map((tab) => {
@@ -317,7 +317,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-gray-700 text-justify flex-1"
+              className="flex-1 text-justify text-gray-700"
             >
               {tabContent[selectedTab]}
             </motion.p>
@@ -357,7 +357,7 @@ export default function AboutPage() {
             <div className="hidden md:block h-[340px] w-0.5 bg-blue-700 mx-8"></div>
 
             {/* Right side buttons */}
-            <div className="flex flex-col gap-6 w-full md:w-1/2">
+            <div className="flex flex-col w-full gap-6 md:w-1/2">
               {[
                 { label: "E-Commerce Logistics", icon: <FaShoppingCart className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
                 { label: "Temperature Controlled Transport", icon: <FaSnowflake className="text-2xl text-blue-700 transition-colors group-hover:text-black" /> },
@@ -382,20 +382,20 @@ export default function AboutPage() {
           </div>
         </section>
         {/* New Large Image + Text Section */}
-        <section className="max-w-6xl mx-auto mt-20 px-4 w-full">
-          <div className="flex flex-col md:flex-row items-center gap-10">
+        <section className="w-full max-w-6xl px-4 mx-auto mt-20">
+          <div className="flex flex-col items-center gap-10 md:flex-row">
 
             {/* Left: Image with no animation */}
             <ParallaxImage
-              src="/assets/barco1.png" // Replace with your actual large image path
+              src="/assets/barco34.jpg" // Replace with your actual large image path
               alt="Elevating Business through Next-Level Logistics"
               className="w-full md:w-1/2" // Ensures the image takes up half of the width
             />
 
             {/* Right: Text content */}
-            <div className="w-full md:w-1/2 text-gray-700 text-sm leading-relaxed">
-              <h2 className="text-xl font-semibold mb-6 ">Why Choose Barco Global Logistics(PVT) Ltd?</h2>
-              <ol className="list-decimal list-inside space-y-4">
+            <div className="w-full text-sm leading-relaxed text-gray-700 md:w-1/2">
+              <h2 className="mb-6 text-xl font-semibold ">Why Choose Barco Global Logistics(PVT) Ltd?</h2>
+              <ol className="space-y-4 list-decimal list-inside">
                 <li><strong>Reliability:</strong> Our track record speaks for itself. With a commitment to on-time deliveries and secure handling, your cargo is in safe hands.</li>
                 <li><strong>Innovation:</strong> In a rapidly evolving industry, we stay ahead of the curve by adopting cutting-edge technologies and creative solutions that streamline your supply chain.</li>
                 <li><strong>Global Reach:</strong> No destination is too far. Our extensive network of partners and agents spans the globe, ensuring your goods reach their destination, no matter where that may be.</li>
@@ -409,30 +409,29 @@ export default function AboutPage() {
 
 
         {/* Beyond Logistics Image Grid Section */}
-        <section className="max-w-6xl mx-auto mt-20 px-4">
+        <section className="max-w-6xl px-4 mx-auto mt-20">
           {/* Subheading */}
           <div className="mb-10 text-center">
-            <h2 className="text-3xl font-extrabold text-black mb-2">Beyond Logistics, It's Our Passion</h2>
-            <p className="text-gray-600 text-base">A visual journey through our commitment, precision, and innovation</p>
-            <div className="w-20 h-100 mx-auto mt-4 bg-blue-600 rounded-full"></div>
+            <h2 className="mb-2 text-3xl font-extrabold text-black">Beyond Logistics, It's Our Passion</h2>
+            <p className="text-base text-gray-600">A visual journey through our commitment, precision, and innovation</p>
+            <div className="w-20 mx-auto mt-4 bg-blue-600 rounded-full h-100"></div>
           </div>
 
           {/* Image Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              "/assets/barco1.png",
-              "/assets/barco1.png",
-              "/assets/barco1.png",
-              "/assets/barco1.png",
-              "/assets/barco1.png",
-              "/assets/barco1.png"
+              "/assets/barco6.jpg",
+              "/assets/barco11.jpg",
+              "/assets/barco21.jpeg",
+              
+             
 
             ].map((src, idx) => (
               <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src={src}
                   alt={`Gallery Image ${idx + 1}`}
-                  className="w-full h-64 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="object-cover w-full h-64 transition-transform duration-300 ease-in-out hover:scale-105"
                   loading="lazy"
                 />
               </div>
