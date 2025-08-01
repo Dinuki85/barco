@@ -30,21 +30,20 @@ export default function HeroSection() {
   return (
     <section className="relative flex items-center justify-center w-full min-h-screen overflow-hidden bg-black md:items-center sm:items-center">
       {/* Video Slides */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full ">
         <AnimatePresence initial={false} >
           <motion.video
-            key={slides[current].video}
-            src={slides[current].video}
-            autoPlay
-            muted
-            loop
-            
-            className="absolute inset-0 object-cover w-full h-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.0}}
-          />
+  key={slides[current].video}
+  src={slides[current].video}
+  autoPlay
+  muted
+  loop
+  className="absolute top-0 left-0 object-cover object-center w-screen h-screen"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 1.0 }}
+/>
         </AnimatePresence>
       </div>
 
