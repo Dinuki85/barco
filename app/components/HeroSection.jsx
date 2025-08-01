@@ -6,7 +6,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const slides = [
  
    {
-    video: "/assets/barco5.mp4",
+    video: "/assets/barco4video.mp4",
     heading: "Customer-Focused Service",
   },
 ];
