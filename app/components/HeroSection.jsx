@@ -1,13 +1,26 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const slides = [
-  { image: "/assets/barco8.jpg", label: "Warehouse" },
-  { image: "/assets/barco21.jpeg", label: "Transport" },
-  { image: "/assets/barco22.jpg", label: "Shipping" },
+  { image: "/assets/barco8.jpg" },
+  { image: "/assets/barco21.jpeg" },
+  { image: "/assets/barco22.jpg" },
 ];
+
+const heading = "BARCO GLOBAL LOGISTICS (PVT) LTD";
+
+const letterVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06 },
+  },
+};
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
@@ -19,10 +32,6 @@ export default function HeroSection() {
     }, 3000);
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
-
-  const goTo = (idx) => setCurrent(idx);
-  const prev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  const next = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   return (
     <>
@@ -58,76 +67,32 @@ export default function HeroSection() {
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
 
-          {/* Bottom curved label */}
-          <div
-            className="absolute px-4 py-3 transform -translate-x-1/2 bottom-4 left-1/2 rounded-2xl"
-            style={{
-              background: "linear-gradient(to top, rgba(0,51,102,0.2), transparent)",
-              backdropFilter: "blur(3px)",
-              borderRadius: "2rem",
-            }}
-          >
-            <motion.div
-              key={slides[current].label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-end justify-center gap-[4px] sm:gap-[6px] md:gap-[8px] lg:gap-[10px]"
+          {/* Centered Animated Heading (fixed text) */}
+          <div className="absolute inset-x-0 flex justify-center pointer-events-none bottom-20">
+            <motion.h1
+              className="font-serif text-4xl font-bold text-center uppercase select-none sm:text-5xl md:text-6xl lg:text-7xl"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              style={{
+                background: "linear-gradient(90deg, #003366, #66b2ff)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                textFillColor: "transparent",
+              }}
             >
-              {slides[current].label.split("").map((letter, idx) => {
-                const offset = Math.sin(idx / 1.5) * 10;
-                return (
-                  <span
-                    key={idx}
-                    className="text-[1.8rem] sm:text-[2.2rem] md:text-[2.5rem] lg:text-[2.8rem] font-bold"
-                    style={{
-                      transform: `translateY(-${offset}px) rotate(${offset * 0.2}deg)`,
-                      background: "linear-gradient(90deg, #003366, #66b2ff)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      fontFamily: "'Playfair Display', serif",
-                      userSelect: "none",
-                      display: "inline-block",
-                    }}
-                  >
-                    {letter}
-                  </span>
-                );
-              })}
-            </motion.div>
+              {heading.split("").map((char, idx) => (
+                <motion.span
+                  key={idx}
+                  variants={letterVariants}
+                  className={char === " " ? "mx-2" : ""}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.h1>
           </div>
-        </div>
-
-        {/* Navigation dots */}
-        <div className="absolute z-30 flex gap-2 left-4 sm:left-8 bottom-20 sm:bottom-12">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goTo(idx)}
-              className={`w-3 h-3 rounded-full border-2 border-white transition ${
-                current === idx ? "bg-white" : "bg-transparent"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Prev/Next buttons */}
-        <div className="absolute z-30 flex gap-3 right-4 sm:right-8 bottom-16 sm:bottom-12">
-          <button
-            onClick={prev}
-            className="p-2 text-blue-900 transition rounded-full bg-white/70 hover:bg-white"
-            aria-label="Previous slide"
-          >
-            <FiChevronLeft size={24} />
-          </button>
-          <button
-            onClick={next}
-            className="p-2 text-blue-900 transition rounded-full bg-white/70 hover:bg-white"
-            aria-label="Next slide"
-          >
-            <FiChevronRight size={24} />
-          </button>
         </div>
       </section>
     </>
