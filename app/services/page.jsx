@@ -12,9 +12,9 @@ import {
 import MeatTeam from "../components/MeatTeam";
 
 const slides = [
-  { image: "/assets/barco11.jpg" },
+  { image: "/assets/barco14.jpg" },
   { image: "/assets/barco13.jpeg" },
-  { image: "/assets/barco18.jpg" },
+  { image: "/assets/barco11.jpg" },
 ];
 
 const heading = "Logistics Capabilities";
@@ -125,7 +125,7 @@ export default function ServicesPage() {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 2000);
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
 
@@ -134,20 +134,22 @@ export default function ServicesPage() {
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
-      <div className="relative w-full h-[550px] pt-16">
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={slides[current].image}
-            src={slides[current].image}
-            alt={`Slide ${current + 1}`}
-            className="absolute inset-0 object-cover w-full h-full"
-            initial={{ opacity: 0, scale: 1.2 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </AnimatePresence>
-      </div>
+     {/* Hero Section */}
+<div className="relative w-full h-[550px] pt-16 overflow-hidden">
+  {slides.map((slide, idx) => (
+    <motion.img
+      key={idx}
+      src={slide.image}
+      alt={`Slide ${idx + 1}`}
+      className="absolute inset-0 object-cover w-full h-full"
+      initial={{ scale: 1.1, opacity: 0.15 }}
+      animate={{ scale: 1, opacity: 0.2 }}
+      transition={{ duration: 10, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
+      draggable={false}
+      style={{ zIndex: idx + 1 }}
+    />
+  ))}
+</div>
 
       {/* Heading */}
       <div className="relative w-full px-4 pt-10 pb-0 md:px-[8%] lg:px-[10%]">
@@ -161,7 +163,11 @@ export default function ServicesPage() {
               viewport={{ once: true, amount: 0.7 }}
             >
               {heading.split("").map((char, idx) => (
-                <motion.span key={idx} variants={letterVariants} className={char === " " ? "mx-2" : ""}>
+                <motion.span
+                  key={idx}
+                  variants={letterVariants}
+                  className={char === " " ? "mx-2" : ""}
+                >
                   {char}
                 </motion.span>
               ))}
@@ -183,28 +189,32 @@ export default function ServicesPage() {
           </div>
 
           <motion.ul
-  className="grid flex-1 max-w-2xl grid-cols-1 gap-6 py-3 font-serif list-none lg:text-sm sm:grid-cols-2 md:grid-cols-2 sm:text-lg"
-  variants={ulVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.5 }}
->
-  {[
-    [MdWarehouse, "Warehousing and Distribution"],
-    [FaShippingFast, "Freight Forwarding"],
-    [GiCargoCrate, "Supply Chain Management"],
-    [MdOutlineLocalShipping, "E‑commerce Logistics"],
-    [MdOutlineSupportAgent, "Last‑Mile Delivery"],
-    [MdWarehouse, "Inventory Management"],
-    [FaShippingFast, "Customs Clearance"],
-    [GiCargoCrate, "Packaging Solutions"],
-    [MdOutlineLocalShipping, "Express Delivery"],
-  ].map(([Icon, label], i) => (
-    <motion.li key={i} variants={liVariants} className="flex items-center gap-2">
-      <Icon className="text-xl text-blue-700" /> {label}
-    </motion.li>
-  ))}
-</motion.ul>
+            className="grid flex-1 max-w-2xl grid-cols-1 gap-6 py-3 font-serif list-none lg:text-sm sm:grid-cols-2 md:grid-cols-2 sm:text-lg"
+            variants={ulVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            {[
+              [MdWarehouse, "Warehousing and Distribution"],
+              [FaShippingFast, "Freight Forwarding"],
+              [GiCargoCrate, "Supply Chain Management"],
+              [MdOutlineLocalShipping, "E‑commerce Logistics"],
+              [MdOutlineSupportAgent, "Last‑Mile Delivery"],
+              [MdWarehouse, "Inventory Management"],
+              [FaShippingFast, "Customs Clearance"],
+              [GiCargoCrate, "Packaging Solutions"],
+              [MdOutlineLocalShipping, "Express Delivery"],
+            ].map(([Icon, label], i) => (
+              <motion.li
+                key={i}
+                variants={liVariants}
+                className="flex items-center gap-2"
+              >
+                <Icon className="text-xl text-blue-700" /> {label}
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
       </div>
 
@@ -226,11 +236,14 @@ export default function ServicesPage() {
             <motion.div
               key={activeService.id + "-desc"}
               initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
               className="relative z-10 max-h-[450px] overflow-y-auto p-6"
             >
-              <h2 className="mb-4 text-4xl font-semibold text-center text-slate-900">{activeService.title}</h2>
+              <h2 className="mb-4 text-4xl font-semibold text-center text-slate-900">
+                {activeService.title}
+              </h2>
               <p className="font-sans text-sm leading-relaxed text-center text-gray-700">
                 {activeService.description}
               </p>
@@ -244,7 +257,9 @@ export default function ServicesPage() {
               key={id}
               onClick={() => setActiveId(id)}
               className={`relative text-sm py-2 text-left transition-colors duration-300 ${
-                id === activeId ? "text-blue-800 font-semibold" : "text-gray-500 hover:text-blue-700"
+                id === activeId
+                  ? "text-blue-800 font-semibold"
+                  : "text-gray-500 hover:text-blue-700"
               }`}
             >
               <span
@@ -259,53 +274,53 @@ export default function ServicesPage() {
           ))}
         </nav>
       </div>
-{/* Accordion Section */}
-<div className="flex justify-center w-full px-4 py-16">
-  <div className="flex flex-col w-full gap-10 lg:flex-row max-w-7xl md:px-8">
-    <div className="flex-1 space-y-4">
-      {additionalServices.map(({ id, title, description }) => {
-        const isOpen = accordionOpen === id;
-        return (
-          <div key={id} className="pb-2 border-b">
-            <button
-              onClick={() => setAccordionOpen(isOpen ? "" : id)}
-              className="flex items-center justify-between w-full text-lg font-semibold text-left transition-colors text-slate-800 hover:text-blue-700"
-            >
-              <h4>{title}</h4>
-              <span className="text-blue-700">{isOpen ? <FaMinus /> : <FaPlus />}</span>
-            </button>
-            <AnimatePresence>
-              {isOpen && (
-                <motion.p
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-2 font-sans text-sm leading-relaxed text-gray-600"
-                >
-                  {description}
-                </motion.p>
-              )}
-            </AnimatePresence>
+      {/* Accordion Section */}
+      <div className="flex justify-center w-full px-4 py-16">
+        <div className="flex flex-col w-full gap-10 lg:flex-row max-w-7xl md:px-8">
+          <div className="flex-1 space-y-4">
+            {additionalServices.map(({ id, title, description }) => {
+              const isOpen = accordionOpen === id;
+              return (
+                <div key={id} className="pb-2 border-b">
+                  <button
+                    onClick={() => setAccordionOpen(isOpen ? "" : id)}
+                    className="flex items-center justify-between w-full text-lg font-semibold text-left transition-colors text-slate-800 hover:text-blue-700"
+                  >
+                    <h4>{title}</h4>
+                    <span className="text-blue-700">
+                      {isOpen ? <FaMinus /> : <FaPlus />}
+                    </span>
+                  </button>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.p
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-2 font-sans text-sm leading-relaxed text-gray-600"
+                      >
+                        {description}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-    <div className="w-full lg:w-[40%]">
-      <img
-        src="/assets/barco10.jpeg"
-        alt="Additional Services"
-        className="object-cover w-full h-full rounded-lg shadow-md"
-      />
-    </div>
-  </div>
-</div>
+          <div className="w-full lg:w-[40%]">
+            <img
+              src="/assets/barco10.jpeg"
+              alt="Additional Services"
+              className="object-cover w-full h-full rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </div>
 
-   <div className="w-full px-0 mx-auto">
-             <MeatTeam />
-           </div>
-   
-      
+      <div className="w-full px-0 mx-auto">
+        <MeatTeam />
+      </div>
     </div>
   );
 }
