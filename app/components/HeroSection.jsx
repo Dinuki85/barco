@@ -39,6 +39,7 @@ export default function HeroSection() {
         muted
         loop
         playsInline
+        preload="auto"
         className="object-contain w-full h-auto md:object-cover md:h-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
