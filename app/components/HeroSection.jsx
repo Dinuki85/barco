@@ -4,13 +4,10 @@ import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const slides = [
-  { image: "/assets/barco8.jpg" },
-  { image: "/assets/barco21.jpeg" },
-  { image: "/assets/barco22.jpg" },
+  { image: "/assets/barco8.jpg", label: "Warehouse" },
+  { image: "/assets/barco21.jpeg", label: "Transport" },
+  { image: "/assets/barco22.jpg", label: "Shipping" },
 ];
-
-// Center words in same order as slides, one per slide
-const centerWords = ["", " ", " "];
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
@@ -29,7 +26,6 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Google Fonts preload */}
       <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet"
@@ -59,38 +55,46 @@ export default function HeroSection() {
             );
           })}
 
-          {/* Dark overlay for contrast */}
+          {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
 
-          {/* Show only the current word */}
+          {/* Bottom curved label */}
           <div
-            className="absolute max-w-xl px-4 py-3 top-1/2 left-1/2"
+            className="absolute px-4 py-3 transform -translate-x-1/2 bottom-4 left-1/2 rounded-2xl"
             style={{
-              transform: "translate(-50%, -50%)",
+              background: "linear-gradient(to top, rgba(0,51,102,0.2), transparent)",
+              backdropFilter: "blur(3px)",
+              borderRadius: "2rem",
             }}
           >
-            <motion.span
-              key={centerWords[current]} // key to animate on change
+            <motion.div
+              key={slides[current].label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.7 }}
-              style={{
-                background: "linear-gradient(90deg, #003366, #66b2ff)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                color: "transparent",
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: "700",
-                fontSize: "2.5rem", // bigger font size for single word
-                userSelect: "none",
-                whiteSpace: "nowrap",
-                display: "inline-block",
-              }}
+              transition={{ duration: 0.6 }}
+              className="flex items-end justify-center gap-[4px] sm:gap-[6px] md:gap-[8px] lg:gap-[10px]"
             >
-              {centerWords[current]}
-            </motion.span>
+              {slides[current].label.split("").map((letter, idx) => {
+                const offset = Math.sin(idx / 1.5) * 10;
+                return (
+                  <span
+                    key={idx}
+                    className="text-[1.8rem] sm:text-[2.2rem] md:text-[2.5rem] lg:text-[2.8rem] font-bold"
+                    style={{
+                      transform: `translateY(-${offset}px) rotate(${offset * 0.2}deg)`,
+                      background: "linear-gradient(90deg, #003366, #66b2ff)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      fontFamily: "'Playfair Display', serif",
+                      userSelect: "none",
+                      display: "inline-block",
+                    }}
+                  >
+                    {letter}
+                  </span>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
 
