@@ -3,12 +3,10 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const slides = [
-  { image: "/assets/barco8.jpg" },
-  { image: "/assets/barco21.jpeg" },
-  { image: "/assets/barco22.jpg" },
+  { image: "/assets/barco8.jpg", heading: "BARCO GLOBAL LOGISTICS (PVT) LTD" },
+  { image: "/assets/barco21.jpeg", heading: "INTERNATIONAL FREIGHT SOLUTIONS" },
+  { image: "/assets/barco22.jpg", heading: "RELIABLE SUPPLY CHAIN PARTNER" },
 ];
-
-const heading = "BARCO GLOBAL LOGISTICS (PVT) LTD";
 
 const letterVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -35,8 +33,9 @@ export default function HeroSection() {
 
   return (
     <>
+      {/* Import Quicksand font from Google Fonts */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
         rel="stylesheet"
       />
 
@@ -67,24 +66,22 @@ export default function HeroSection() {
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
 
-          {/* Responsive Positioned Heading */}
-          <div
-            className="absolute inset-x-0 flex justify-center pointer-events-none  bottom-6 md:top-1/2 md:bottom-auto md:transform md:-translate-y-1/2"
-          >
+          {/* Centered Heading with Transparent Outline */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <motion.h1
-              className="font-serif text-3xl font-bold text-center uppercase select-none sm:text-4xl md:text-6xl lg:text-7xl"
+              key={slides[current].heading}
+              className="text-3xl font-bold text-center uppercase select-none sm:text-4xl md:text-6xl lg:text-7xl"
+              style={{
+                fontFamily: "'Quicksand', sans-serif",
+                color: "transparent",
+                WebkitTextStroke: "1.5px #66ccff",
+                WebkitTextFillColor: "transparent",
+              }}
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              style={{
-                background: "linear-gradient(90deg, #003366, #66b2ff)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                textFillColor: "transparent",
-              }}
             >
-              {heading.split("").map((char, idx) => (
+              {slides[current].heading.split("").map((char, idx) => (
                 <motion.span
                   key={idx}
                   variants={letterVariants}
