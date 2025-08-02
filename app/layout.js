@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ This works because it's a server component
+
 export const metadata = {
   title: "Barco Global Logistics (PVT) LTD",
   description: "We move your business forward through global logistics.",
