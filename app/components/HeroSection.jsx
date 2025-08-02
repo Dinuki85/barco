@@ -40,8 +40,8 @@ export default function HeroSection() {
         rel="stylesheet"
       />
 
-      <section className="relative w-full overflow-hidden bg-black min-h-[300px] md:min-h-[400px] lg:min-h-screen">
-        <div className="relative w-full h-auto min-h-[220px] md:min-h-[300px] lg:h-screen">
+      <section className="relative w-full h-screen overflow-hidden bg-black">
+        <div className="relative w-full h-full">
           {slides.map((slide, index) => {
             const isActive = current === index;
             return (
@@ -58,7 +58,7 @@ export default function HeroSection() {
                   opacity: { duration: 1.5, ease: "easeInOut" },
                   scale: { duration: 3, ease: "easeInOut" },
                 }}
-                className="absolute top-0 left-0 w-full h-[220px] md:h-[300px] lg:h-screen object-cover"
+                className="absolute top-0 left-0 object-cover w-full h-full"
                 draggable={false}
               />
             );
@@ -67,10 +67,12 @@ export default function HeroSection() {
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
 
-          {/* Centered Animated Heading (fixed text) */}
-          <div className="absolute inset-x-0 flex justify-center pointer-events-none bottom-20">
+          {/* Responsive Positioned Heading */}
+          <div
+            className="absolute inset-x-0 flex justify-center pointer-events-none  bottom-6 md:top-1/2 md:bottom-auto md:transform md:-translate-y-1/2"
+          >
             <motion.h1
-              className="font-serif text-4xl font-bold text-center uppercase select-none sm:text-5xl md:text-6xl lg:text-7xl"
+              className="font-serif text-3xl font-bold text-center uppercase select-none sm:text-4xl md:text-6xl lg:text-7xl"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -86,7 +88,7 @@ export default function HeroSection() {
                 <motion.span
                   key={idx}
                   variants={letterVariants}
-                  className={char === " " ? "mx-2" : ""}
+                  className={char === " " ? "mx-1" : ""}
                 >
                   {char}
                 </motion.span>
