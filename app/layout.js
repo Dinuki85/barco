@@ -1,38 +1,35 @@
-"use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
 
-import Footer from "./components/Footer";
-import { usePathname } from "next/navigation";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import MainLayout from "./MainLayout";
+
+
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-config.autoAddCss = false
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
+// ✅ This works because it's a server component
+export const metadata = {
+  title: "Barco Global Logistics (PVT) LTD",
+  description: "We move your business forward through global logistics.",
+};
 
-
-export default function RootLayout({ children } ) {
-
-  const pathname = usePathname();
+export default function RootLayout({ children }) {
   return (
-    
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-       <Header />
-        {children}
-        {pathname !== "/contact" && <Footer />}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
-   
   );
 }
