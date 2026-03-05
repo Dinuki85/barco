@@ -8,7 +8,7 @@ import { motion, useInView } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 // Animation variants
-const heading = "Logistics Capabilities";
+const heading = "Business Capabilities";
 
 const letterVariants = {
     hidden: { opacity: 0, y: 40 },

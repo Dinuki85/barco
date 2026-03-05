@@ -54,7 +54,7 @@ const Header = ({ forceBlack = false }) => {
           <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24">
             <Image
               src="/logo.png"
-              alt="Barco Logo"
+              alt="Business Logo"
               width={96}
               height={96}
               className="object-contain"

@@ -43,9 +43,9 @@ const buttonRightVariants = {
 };
 
 const tabContent = {
-  History: `At Barco Global Logistics (Pvt) Ltd, we are more than a logistics provider — we are the driving force behind efficient, reliable, and innovative supply chain solutions. Since our inception, we have been dedicated to bridging the gap between businesses and markets with precision, speed, and care. Founded on the principles of integrity and customer-centric service, Barco Global Logistics has evolved into a trusted global partner, delivering tailored logistics and freight services that empower our clients to thrive in a dynamic international marketplace. With decades of expertise and a forward-thinking approach, we continue to set the standard for excellence in logistics across borders and industries.`,
+  History: `At Business Artica  (Pvt) Ltd, we are more than a logistics provider — we are the driving force behind efficient, reliable, and innovative supply chain solutions. Since our inception, we have been dedicated to bridging the gap between businesses and markets with precision, speed, and care. Founded on the principles of integrity and customer-centric service, Barco Global Logistics has evolved into a trusted global partner, delivering tailored logistics and freight services that empower our clients to thrive in a dynamic international marketplace. With decades of expertise and a forward-thinking approach, we continue to set the standard for excellence in logistics across borders and industries.`,
   Vision: `To transform the logistics industry by setting the highest benchmarks for innovation, efficiency, and sustainability. We envision a world where businesses connect effortlessly, borders become gateways, and opportunities are boundless. Through advanced technology, eco-friendly solutions, and an unwavering commitment to excellence, we strive to be the driving force that reshapes global trade. By consistently surpassing expectations, embracing progress, and delivering unmatched value, we aim to be the trusted global leader shaping the future of logistics.`,
-  Mission: `At Barco Global Logistics (Pvt) Ltd, our mission is to be a catalyst for global trade and business growth. We are committed to delivering innovative, dependable, and customized logistics solutions that enable our clients to succeed in an ever-evolving marketplace. Driven by excellence and a customer-first mindset, we work tirelessly to create seamless supply chains, overcome logistical challenges, and unlock new opportunities. Leveraging our expertise, advanced technology, and relentless dedication, we strive to be the trusted partner that businesses rely on to navigate the complexities of logistics with confidence and ease.`,
+  Mission: `At Business Artica (Pvt) Ltd, our mission is to be a catalyst for global trade and business growth. We are committed to delivering innovative, dependable, and customized logistics solutions that enable our clients to succeed in an ever-evolving marketplace. Driven by excellence and a customer-first mindset, we work tirelessly to create seamless supply chains, overcome logistical challenges, and unlock new opportunities. Leveraging our expertise, advanced technology, and relentless dedication, we strive to be the trusted partner that businesses rely on to navigate the complexities of logistics with confidence and ease.`,
 };
 
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-[200px] md:h-[450px] lg:h-[550px] bg-black">
         <img
           src="/assets/barco12.png" // <-- use your high quality image path here
-          alt="About Barco Global Logistics"
+          alt="About Business Artica"
           className="object-cover w-full h-full"
           loading="eager"
         />
@@ -186,7 +186,7 @@ export default function AboutPage() {
             variants={letterVariants}
             transition={{ duration: 0.6 }}
           >
-            At Barco Global Logistics (Pvt) Ltd, we are more
+            At Business Artica (Pvt) Ltd, we are more
             than just a logistics provider — we are
             partners in global connectivity, builders of
             supply chains, and catalysts for business transformation.
@@ -412,8 +412,8 @@ export default function AboutPage() {
         <section className="max-w-6xl px-4 mx-auto mt-20">
           {/* Subheading */}
           <div className="mb-10 text-center">
-            <h2 className="mb-2 text-3xl font-extrabold text-black">Beyond Logistics, It's Our Passion</h2>
-            <p className="text-base text-gray-600">A visual journey through our commitment, precision, and innovation</p>
+            <h2 className="mb-2 text-3xl font-extrabold text-black">Beyond Business, It's Our Aim</h2>
+            <p className="text-base text-gray-600">A  journey through our commitment, precision, and innovation</p>
             <div className="w-20 mx-auto mt-4 bg-blue-600 rounded-full h-100"></div>
           </div>
 

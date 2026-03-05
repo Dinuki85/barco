@@ -103,7 +103,7 @@ const WhyChooseUsSection = () => {
                         variants={letterVariants}
                         transition={{ duration: 0.6 }}
                     >
-                        At Barco Global Logistics, we do much more than 
+                        At Busienss Artica, we do much more than 
                         simply transport goods — we drive business growth
                          and enable success across borders. As a premier provider
                           of comprehensive global logistics and freight forwarding

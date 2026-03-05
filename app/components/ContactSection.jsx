@@ -37,25 +37,25 @@ export default function ContactSection() {
         <div className="flex items-center gap-3 mb-2">
           <FaBuilding className="text-2xl text-blue-900 transition-colors duration-300 group-hover:text-blue-100" />
           <span className="text-xl font-bold text-blue-900 transition-colors duration-300 group-hover:text-white">
-            Barco Global Logistics (PVT) LTD
+           Business Artica (Pvt) Ltd
           </span>
         </div>
         <div className="flex items-center gap-3">
           <FaMapMarkerAlt className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
           <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            123 Marine Drive, Colombo 03, Sri Lanka
+            New City, Colombo 05, Sri Lanka
           </span>
         </div>
         <div className="flex items-center gap-3">
           <FaPhoneAlt className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
           <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            +94 11 234 5678
+            +94 52 222 5652
           </span>
         </div>
         <div className="flex items-center gap-3">
           <FaEnvelope className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
           <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            info@barcologistics.com
+            info@business.com
           </span>
         </div>
         <div className="flex items-center gap-3">

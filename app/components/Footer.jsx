@@ -60,9 +60,9 @@ export default function Footer() {
                     
                     <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
                         <h2 className="mb-3 text-4xl font-bold">
-                            <span className="text-white">Barco Global Logistics(PVT) Ltd</span>
+                            <span className="text-white">Business Artica (PVT) Ltd</span>
                         </h2>
-                        <p className="mb-6 text-lg italic">"Beyond Logistics, It's Our Passion"</p>
+                        <p className="mb-6 text-lg italic">"Beyond Business, It's Our Aim"</p>
 
                         {/* Centered Button */}
                         <div className="flex justify-center">
@@ -83,9 +83,9 @@ export default function Footer() {
                     <div>
                         <h3 className="mb-2 text-lg font-semibold text-black">📍 Address</h3>
                         <p>
-                            Level 35, West Tower ,World Trade Center
+                            New City
                             <br />
-                            Colombo 01,
+                            Colombo 05,
                             <br />
                             Sri Lanka
                         </p>
@@ -93,9 +93,9 @@ export default function Footer() {
                     <div>
                         <h3 className="mb-2 text-lg font-semibold text-black">📞 Contact</h3>
                         <p>
-                            Phone: +94 77 123 4567
+                            Phone: +94 65 222 1232
                             <br />
-                            Email: sales@barco.lk
+                            Email: business@gmail.com
                         </p>
                     </div>
                     <div>
@@ -112,7 +112,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="py-4 text-sm text-center text-gray-300 border-t border-gray-600 bg-blue-950">
-                    &copy;  {new Date().getFullYear()}  Barco Global Logistics(Pvt) Ltd. All rights reserved.
+                    &copy;  {new Date().getFullYear()}  Business Artica(Pvt) Ltd. All rights reserved.
                 </div>
             </footer>
         </>
