@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const slides = [
-  { image: "/assets/barco8.jpg", heading: "Busness Artica (PVT) LTD" },
+  { image: "/assets/barco8.jpg", heading: "Business Artica (PVT) LTD" },
   { image: "/assets/barco21.jpeg", heading: "Your Business Idea" },
   { image: "/assets/barco22.jpg", heading: "RELIABLE SUPPLY CHAIN PARTNER" },
 ];

@@ -82,7 +82,7 @@ export default function AboutPage() {
       {/* Top full-width image */}
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-[200px] md:h-[450px] lg:h-[550px] bg-black">
         <img
-          src="/assets/barco12.png" // <-- use your high quality image path here
+          src="/assets/barco2.jpg" // <-- use your high quality image path here
           alt="About Business Artica"
           className="object-cover w-full h-full"
           loading="eager"
