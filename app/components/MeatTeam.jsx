@@ -7,22 +7,22 @@ const teamMembers = [
     image: "/assets/barco1.jpg",
     name: "Alice Johnson",
     position: "CEO",
-    company: "Barco Logistics",
-    email: "alice@barco.com"
+    company: "Business Artica",
+    email: "alice@artica.com"
   },
   {
     image: "/assets/barco2.jpg",
     name: "Bob Smith",
     position: "Operations Manager",
-    company: "Barco Logistics",
-    email: "bob@barco.com"
+    company: "Business Artica",
+    email: "bob@artica.com"
   },
   {
     image: "/assets/barco2.jpg",
     name: "Carol Lee",
     position: "Logistics Specialist",
-    company: "Barco Logistics",
-    email: "carol@barco.com"
+    company: "Business Artica",
+    email: "carol@bartica.com"
   },
   // Add more members as needed
 ];
