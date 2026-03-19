@@ -7,8 +7,8 @@ import { useState } from "react";
 import ParallaxImage from "../components/ParallaxImage";
 
 
-const heading = "About Us";
-const heading2 = "Why Choose Us";
+const heading = "Our Identity";
+const heading2 = "Strategic edge";
 const letterVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 }
@@ -43,9 +43,9 @@ const buttonRightVariants = {
 };
 
 const tabContent = {
-  History: `At Business Artica  (Pvt) Ltd, we are more than a logistics provider — we are the driving force behind efficient, reliable, and innovative supply chain solutions. Since our inception, we have been dedicated to bridging the gap between businesses and markets with precision, speed, and care. Founded on the principles of integrity and customer-centric service, Barco Global Logistics has evolved into a trusted global partner, delivering tailored logistics and freight services that empower our clients to thrive in a dynamic international marketplace. With decades of expertise and a forward-thinking approach, we continue to set the standard for excellence in logistics across borders and industries.`,
-  Vision: `To transform the logistics industry by setting the highest benchmarks for innovation, efficiency, and sustainability. We envision a world where businesses connect effortlessly, borders become gateways, and opportunities are boundless. Through advanced technology, eco-friendly solutions, and an unwavering commitment to excellence, we strive to be the driving force that reshapes global trade. By consistently surpassing expectations, embracing progress, and delivering unmatched value, we aim to be the trusted global leader shaping the future of logistics.`,
-  Mission: `At Business Artica (Pvt) Ltd, our mission is to be a catalyst for global trade and business growth. We are committed to delivering innovative, dependable, and customized logistics solutions that enable our clients to succeed in an ever-evolving marketplace. Driven by excellence and a customer-first mindset, we work tirelessly to create seamless supply chains, overcome logistical challenges, and unlock new opportunities. Leveraging our expertise, advanced technology, and relentless dedication, we strive to be the trusted partner that businesses rely on to navigate the complexities of logistics with confidence and ease.`,
+  History: `Nexa Global was founded on a singular premise: that the future of trade belongs to those who can master its complexity. We didn't just start a logistics company; we engineered a platform for global growth. From our initial launch, we've focused on integrating high-level strategy with granular operational execution. Today, Nexa Global stands as a beacon of intelligent logistics, orchestrating supply chains that are as resilient as they are efficient. We've moved beyond traditional freight forwarding to become the digital backbone for international commerce.`,
+  Vision: `To establish Nexa Global as the definitive standard for intelligent, sustainable, and hyper-efficient global supply chains. We envision a world where logistics is no longer a bottleneck but a competitive advantage. Through proprietary algorithms, a commitment to zero-carbon initiatives, and a passion for architectural excellence in trade, we are building the gateways of tomorrow. Our vision is to empower every global innovator with the tools to connect, scale, and lead in a borderless economy.`,
+  Mission: `Our mission is to architect the world's most adaptive logistics ecosystem. We provide mission-critical supply chain solutions that enable global enterprises to operate with speed, precision, and total transparency. By combining advanced predictive analytics with a relentless focus on client success, we solve the most complex logistical challenges before they even arise. We are the trusted partners that growth-oriented businesses rely on to navigate the global landscape with absolute confidence.`,
 };
 
 
@@ -118,11 +118,11 @@ export default function AboutPage() {
               </motion.h1>
 
               {/* Underline */}
-              <div className="w-100 h-0.5 mt-4 mb-6 bg-gray-500 rounded-full"></div>
+              <div className="w-100 h-0.5 mt-4 mb-6 bg-accent rounded-full"></div>
 
               {/* Subheading */}
-              <h3 className="text-xl font-medium text-blue-900">
-                Beyond Logistics, It's Our Passion
+              <h3 className="text-xl font-bold tracking-tight text-primary">
+                Intelligent Logistics, Orchestrated.
               </h3>
             </div>
 
@@ -179,27 +179,23 @@ export default function AboutPage() {
 
           {/* Centered and Justified Paragraph */}
           <motion.p
-            className="max-w-4xl px-2 mx-auto mt-12 font-sans text-base leading-relaxed text-justify text-gray-700"
+            className="max-w-4xl px-2 mx-auto mt-12 font-sans text-lg leading-relaxed text-justify text-slate-600"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={letterVariants}
             transition={{ duration: 0.6 }}
           >
-            At Business Artica (Pvt) Ltd, we are more
-            than just a logistics provider — we are
-            partners in global connectivity, builders of
-            supply chains, and catalysts for business transformation.
-            With a firm belief in innovation and operational excellence,
-            have continuously evolved to meet the dynamic demands of the
-            logistics landscape. Established with a vision to revolutionize
-            the movement of goods, Barco began its journey with a strong
-            commitment to reliability, agility, and customer satisfaction.
-            Over the years, we have grown into a trusted name in the industry,
-            facilitating seamless trade and transport across borders and industries.
-            Our mission is to empower businesses by delivering tailored logistics solutions
-            that simplify complexity, accelerate growth, and unlock global opportunities.
-            At Barco, we bridge distances — not just geographically, but between ambition and achievement.
+            Nexa Global represents the convergence of deep domain expertise and next-generation 
+            technology. We are more than just a logistics provider — we are the strategic architects 
+            of your growth. Since our inception, we have been committed to simplifying the 
+            complexities of global trade, providing our partners with the speed and precision 
+            required to lead in a competitive world.
+            <br /><br />
+            Our approach is built on a foundation of reliability, transparency, and relentless 
+            innovation. We don't just move cargo; we move your business forward. At Nexa Global, 
+            we bridge the gap between global ambition and local execution, ensuring every 
+            milestone of your supply chain is a step toward greater success.
           </motion.p>
         </section>
 
@@ -393,14 +389,14 @@ export default function AboutPage() {
             />
 
             {/* Right: Text content */}
-            <div className="w-full text-sm leading-relaxed text-gray-700 md:w-1/2">
-              <h2 className="mb-6 text-xl font-semibold ">Why Choose Barco Global Logistics(PVT) Ltd?</h2>
-              <ol className="space-y-4 list-decimal list-inside">
-                <li><strong>Reliability:</strong> Our track record speaks for itself. With a commitment to on-time deliveries and secure handling, your cargo is in safe hands.</li>
-                <li><strong>Innovation:</strong> In a rapidly evolving industry, we stay ahead of the curve by adopting cutting-edge technologies and creative solutions that streamline your supply chain.</li>
-                <li><strong>Global Reach:</strong> No destination is too far. Our extensive network of partners and agents spans the globe, ensuring your goods reach their destination, no matter where that may be.</li>
-                <li><strong>Transparency:</strong> We believe in open communication. Throughout the journey, you’ll have real-time access to tracking and updates, giving you peace of mind.</li>
-                <li><strong>Sustainability:</strong> Responsibility is at the heart of what we do. We’re committed to reducing our environmental footprint and promoting eco-friendly practices.</li>
+            <div className="w-full text-base leading-relaxed text-slate-600 md:w-1/2">
+              <h2 className="mb-6 text-3xl font-black tracking-tighter text-slate-900">The Nexa Advantage</h2>
+              <ol className="space-y-6 list-decimal list-inside">
+                <li><strong className="text-slate-900">Technical Precision:</strong> Our systems are engineered for total accuracy, ensuring your data and cargo are perfectly synchronized.</li>
+                <li><strong className="text-slate-900">Predictive Logic:</strong> We use industry-leading analytics to anticipate bottlenecks and optimize routes before challenges arise.</li>
+                <li><strong className="text-slate-900">Global Connectivity:</strong> Our hyper-scaled network ensures your business has local presence in every major market worldwide.</li>
+                <li><strong className="text-slate-900">Absolute Transparency:</strong> Real-time peering into every movement provides the clarity needed for confident decision-making.</li>
+                <li><strong className="text-slate-900">Resilient Growth:</strong> We architect supply chains that are built to scale, ensuring your logistics infrastructure grows with you.</li>
               </ol>
             </div>
 
