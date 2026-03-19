@@ -3,29 +3,17 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
 
-const heading = "Let's Connect Together";
+const heading = "Next-Gen Connectivity";
 
-const letterVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 }
-};
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.06
-        }
-    }
-};
+// ... (skipping unchanged code)
 
 export default function Footer() {
     return (
         <>
             {/* Heading Section - OUTSIDE FOOTER */}
-            <div className="relative w-full px-4 pt-10 pb-0 text-center md:px-[8%] lg:px-[15%]">
+            <div className="relative w-full px-4 pt-20 pb-0 text-center md:px-[8%] lg:px-[15%]">
                 <motion.h1
-                    className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
+                    className="font-sans text-3xl font-black tracking-tighter leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-900"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -35,86 +23,80 @@ export default function Footer() {
                         <motion.span
                             key={idx}
                             variants={letterVariants}
-                            // For spaces, just render space without extra margin
-                            className={char === " " ? "" : ""}
+                            className={char === " " ? "mx-2" : ""}
                         >
                             {char}
                         </motion.span>
                     ))}
                 </motion.h1>
-
             </div>
 
             {/* Footer starts here */}
-            <footer className="w-full bg-blue-950">
+            <footer className="w-full mt-20 bg-primary">
                 {/* Top Section with Fixed Image Background */}
                 <div
-                    className="relative h-[350px] bg-fixed bg-center bg-cover flex items-center justify-center text-center px-4"
+                    className="relative h-[400px] bg-fixed bg-center bg-cover flex items-center justify-center text-center px-4"
                     style={{ backgroundImage: "url('/assets/barco1.png')" }}
                 >
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/20" />
-
+                    <div className="absolute inset-0 bg-primary/60 backdrop-blur-sm" />
 
                     {/* Content */}
-                    
                     <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
-                        <h2 className="mb-3 text-4xl font-bold">
-                            <span className="text-white">Business Artica (PVT) Ltd</span>
+                        <h2 className="mb-4 text-5xl font-black tracking-tighter">
+                            NEXA<span className="text-accent underline decoration-4 underline-offset-8">GLOBAL</span>
                         </h2>
-                        <p className="mb-6 text-lg italic">"Beyond Business, It's Our Aim"</p>
+                        <p className="mb-10 text-xl font-medium tracking-wide opacity-80">"Intelligent Logistics, Orchestrated"</p>
 
                         {/* Centered Button */}
                         <div className="flex justify-center">
                             <Link href="/contact">
-                                <button className="flex items-center gap-2 px-5 py-2 text-white transition-all duration-300 border border-white rounded-full hover:bg-white hover:text-blue-950">
-
-                                    Contact Us
-                                    <HiArrowUpRight className="text-xl" />
+                                <button className="premium-button bg-accent border-none">
+                                    Start a Conversation
+                                    <HiArrowUpRight className="inline-block ml-2 text-xl" />
                                 </button>
                             </Link>
                         </div>
                     </div>
-
                 </div>
 
                 {/* Contact Details */}
-                <div className="grid gap-6 px-6 py-10 text-sm text-white bg-blue-500 md:px-16 md:grid-cols-3 md:text-base">
-                    <div>
-                        <h3 className="mb-2 text-lg font-semibold text-black">📍 Address</h3>
-                        <p>
-                            New City
+                <div className="grid gap-12 px-6 py-20 text-white bg-accent md:px-16 md:grid-cols-3">
+                    <div className="space-y-4">
+                        <h3 className="text-sm font-black tracking-widest text-primary uppercase">📍 Headquarters</h3>
+                        <p className="text-lg font-medium">
+                            Skyline Tower, 12th Floor
                             <br />
-                            Colombo 05,
+                            Financial District, Colombo 05
                             <br />
                             Sri Lanka
                         </p>
                     </div>
-                    <div>
-                        <h3 className="mb-2 text-lg font-semibold text-black">📞 Contact</h3>
-                        <p>
-                            Phone: +94 65 222 1232
+                    <div className="space-y-4">
+                        <h3 className="text-sm font-black tracking-widest text-primary uppercase">📞 Dispatch & Support</h3>
+                        <p className="text-lg font-medium">
+                            +94 11 234 5678
                             <br />
-                            Email: business@gmail.com
+                            solutions@nexaglobal.io
                         </p>
                     </div>
-                    <div>
-                        <h3 className="mb-2 text-lg font-semibold text-black">⏰ Office Hours</h3>
-                        <p>
-                            Mon - Fri: 8:30 AM – 6:00 PM
+                    <div className="space-y-4">
+                        <h3 className="text-sm font-black tracking-widest text-primary uppercase">⏰ Global Operations</h3>
+                        <p className="text-lg font-medium">
+                            Mon - Fri: 24/7 Priority Support
                             <br />
-                            Saturday: 9:00 AM – 1:00 PM
-                            <br />
-                            Sunday: Closed
+                            Sat - Sun: 09:00 AM – 06:00 PM
                         </p>
                     </div>
                 </div>
 
                 {/* Copyright */}
-                <div className="py-4 text-sm text-center text-gray-300 border-t border-gray-600 bg-blue-950">
-                    &copy;  {new Date().getFullYear()}  Business Artica(Pvt) Ltd. All rights reserved.
+                <div className="py-8 text-sm font-medium text-center text-slate-500 border-t border-slate-800 bg-primary">
+                    &copy; {new Date().getFullYear()} Nexa Global Solutions Ltd. Built for the future of trade.
                 </div>
             </footer>
         </>
+    );
+}        </>
     );
 }

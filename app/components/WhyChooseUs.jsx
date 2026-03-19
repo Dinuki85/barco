@@ -11,41 +11,15 @@ const images = [
     "/assets/barco27.jpg"
 ];
 
-const heading = "Why Choose Us";
+const heading = "Strategic Edge";
 
-const letterVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 }
-};
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.06
-        }
-    }
-};
-
-const listContainer = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.15
-        }
-    }
-};
-
-const listItem = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0 }
-};
+// ... (skipping unchanged code)
 
 const whyList = [
-    "Global network and local expertise",
-    "On-time, secure deliveries",
-    "Advanced tracking and support",
-    "Flexible, customer-focused solutions"
+    "Predictive Intelligence & Global Scale",
+    "Precision-Engineered Supply Chains",
+    "Digital-First Transparency & Control",
+    "Sustainable, Adaptive Growth Solutions"
 ];
 
 const WhyChooseUsSection = () => {
@@ -59,11 +33,11 @@ const WhyChooseUsSection = () => {
     }, []);
 
     return (
-        <section className="w-full px-2 py-16 bg-white sm:px-4 md:px-12 lg:px-24">
+        <section className="w-full px-4 py-24 bg-white sm:px-6 md:px-12 lg:px-24">
             {/* Header Row */}
-            <div className="flex flex-col items-start justify-between mb-8 md:flex-row">
+            <div className="flex flex-col items-start justify-between mb-12 md:flex-row">
                 <motion.h1
-                    className="font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
+                    className="font-sans text-3xl font-black tracking-tighter leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-900"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -81,64 +55,65 @@ const WhyChooseUsSection = () => {
                 </motion.h1>
                 <div className="flex justify-end w-full mt-6 md:w-auto md:mt-0">
                     <Link href="/about" className="flex flex-col items-end cursor-pointer select-none group">
-                        <span className="flex items-center text-xl font-bold transition-colors text-slate-800 group-hover:text-blue-700">
-                            About Us
+                        <span className="flex items-center text-xl font-bold transition-colors text-accent group-hover:text-blue-700">
+                            Our Story
                             <HiArrowUpRight className="ml-2 text-2xl" />
                         </span>
-                        <span className="block w-full h-px mt-1 transition-colors bg-slate-400 group-hover:bg-blue-700"></span>
+                        <span className="block w-full h-px mt-1 transition-colors bg-accent/30 group-hover:bg-blue-700"></span>
                     </Link>
                 </div>
             </div>
-            <hr className="mb-10 border-t border-gray-200" />
+            <hr className="mb-16 border-t border-slate-100" />
 
             {/* Content Row */}
-            <div className="flex flex-col items-center justify-between gap-10 justify md:flex-row">
+            <div className="flex flex-col items-center justify-between gap-16 md:flex-row">
                 {/* Left: Description & List */}
-                <div className="w-full mb-10 md:w-1/2 md:mb-0">
-                  <motion.p
-                        className="mb-6 text-sm text-justify text-gray-700"
+                <div className="w-full md:w-1/2">
+                    <motion.p
+                        className="mb-10 text-lg leading-relaxed text-slate-600"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}
                         variants={letterVariants}
                         transition={{ duration: 0.6 }}
                     >
-                        At Busienss Artica, we do much more than 
-                        simply transport goods — we drive business growth
-                         and enable success across borders. As a premier provider
-                          of comprehensive global logistics and freight forwarding
-                           services, we empower companies of all sizes to seamlessly 
-                           connect with new markets, navigate the complexities of international
-                            trade, and expand their operations with confidence and agility.
-
-With deep expertise in managing intricate supply chains, we design and deliver innovative, 
-efficient, and customized logistics solutions tailored to meet the unique needs of each client.
- Our unwavering commitment to reliability, combined with strong strategic partnerships and 
- cutting-edge technology, ensures that every shipment is handled with precision and care. 
- This dedication to excellence and innovation sets us apart in a competitive industry, 
- making Barco Global Logistics a trusted partner for businesses aiming to thrive in today’s 
- fast-paced global marketplace.
+                        At <span className="font-bold text-slate-900">Nexa Global</span>, we transcend traditional logistics. 
+                        We build the digital infrastructure for modern commerce, enabling businesses to scale 
+                        with unprecedented speed and precision. As an intelligence-driven logistics partner, 
+                        we empower global innovators to navigate complexity with confidence.
+                        <br /><br />
+                        Our methodology combines deep domain expertise with cutting-edge orchestration technology. 
+                        We design resilient supply chains that are not just efficient, but adaptive—ready for 
+                        the challenges of tomorrow's global marketplace.
                     </motion.p>
-                   
+                    
+                    <motion.ul
+                        className="space-y-4"
+                        variants={listContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
+                        {whyList.map((item, idx) => (
+                            <motion.li key={idx} variants={listItem} className="flex items-center gap-3 font-semibold text-slate-800">
+                                <FaCheckCircle className="flex-shrink-0 text-accent" />
+                                {item}
+                            </motion.li>
+                        ))}
+                    </motion.ul>
                 </div>
                 {/* Right: Stacked, auto-sliding images */}
-                <div className="w-full md:w-1/2 flex justify-center relative min-h-[350px]">
+                <div className="w-full md:w-1/2 flex justify-center relative min-h-[400px]">
                     {images.map((src, idx) => (
                         <img
                             key={src + idx}
                             src={src}
-                            alt={`Why Choose Us ${idx + 1}`}
+                            alt={`Strategic Edge ${idx + 1}`}
                             className={`
-                absolute rounded-lg shadow-lg transition-all duration-700
-                ${idx === current ? "opacity-100 scale-100 z-20" : "opacity-0 scale-95 z-10"}
-                ${idx === (current + images.length - 1) % images.length ? "left-8 top-8 opacity-60 scale-90 z-10" : ""}
-                ${idx === (current + images.length - 2) % images.length ? "left-16 top-16 opacity-40 scale-90 z-0" : ""}
-                w-[80vw] max-w-[400px] h-[300px] object-cover
+                absolute rounded-2xl shadow-2xl transition-all duration-1000 ease-in-out
+                ${idx === current ? "opacity-100 scale-100 translate-x-0 z-20" : "opacity-0 scale-95 translate-x-4 z-10"}
+                w-full max-w-[450px] aspect-video object-cover
               `}
-                            style={{
-                                left: idx === current ? 0 : undefined,
-                                top: idx === current ? 0 : undefined,
-                            }}
                         />
                     ))}
                 </div>

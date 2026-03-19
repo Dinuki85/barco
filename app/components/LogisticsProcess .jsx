@@ -23,31 +23,31 @@ const centerServices = [
 
 const topItems = [
     {
-        title: "Order Placement",
+        title: "Intelligent Orchestration",
         description:
-            "The process begins when a customer places an order for goods through various channels, such as a website, phone, or in-person.",
-        icon: <FaRegClipboard className="text-4xl text-blue-800" />,
+            "Proprietary algorithms analyze global demand patterns to initiate the most efficient supply cycle.",
+        icon: <FaRegClipboard className="text-4xl text-accent" />,
     },
     {
-        title: "Inventory Management",
+        title: "Digital Inventory Sync",
         description:
-            "Monitoring stock levels and ensuring efficient restocking without overloading or shortages.",
-        icon: <MdOutlineInventory className="text-4xl text-blue-800" />,
+            "Real-time visibility across global hubs ensures optimal stock levels with zero latency.",
+        icon: <MdOutlineInventory className="text-4xl text-accent" />,
     },
 ];
 
 const bottomItems = [
     {
-        title: "Transportation",
+        title: "Dynamic Routing",
         description:
-            "Selecting optimal transport modes (road, air, sea) based on destination and delivery speed.",
-        icon: <MdLocalShipping className="text-4xl text-blue-800" />,
+            "AI-driven selection of multimodal transport paths to maximize speed and minimize carbon footprint.",
+        icon: <MdLocalShipping className="text-4xl text-accent" />,
     },
     {
-        title: "Warehousing & Storage",
+        title: "Autonomous Fulfillment",
         description:
-            "Efficient storage and retrieval from warehouse hubs with real-time logistics tracking.",
-        icon: <FaWarehouse className="text-4xl text-blue-800" />,
+            "Smart warehousing systems ensure precision picking and rapid dispatch for end-to-end reliability.",
+        icon: <FaWarehouse className="text-4xl text-accent" />,
     },
 ];
 

@@ -2,19 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --darkBlue: #001F54;
-  --lightBlue: #0078D7;
-  --white: #ffffff;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #020617;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+}
+
+[data-theme='dark'] {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --primary: #f8fafc;
+  --primary-foreground: #0f172a;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
 }
 
 body {
-  font-family: "Outfit", sans-serif;
+  @apply font-sans antialiased text-foreground bg-background;
+  font-family: 'Outfit', sans-serif;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 font-bold;
+  }
+
+  .premium-button {
+    @apply px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-blue-500/20 bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .section-padding {
+    @apply py-20 px-6 max-w-7xl mx-auto;
+  }
 }
 
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 2px #1e3352;
-  text-stroke: 2px #1e3352;
+  -webkit-text-stroke: 1px currentColor;
+  opacity: 0.3;
 }
  

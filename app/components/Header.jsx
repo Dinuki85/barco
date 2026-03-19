@@ -46,21 +46,12 @@ const Header = ({ forceBlack = false }) => {
     >
            
       <div className="flex items-center justify-between h-16 px-4 mx-auto md:h-20 md:px-10 max-w-7xl">
-        {/* Logo */}
         <Link
           href="/"
-          className={`flex items-center h-full text-2xl font-bold transition-colors duration-300 ${textColor}`}
+          className={`flex items-center h-full text-2xl font-black tracking-tighter transition-colors duration-300 ${textColor}`}
         >
-          <div className="flex items-center justify-center w-20 h-20 pl-2 pr-3 rounded-lg md:w-24 md:h-24">
-            <Image
-              src="/logo.png"
-              alt="Business Logo"
-              width={96}
-              height={96}
-              className="object-contain"
-              priority
-            />
-          </div>
+          <span className="text-accent">NEXA</span>
+          <span className="ml-1 opacity-80">GLOBAL</span>
         </Link>
 
         {/* Hamburger Menu Button for mobile */}

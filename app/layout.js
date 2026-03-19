@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 
 
 export const metadata = {
-  title: "Barco Global Logistics (PVT) LTD",
-  description: "We move your business forward through global logistics.",
+  title: "Nexa Global | Intelligent Logistics & Supply Chain Solutions",
+  description: "Empowering global trade with cutting-edge logistics, real-time tracking, and seamless supply chain management.",
 };
 
 export default function RootLayout({ children }) {

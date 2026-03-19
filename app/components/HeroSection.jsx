@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const slides = [
-  { image: "/assets/barco8.jpg", heading: "Business Artica (PVT) LTD" },
-  { image: "/assets/barco21.jpeg", heading: "Your Business Idea" },
-  { image: "/assets/barco22.jpg", heading: "RELIABLE SUPPLY CHAIN PARTNER" },
+  { image: "/assets/barco8.jpg", heading: "NEXA GLOBAL", subtext: "The Future of Intelligent Logistics" },
+  { image: "/assets/barco21.jpeg", heading: "SMART SUPPLY CHAIN", subtext: "Data-Driven Efficiency for Your Business" },
+  { image: "/assets/barco22.jpg", heading: "GLOBAL REACH", subtext: "Seamlessly Connecting Markets Worldwide" },
 ];
 
 const letterVariants = {
@@ -68,29 +68,39 @@ export default function HeroSection() {
 
           {/* Centered Heading with Transparent Outline */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <motion.h1
-              key={slides[current].heading}
-              className="text-3xl font-bold text-center uppercase select-none sm:text-4xl md:text-6xl lg:text-7xl"
-              style={{
-                fontFamily: "'Quicksand', sans-serif",
-                color: "transparent",
-                WebkitTextStroke: "1.5px #66ccff",
-                WebkitTextFillColor: "transparent",
-              }}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {slides[current].heading.split("").map((char, idx) => (
-                <motion.span
-                  key={idx}
-                  variants={letterVariants}
-                  className={char === " " ? "mx-1" : ""}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </motion.h1>
+            <motion.div className="flex flex-col items-center">
+              <motion.h1
+                key={slides[current].heading}
+                className="text-3xl font-bold text-center uppercase select-none sm:text-4xl md:text-6xl lg:text-7xl"
+                style={{
+                  fontFamily: "'Quicksand', sans-serif",
+                  color: "transparent",
+                  WebkitTextStroke: "1.5px #66ccff",
+                  WebkitTextFillColor: "transparent",
+                }}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {slides[current].heading.split("").map((char, idx) => (
+                  <motion.span
+                    key={idx}
+                    variants={letterVariants}
+                    className={char === " " ? "mx-1" : ""}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="mt-4 text-lg font-medium tracking-widest text-white uppercase md:text-xl opacity-80"
+              >
+                {slides[current].subtext}
+              </motion.p>
+            </motion.div>
           </div>
         </div>
       </section>
