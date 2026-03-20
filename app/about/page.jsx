@@ -1,7 +1,7 @@
 "use client"
 
 import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink, FaShoppingCart, FaSnowflake, FaShieldAlt, FaRocket } from "react-icons/fa";
-import MeatTeam from "../components/MeatTeam";
+import MeetTeam from "../components/MeetTeam";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ParallaxImage from "../components/ParallaxImage";
@@ -437,7 +437,7 @@ export default function AboutPage() {
 
 
         <div className="w-full px-0 mx-auto">
-          <MeatTeam />
+          <MeetTeam />
         </div>
 
       </main>

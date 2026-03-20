@@ -21,95 +21,109 @@ export default function ContactSection() {
       {/* Company Details Card */}
       <div
         className={`
-          group relative flex flex-col gap-5 justify-center items-start
+          group relative flex flex-col gap-6 justify-center items-start
           w-full max-w-md mb-8 md:mb-0 md:mr-8
-          rounded-2xl p-8 shadow-xl
-          border border-blue-200
-          backdrop-blur-md
-          transition-transform duration-300
-          hover:scale-105
-          animated-bg
+          rounded-3xl p-10 shadow-2xl
+          border border-slate-200/50
+          backdrop-blur-xl
+          transition-all duration-500
+          hover:scale-[1.02]
+          premium-glass-card
         `}
-        style={{
-          boxShadow: "0 8px 32px 0 rgba(31, 64, 104, 0.18)",
-        }}
       >
-        <div className="flex items-center gap-3 mb-2">
-          <FaBuilding className="text-2xl text-blue-900 transition-colors duration-300 group-hover:text-blue-100" />
-          <span className="text-xl font-bold text-blue-900 transition-colors duration-300 group-hover:text-white">
-           Business Artica (Pvt) Ltd
+        <div className="flex items-center gap-4 mb-4">
+          <div className="p-3 rounded-2xl bg-primary/10">
+            <FaBuilding className="text-3xl text-primary" />
+          </div>
+          <span className="text-2xl font-black tracking-tighter text-slate-900">
+           NEXA<span className="text-accent underline decoration-2 underline-offset-4">GLOBAL</span>
           </span>
         </div>
-        <div className="flex items-center gap-3">
-          <FaMapMarkerAlt className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
-          <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            New City, Colombo 05, Sri Lanka
-          </span>
+        
+        <div className="space-y-4">
+          <div className="flex items-center gap-4">
+            <div className="p-2 rounded-lg bg-accent/10">
+              <FaMapMarkerAlt className="text-accent" />
+            </div>
+            <span className="font-semibold tracking-tight text-slate-700">
+              Skyline Tower, Financial District, Colombo 05
+            </span>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <div className="p-2 rounded-lg bg-accent/10">
+              <FaPhoneAlt className="text-accent" />
+            </div>
+            <span className="font-semibold tracking-tight text-slate-700">
+              +94 11 234 5678
+            </span>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <div className="p-2 rounded-lg bg-accent/10">
+              <FaEnvelope className="text-accent" />
+            </div>
+            <span className="font-semibold tracking-tight text-slate-700">
+              solutions@nexaglobal.io
+            </span>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <div className="p-2 rounded-lg bg-accent/10">
+              <FaClock className="text-accent" />
+            </div>
+            <span className="font-semibold tracking-tight text-slate-700">
+              24/7 Priority Support Ecosystem
+            </span>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <FaPhoneAlt className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
-          <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            +94 52 222 5652
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaEnvelope className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
-          <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            info@business.com
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaClock className="text-blue-700 transition-colors duration-300 group-hover:text-blue-200" />
-          <span className="font-medium text-blue-900 transition-colors duration-300 group-hover:text-white">
-            Mon - Fri: 8:30 AM - 6:00 PM
-          </span>
-        </div>
-        <div className="mt-4 text-sm leading-relaxed text-blue-800 transition-colors duration-300 group-hover:text-blue-100">
-          <span className="font-semibold">
-            Your trusted partner in global logistics and supply chain solutions. We deliver reliability, speed, and transparency for your business worldwide.
-          </span>
+
+        <div className="pt-6 mt-6 border-t border-slate-200">
+          <p className="text-lg font-medium leading-relaxed text-slate-500">
+            Architecting the future of global trade. We deliver high-fidelity, intelligent logistics solutions for growth-oriented enterprises.
+          </p>
         </div>
       </div>
 
       {/* Contact Form Card */}
-      <div className="flex flex-col items-center w-full max-w-lg p-8 bg-white rounded-lg shadow-md bg-opacity-90">
-        <h1 className="mb-8 text-3xl font-bold text-center text-blue-900">Contact Us</h1>
+      <div className="flex flex-col items-center w-full max-w-lg p-10 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-slate-100">
+        <h1 className="mb-10 text-5xl font-black tracking-tighter text-slate-900">Get in Touch</h1>
         {state.succeeded ? (
           <div className="py-10 text-center">
-            <h2 className="mb-4 text-2xl font-semibold text-green-600">🎉 Thank you!</h2>
-            <p className="text-gray-700">Your message has been successfully sent. We'll get back to you soon.</p>
+            <h2 className="mb-4 text-2xl font-semibold text-accent">🎉 Transmission Received</h2>
+            <p className="text-slate-600 font-medium">Our strategic team will be in contact shortly.</p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="w-full space-y-5"
+            className="w-full space-y-6"
           >
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email Address
+              <label htmlFor="email" className="block text-sm font-bold tracking-widest text-slate-500 uppercase mb-2">
+                Business Email
               </label>
               <input
                 id="email"
                 type="email"
                 name="email"
                 required
-                placeholder="you@example.com"
-                className="block w-full px-4 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                placeholder="partnership@startup.io"
+                className="block w-full px-5 py-4 bg-slate-50 border-none rounded-2xl shadow-sm focus:ring-2 focus:ring-accent transition-all duration-300"
               />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Message
+              <label htmlFor="message" className="block text-sm font-bold tracking-widest text-slate-500 uppercase mb-2">
+                How can we collaborate?
               </label>
               <textarea
                 id="message"
                 name="message"
                 required
                 rows="5"
-                placeholder="Your message..."
-                className="block w-full px-4 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Specify your logistical requirements..."
+                className="block w-full px-5 py-4 bg-slate-50 border-none rounded-2xl shadow-sm focus:ring-2 focus:ring-accent transition-all duration-300"
               />
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
@@ -118,34 +132,14 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="w-full px-4 py-2 font-semibold text-white transition bg-blue-600 rounded-md hover:bg-blue-700"
+                className="premium-button w-full py-5 text-lg font-black tracking-widest uppercase bg-primary hover:bg-slate-800"
               >
-                {state.submitting ? "Sending..." : "Submit"}
+                {state.submitting ? "Processing..." : "Initiate Partnership"}
               </button>
             </div>
           </form>
         )}
       </div>
-      {/* Custom color animation for the company card */}
-      <style jsx>{`
-        .animated-bg {
-          background: linear-gradient(135deg, #e0f2fecc 60%, #bae6fdcc 80%, #a5d8fccf 100%);
-          animation: lightPulse 2s infinite alternate;
-        }
-        .animated-bg:hover {
-          animation: none !important;
-          background: linear-gradient(135deg, #1e3a8aee 60%, #2563ebee 100%);
-          background-blend-mode: multiply;
-        }
-        @keyframes lightPulse {
-          0% {
-            background: linear-gradient(135deg, #e0f2fecc 60%, #bae6fdcc 80%, #a5d8fccf 100%);
-          }
-          100% {
-            background: linear-gradient(135deg, #dbeafecc 60%, #bfdbfecc 80%, #93c5fdcc 100%);
-          }
-        }
-      `}</style>
     </div>
   );
 }

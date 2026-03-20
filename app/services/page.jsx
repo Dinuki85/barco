@@ -9,7 +9,60 @@ import {
   MdOutlineSupportAgent,
   MdWarehouse,
 } from "react-icons/md";
-import MeatTeam from "../components/MeatTeam";
+import MeetTeam from "../components/MeetTeam";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+};
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+        },
+    },
+};
+
+const h2ContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.03,
+        },
+    },
+};
+
+const h2LetterVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+};
+
+const ulVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const liVariants = {
+    hidden: { opacity: 0, x: -20, filter: "blur(5px)" },
+    visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+};
 
 const slides = [
   { image: "/assets/barco14.jpg" },
@@ -17,74 +70,43 @@ const slides = [
   { image: "/assets/barco11.jpg" },
 ];
 
-const heading = "Logistics Capabilities";
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.06 },
-  },
-};
-const ulVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
-const liVariants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0 },
-};
-const h2ContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.06 },
-  },
-};
-const h2LetterVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-};
+// ... (skipping unchanged variants)
 
 const detailedServices = [
   {
     id: "warehousing",
-    title: "Warehousing and Distribution",
+    title: "Intelligent Warehousing",
     description:
-      "At Business Artica, our warehousing and distribution service offers more than just storage — it’s a strategic backbone of your supply chain. With cutting‑edge security systems, climate control options, fire safety protocols and scalable racking designs across multiple strategically placed facilities, we ensure your cargo is protected and stored under optimal conditions. Our advanced Warehouse Management System integrates real‑time tracking, automated stock alerts and comprehensive reporting to help you manage inventory with precision. We also provide tailored distribution services, coordinating shipment routing, consolidation and carrier negotiation to ensure goods are dispatched efficiently and cost‑effectively. Whether you operate in retail, manufacturing or e‑commerce, we provide customized workflows, transparent processes and proactive planning to meet fluctuating demands. Our dedicated logistics team works closely with clients to align warehouse throughput with delivery schedules, thereby reducing lead times and minimizing inventory holding costs. With our focus on green initiatives, energy‑efficient lighting, reusable packaging and low‑emission transport partners, we help you reduce environmental impact while supporting scalability. Ultimately, this integrated warehousing and distribution solution delivers operational efficiency, inventory accuracy and sustainable logistics performance to empower your business growth.",
+      "At Nexa Global, our warehousing ecosystems are engineered for maximum throughput and absolute precision. We don't just store goods; we manage mission-critical inventory through a network of high-security, climate-controlled hubs. Powered by proprietary WMS technology, our facilities offer real‑time visibility and predictive stock management. From automated retrieval systems to scalable racking architectures, we ensure your assets are protected and ready for rapid deployment across any global market.",
     image: "/assets/barco31.jpg",
   },
   {
     id: "freight",
-    title: "Freight Forwarding",
+    title: "Global Interconnect",
     description:
-      "Business Artica’ freight forwarding service acts as a global logistics concierge — making international shipping seamless and stress‑free. Leveraging a vast network of trusted carriers across sea, air and land routes, we negotiate competitive rates and optimal transit times tailored to your cargo type and destination. Our team handles every detail — bill of lading, export/import documentation, customs declarations, duties, and compliance regulations — to ensure shipments move smoothly without delays. We offer door‑to‑door tracking, shipment consolidation for cost‑efficiency, and scalable options that support both small‑quantity e‑commerce parcels and full container loads. With real‑time updates, proactive alerts and transparent status communication, you remain informed at every stage. Our industry expertise enables us to mitigate risks such as port congestion, customs holds or regulatory changes — helping you avoid unexpected costs or disruptions. Whether you're shipping perishables, hazardous goods or retail merchandise, our tailored freight forwarding service prioritizes reliability, visibility and cost control to help your supply chain adapt and thrive.",
+      "Nexa Global's freight forwarding is the digital link in your international trade strategy. We orchestrate complex multi-modal movements across sea, air, and land with surgical precision. By leveraging a hyper-scaled network of premium carriers, we secure priority capacity and optimized transit routes. Our architects handle every aspect of global compliance, from advanced documentation to tactical customs navigation, ensuring your capital remains in motion and your supply chain stays resilient.",
     image: "/assets/barco26.jpg",
   },
   {
     id: "supply",
-    title: "Supply Chain Management",
+    title: "Supply Chain Architecture",
     description:
-      "Business Artica delivers comprehensive supply chain management solutions that unify all logistics processes under one coordinated plan. From procurement and inventory planning to warehousing, transportation, and delivery, we integrate operations to eliminate silos and boost efficiency. Using state‑of‑the‑art software, we provide live tracking dashboards, demand forecasting, order validation, and performance analytics — enabling well‑informed decisions and swift reaction to disruptions. Our team consults on layout optimization, supplier coordination, shipment timing and inventory buffers to reduce waste and improve throughput. Through continuous monitoring and communication with all stakeholders, delays in procurement or transport are flagged early and resolved without affecting customer deliveries. With our focus on cost reduction and increased visibility, we support just‑in‑time delivery and lean inventory strategies while maintaining buffer safety stocks. Ultimately, our integrated supply chain management approach helps you maintain operational agility, reduce costs and scale logistics without losing control.",
+      "We deliver high-fidelity supply chain management that transforms logistics into a competitive advantage. Nexa Global integrates every touchpoint—from source procurement to final delivery—into a single, transparent workflow. Utilizing predictive analytics and real-time peering, we identify and mitigate risks before they impact your operations. Our consultants architect lean, adaptive systems that reduce waste, accelerate cycles, and empower you to scale with absolute confidence.",
     image: "/assets/barco27.jpg",
   },
   {
     id: "ecommerce",
-    title: "E‑commerce Logistics",
+    title: "Next-Gen E-Commerce",
     description:
-      "For fast‑growing online retailers, Barco Global Logistics offers tailored e‑commerce logistics that prioritize customer experience and operational efficiency. Our services include fast order fulfillment, flexible inventory allocation across fulfillment centers, easy returns processing and customizable delivery options. With real‑time order and shipment tracking, branded notifications, multi‑carrier routing and transparent rate choices, your customers enjoy a seamless digital purchase experience. We support omnichannel strategies by synchronizing inventory, order status and fulfillment across online marketplace platforms and physical stores. Our reverse logistics program simplifies returns and exchanges, reducing processing time and improving customer satisfaction. With scalable infrastructure, weekend fulfillment and surge handling during promotional periods, we enable consistent service during peak demand. Through data insights on package status, delivery windows and feedback loops, we continuously refine logistics flow. In combining speed, flexibility and transparent communication, our e‑commerce logistics empowers brands to outperform expectations and build loyalty.",
+      "Designed for the world's most ambitious digital brands, Nexa Global's e-commerce logic prioritizes high-velocity fulfillment and premium customer experience. We provide multi-node inventory positioning, automated order processing, and seamless omnichannel integration. Our systems are built to handle massive surge events with zero latency, providing your customers with the rapid, reliable delivery they expect. With branded tracking and tactical reverse logistics, we turn fulfillment into a loyalty engine.",
     image: "/assets/barco19.jpeg",
   },
   {
     id: "lastmile",
-    title: "Last‑Mile Delivery",
+    title: "Precision Last-Mile",
     description:
-      "Business Artica understands that the final leg of delivery is critical — it’s where the promise meets the customer. Our last‑mile delivery network is built for speed, visibility and reliability — offering home and commercial deliveries with precise routing, real‑time GPS tracking and live ETA notifications. We offer flexible delivery slots, weekend schedules and safe handling protocols to ensure packages arrive intact and on time. Our operations include transparent tracking interfaces, proof‑of‑delivery confirmation and customer support to resolve delays or missed deliveries. Whether delivering bulky goods or small parcels, our scalable fleet adapts to geographic and volume demands. We constantly monitor delivery performance, customer feedback and route efficiency to optimize speed and satisfaction. By turning final‑mile delivery into a dependable experience, we help you enhance brand reputation, lower return rates and increase customer loyalty — giving you a measurable competitive edge in today’s fast‑moving market.",
+      "The final touch is the most critical. Nexa Global's last-mile network is engineered for the highest standards of reliability and visual transparency. We offer hyper-local delivery solutions with real-time GPS orchestration and exact-window notifications. Our fleet is adaptive, handling everything from high-value white-glove installations to high-volume parcel drops. By obsessing over delivery performance and customer feedback, we protect your brand's reputation at the point of impact.",
     image: "/assets/barco1.png",
   },
 ];
@@ -92,27 +114,27 @@ const detailedServices = [
 const additionalServices = [
   {
     id: "customs",
-    title: "Customs Clearance",
+    title: "Tactical Customs Navigation",
     description:
-      "Our customs clearance service ensures smooth cross‑border movement through expert documentation management, duty calculation, regulatory compliance and proactive communication with authorities.",
+      "Our compliance experts ensure seamless border transits through advanced classification, automated duty calculation, and proactive regulatory peering across all global jurisdictions.",
   },
   {
     id: "inventory",
-    title: "Inventory Management",
+    title: "Predictive Inventory Logic",
     description:
-      "We support demand planning, real‑time stock monitoring, inventory audits and replenishment automation to maintain optimal stock levels without overage or shortage.",
+      "Harness real-time data to optimize stock levels, minimize holding costs, and ensure 100% availability through automated replenishment and demand-sensing technology.",
   },
   {
     id: "packaging",
-    title: "Packaging Solutions",
+    title: "Engineered Packaging",
     description:
-      "Our packaging experts deliver custom solutions — from protective wrapping, labelling and pallets to eco‑friendly packaging strategies — to protect goods and uphold brand image.",
+      "From high-impact industrial protective systems to premium sustainable consumer materials, our packaging solutions are designed to protect both your product and your brand's image.",
   },
   {
     id: "express",
-    title: "Express Delivery",
+    title: "Mission-Critical Express",
     description:
-      "For urgent shipments, our express delivery service guarantees rapid transit times, priority handling, fast tracking, and time‑sensitive support.",
+      "When timing is everything, our priority express circuits guarantee the fastest possible transit through dedicated handlers and expedited global clearance channels.",
   },
 ];
 
@@ -156,7 +178,7 @@ export default function ServicesPage() {
         <div className="flex flex-col w-full gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex-1 text-left">
             <motion.h1
-              className="inline-block font-serif text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-800"
+              className="inline-block font-sans text-3xl font-black tracking-tighter leading-tight sm:text-4xl md:text-5xl lg:text-8xl text-slate-900"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -172,15 +194,15 @@ export default function ServicesPage() {
                 </motion.span>
               ))}
             </motion.h1>
-            <hr className="w-1/2 mt-4 mb-4 border-4 border-light-blue-300" />
+            <hr className="w-1/2 mt-4 mb-4 border-4 border-accent" />
             <motion.h2
-              className="flex flex-wrap items-center font-serif text-sm font-thin text-left sm:text-xl md:text-2xl"
+              className="flex flex-wrap items-center font-sans text-sm font-bold tracking-tight text-left sm:text-xl md:text-2xl text-primary"
               variants={h2ContainerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
             >
-              {"Delivering Possibilities, On Time".split("").map((word, idx) => (
+              {"Intelligent Logistics, Orchestrated".split("").map((word, idx) => (
                 <motion.span key={idx} variants={h2LetterVariants} className="mr-2">
                   {word}
                 </motion.span>
@@ -319,7 +341,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="w-full px-0 mx-auto">
-        <MeatTeam />
+        <MeetTeam />
       </div>
     </div>
   );

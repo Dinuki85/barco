@@ -5,6 +5,29 @@ import { HiArrowUpRight } from "react-icons/hi2";
 
 const heading = "Next-Gen Connectivity";
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+};
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+        },
+    },
+};
+
 // ... (skipping unchanged code)
 
 export default function Footer() {
@@ -95,8 +118,6 @@ export default function Footer() {
                     &copy; {new Date().getFullYear()} Nexa Global Solutions Ltd. Built for the future of trade.
                 </div>
             </footer>
-        </>
-    );
         </>
     );
 }

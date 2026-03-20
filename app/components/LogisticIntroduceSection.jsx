@@ -10,6 +10,81 @@ import { HiArrowUpRight } from "react-icons/hi2";
 // Animation variants
 const heading = "Strategic Capabilities";
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+};
+
+const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+        },
+    },
+};
+
+const h2ContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.03,
+        },
+    },
+};
+
+const h2LetterVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+};
+
+const ulVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const liVariants = {
+    hidden: { opacity: 0, x: -20, filter: "blur(5px)" },
+    visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+};
+
+// Custom Hook for Counter Animation
+const useCounter = (end, duration, startTrigger) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        if (!startTrigger) return;
+
+        let startTime = null;
+        const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            setCount(Math.floor(progress * end));
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }, [end, duration, startTrigger]);
+
+    return count;
+};
+
 // ... (skipping unchanged code)
 
 const LogisticIntroduceSection = () => {

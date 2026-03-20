@@ -7,15 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkBlue: "#001F54",
-        lightBlue: "#0078D7",
-        white: "#ffffff",
+        primary: "var(--primary)",
+        "primary-foreground": "var(--primary-foreground)",
+        accent: "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        muted: "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
       },
       fontFamily: {
-        calibri: ["Calibri", "sans-serif"],
-        timesnewroman: ["Times New Roman", "serif"],
-      }, // <-- add this closing brace
-    },   // <-- and this one to close extend
+        sans: ["Outfit", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
