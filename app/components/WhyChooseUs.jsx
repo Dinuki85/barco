@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { FaCheckCircle } from "react-icons/fa";
+import Image from "next/image";
+
 
 const images = [
     "/assets/barco26.jpg",
@@ -143,18 +145,25 @@ const WhyChooseUsSection = () => {
                 {/* Right: Stacked, auto-sliding images */}
                 <div className="w-full md:w-1/2 flex justify-center relative min-h-[400px]">
                     {images.map((src, idx) => (
-                        <img
+                        <div
                             key={src + idx}
-                            src={src}
-                            alt={`Strategic Edge ${idx + 1}`}
                             className={`
-                absolute rounded-2xl shadow-2xl transition-all duration-1000 ease-in-out
-                ${idx === current ? "opacity-100 scale-100 translate-x-0 z-20" : "opacity-0 scale-95 translate-x-4 z-10"}
-                w-full max-w-[450px] aspect-video object-cover
-              `}
-                        />
+                                absolute transition-all duration-1000 ease-in-out
+                                ${idx === current ? "opacity-100 scale-100 translate-x-0 z-20" : "opacity-0 scale-95 translate-x-4 z-10"}
+                                w-full max-w-[450px] aspect-video
+                            `}
+                        >
+                            <Image
+                                src={src}
+                                alt={`Strategic Edge ${idx + 1}`}
+                                fill
+                                className="object-cover shadow-2xl rounded-2xl"
+                                sizes="(max-width: 768px) 100vw, 450px"
+                            />
+                        </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );

@@ -2,6 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+
 import { FaShippingFast, FaPlus, FaMinus } from "react-icons/fa";
 import { GiCargoCrate } from "react-icons/gi";
 import {
@@ -10,6 +12,8 @@ import {
   MdWarehouse,
 } from "react-icons/md";
 import MeetTeam from "../components/MeetTeam";
+
+const heading = "Strategic Solutions";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -159,18 +163,26 @@ export default function ServicesPage() {
      {/* Hero Section */}
 <div className="relative w-full h-[550px] pt-16 overflow-hidden">
   {slides.map((slide, idx) => (
-    <motion.img
+    <motion.div
       key={idx}
-      src={slide.image}
-      alt={`Slide ${idx + 1}`}
-      className="absolute inset-0 object-cover w-full h-full"
+      className="absolute inset-0 w-full h-full"
       initial={{ scale: 1.1, opacity: 0.15 }}
       animate={{ scale: 1, opacity: 0.2 }}
       transition={{ duration: 10, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
-      draggable={false}
       style={{ zIndex: idx + 1 }}
-    />
+    >
+      <Image
+        src={slide.image}
+        alt={`Slide ${idx + 1}`}
+        fill
+        priority={idx === 0}
+        className="object-cover"
+        draggable={false}
+        sizes="100vw"
+      />
+    </motion.div>
   ))}
+
 </div>
 
       {/* Heading */}
@@ -244,17 +256,24 @@ export default function ServicesPage() {
       <div className="flex flex-col gap-10 px-4 py-12 mx-auto lg:flex-row max-w-7xl md:px-8">
         <div className="relative flex-1 px-6 py-6 bg-gray-50 rounded-lg overflow-hidden min-h-[450px] max-w-3xl mx-auto">
           <AnimatePresence mode="wait">
-            <motion.img
+            <motion.div
               key={activeService.id}
-              src={activeService.image}
-              alt={`${activeService.id} background`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.15 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8 }}
-              className="absolute top-0 left-0 object-cover w-full h-full pointer-events-none select-none"
-              style={{ filter: "brightness(0.9)" }}
-            />
+              className="absolute top-0 left-0 w-full h-full pointer-events-none select-none"
+            >
+                <Image
+                    src={activeService.image}
+                    alt={`${activeService.id} background`}
+                    fill
+                    className="object-cover"
+                    style={{ filter: "brightness(0.9)" }}
+                    sizes="(max-width: 1024px) 100vw, 768px"
+                />
+            </motion.div>
+
             <motion.div
               key={activeService.id + "-desc"}
               initial={{ opacity: 0, x: 20 }}
@@ -330,13 +349,16 @@ export default function ServicesPage() {
               );
             })}
           </div>
-          <div className="w-full lg:w-[40%]">
-            <img
+          <div className="w-full lg:w-[40%] relative min-h-[300px]">
+            <Image
               src="/assets/barco10.jpeg"
               alt="Additional Services"
-              className="object-cover w-full h-full rounded-lg shadow-md"
+              fill
+              className="object-cover rounded-lg shadow-md"
+              sizes="(max-width: 1024px) 100vw, 400px"
             />
           </div>
+
         </div>
       </div>
 

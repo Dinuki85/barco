@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 
 const slides = [
   { image: "/assets/barco8.jpg", heading: "NEXA GLOBAL", subtext: "The Future of Intelligent Logistics" },
@@ -33,34 +35,35 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Import Quicksand font from Google Fonts */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
-        rel="stylesheet"
-      />
-
       <section className="relative w-full h-screen overflow-hidden bg-black">
+
         <div className="relative w-full h-full">
           {slides.map((slide, index) => {
             const isActive = current === index;
             return (
-              <motion.img
+              <motion.div
                 key={slide.image}
-                src={slide.image}
-                alt={`Slide ${index + 1}`}
                 initial={false}
                 animate={{
                   opacity: isActive ? 1 : 0,
-                  scale: isActive ? [1, 1.1] : 1,
                 }}
                 transition={{
                   opacity: { duration: 1.5, ease: "easeInOut" },
-                  scale: { duration: 3, ease: "easeInOut" },
                 }}
-                className="absolute top-0 left-0 object-cover w-full h-full"
-                draggable={false}
-              />
+                className="absolute top-0 left-0 w-full h-full"
+              >
+                <Image
+                  src={slide.image}
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  priority={index === 0}
+                  className={`object-cover transition-transform duration-[3000ms] ease-in-out ${isActive ? "scale-110" : "scale-100"}`}
+                  draggable={false}
+                  sizes="100vw"
+                />
+              </motion.div>
             );
+
           })}
 
           {/* Dark overlay */}
@@ -73,7 +76,8 @@ export default function HeroSection() {
                 key={slides[current].heading}
                 className="text-3xl font-bold text-center uppercase select-none sm:text-4xl md:text-6xl lg:text-7xl"
                 style={{
-                  fontFamily: "'Quicksand', sans-serif",
+                  fontFamily: "var(--font-quicksand), sans-serif",
+
                   color: "transparent",
                   WebkitTextStroke: "1.5px #66ccff",
                   WebkitTextFillColor: "transparent",

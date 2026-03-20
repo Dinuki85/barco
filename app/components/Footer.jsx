@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 import { HiArrowUpRight } from "react-icons/hi2";
 
 const heading = "Next-Gen Connectivity";

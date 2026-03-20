@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Quicksand } from "next/font/google";
 import "./globals.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -8,15 +8,19 @@ import MainLayout from "./MainLayout";
 
 config.autoAddCss = false;
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+
+const quicksand = Quicksand({
+    variable: "--font-quicksand",
+    subsets: ["latin"],
+    weight: ["500", "700"],
 });
+
+
 
 
 export const metadata = {
@@ -27,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${outfit.variable} ${quicksand.variable} font-sans`}>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

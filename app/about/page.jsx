@@ -4,7 +4,9 @@ import { FaShippingFast, FaClipboardList, FaWarehouse, FaProjectDiagram, FaLink,
 import MeetTeam from "../components/MeetTeam";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import ParallaxImage from "../components/ParallaxImage";
+
 
 
 const heading = "Our Identity";
@@ -81,15 +83,18 @@ export default function AboutPage() {
     <>
       {/* Top full-width image */}
       <div className="w-screen relative left-1/2 -translate-x-1/2 h-[200px] md:h-[450px] lg:h-[550px] bg-black">
-        <img
-          src="/assets/barco2.jpg" // <-- use your high quality image path here
-          alt="About Business Artica"
-          className="object-cover w-full h-full"
-          loading="eager"
+        <Image
+          src="/assets/barco2.jpg"
+          alt="About Nexa Global"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
         {/* Optional overlay for readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
+
       <main className="min-h-screen px-4 pt-20 pb-12 ">
 
 
@@ -128,21 +133,16 @@ export default function AboutPage() {
 
             {/* Right: Stacked Carousel */}
             <div className="relative w-full overflow-hidden shadow-xl h-72 md:h-80 lg:h-96 rounded-xl">
-              <img
-                src="/assets/barco14.jpg"
-                alt="Stack 1"
-                className="absolute inset-0 object-cover w-full h-full rounded-xl animate-stack1"
-              />
-              <img
-                src="/assets/barco30.jpg"
-                alt="Stack 2"
-                className="absolute inset-0 object-cover w-full h-full rounded-xl animate-stack2"
-              />
-              <img
-                src="/assets/barco31.jpg"
-                alt="Stack 3"
-                className="absolute inset-0 object-cover w-full h-full rounded-xl animate-stack3"
-              />
+              <div className="absolute inset-0 animate-stack1">
+                <Image src="/assets/barco14.jpg" alt="Stack 1" fill className="object-cover rounded-xl" sizes="(max-width: 768px) 100vw, 500px" />
+              </div>
+              <div className="absolute inset-0 animate-stack2">
+                <Image src="/assets/barco30.jpg" alt="Stack 2" fill className="object-cover rounded-xl" sizes="(max-width: 768px) 100vw, 500px" />
+              </div>
+              <div className="absolute inset-0 animate-stack3">
+                <Image src="/assets/barco31.jpg" alt="Stack 3" fill className="object-cover rounded-xl" sizes="(max-width: 768px) 100vw, 500px" />
+              </div>
+
 
               {/* Stack animation styles */}
               <style jsx>{`
@@ -423,15 +423,17 @@ export default function AboutPage() {
              
 
             ].map((src, idx) => (
-              <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
-                <img
+              <div key={idx} className="relative h-64 overflow-hidden rounded-lg shadow-lg">
+                <Image
                   src={src}
                   alt={`Gallery Image ${idx + 1}`}
-                  className="object-cover w-full h-64 transition-transform duration-300 ease-in-out hover:scale-105"
-                  loading="lazy"
+                  fill
+                  className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
             ))}
+
           </div>
         </section>
 
